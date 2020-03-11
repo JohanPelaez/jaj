@@ -1,0 +1,99 @@
+.jaj-sidebar {
+    height: 100vh;
+    max-height: 100vh;
+    overflow: auto;
+    border-right: 1.5px solid rgba(0, 168, 193, .1);
+    background-color: rgba(41,49,51,1);
+    color: white;
+    font-size: 14px;
+}
+.jaj-sidebar a {
+    color: #cfcfcf;
+}
+.jaj-sidebar .image-logo {
+    padding: 15px;
+    border-bottom: 1.5px solid rgba(0, 168, 193, .1);
+}
+.jaj-sidebar img {
+    width: 160px;
+    margin: auto;
+}
+.jaj-sidebar .jaj-menu {
+    overflow-y: auto;
+    max-height: calc(100% - 195px);
+    overflow-x: hidden;
+}
+.jaj-nav-list {
+    list-style: none;
+    padding: 0;
+    max-width: 100%;
+    width: 100%;
+}
+.jaj-nav-list .jaj-menu-title {
+    border-bottom: 1.5px solid rgba(0, 168, 193, .1);
+}
+.title-content {
+    padding: 10px 25px 10px 15px;
+    position: relative;
+    cursor: pointer;
+}
+.jaj-nav-list .jaj-menu-title .title-content:hover {
+    background-color: rgba(0, 168, 193, .1);
+}
+.jaj-menu-title .icon {
+    position: absolute;
+    right: 15px;
+    top: calc(50% - 12px);
+}
+.jaj-menu-title .icon.ion-md-arrow-dropdown {
+    display: none;
+}
+.jaj-menu-title.active .icon.ion-md-arrow-dropdown {
+    display: block;
+}
+.jaj-menu-title.active .icon.ion-md-arrow-dropright {
+    display: none;
+}
+.jaj-menu-title .jaj-sub-menu {
+    display: none;
+    list-style: none;
+    padding: 15px 10px 15px 25px;
+    background-color: rgba(255,255,255,.1);
+}
+.jaj-menu-title.active .jaj-sub-menu {
+    display: block;
+}
+.jaj-menu-title2 .jaj-sub-menu2 {
+    list-style: none;
+    padding: 0 10px;
+}
+.jaj-menu-title2 {
+    color: rgb(0, 168, 193);
+    padding: 5px 0;
+    border-bottom: 1px solid rgba(0, 168, 193, .3);
+}
+.jaj-header {
+    height: 64px;
+    padding: 15px;
+    box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.15);
+    background-color: rgb(0, 168, 193);
+    margin-bottom: 30px;
+}
+
+.jaj-header a {
+    line-height: 34px;
+    color: white;
+    float: right;
+}
+
+.page-container, .modal_container{
+    display: none;
+}
+  
+.page-container:target, .modal_container:target{
+    display: flex;
+}
+
+.page-container form {
+    margin: auto;
+}

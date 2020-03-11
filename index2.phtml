@@ -1,0 +1,1329 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Pagina Principal</title>
+<!-- Ion Icons -->
+<link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link href="view/css/estilos.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<!--Nav empieza desde aqui-->
+<header>
+	<div class="container">
+	<nav>
+		<div class="menu-icons">
+		<i class="icon ion-md-menu"></i>
+		<i class="icon ion-md-close"></i>
+		</div>
+		<a href="#" class="logo">
+		<i class="icon ion-md-shirt"></i>
+		</a>
+		<ul class="nav-list">
+		<li>
+			<a href="#">Ordenes de Producción
+			<i class="icon ion-md-arrow-dropdown"></i>
+			</a>
+			<ul class="sub-menu">
+			<li>
+				<a href="#"  >Ver Orden de Producción</a>
+			</li>
+			<li>
+				<a href="#">Crear Orden de Producción
+				<i class="icon ion-md-arrow-dropdown"></i>
+				</a>
+				<ul class="sub-menu">
+				<li>
+					<a href="#">Arreglos</a>
+				</li>
+				<li>
+					<a href="#">Bordados</a>
+				</li>
+				<li>
+					<a href="op_camisas_polo.php">Camisas / Polo</a>
+				</li>
+				<li>
+					<a href="#">Camisetas / Tirantes</a>
+				</li>
+				<li>
+					<a href="#">Chalecos</a>
+				</li>
+				<li>
+					<a href="#">Delantales</a>
+				</li>
+				<li>
+					<a href="#">Otros</a>
+				</li>
+				<li>
+					<a href="#">Pantalones</a>
+				</li>
+				<li>
+					<a href="#">Pantalonetas / Buzos</a>
+				</li>
+				<li>
+					<a href="#">Poliflex</a>
+				</li>
+				<li>
+					<a href="#">Sublimación</a>
+				</li>
+				</ul>
+			</li>
+			</ul>
+		</li>
+		<li>
+			<a href="#">Productos / Telas
+			<i class="icon ion-md-arrow-dropdown"></i>
+			</a>
+			<ul class="sub-menu">
+			<li>
+				<a href="#">Añadir Productos
+				<i class="icon ion-md-arrow-dropdown"></i>
+				</a>
+				<ul class="sub-menu">
+				<li>
+					<a href="#modal_crear_prod">Productos</a>
+				</li>
+				<li>
+					<a href="#modal_crear_cat" id='btn_Cat'>Categorías</a>
+				</li>
+				<li>
+					<a href="#modal_crear_subcat">Sub Categorías</a>
+				</li>
+				<li>
+					<a href="#modal_crear_prodstock">Productos con Stock</a>
+				</li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">Actualizar Productos
+				<i class="icon ion-md-arrow-dropdown"></i>
+				</a>
+				<ul class="sub-menu">
+				<li>
+					<a href="#modal_act_prod">Productos</a>
+				</li>
+				<li>
+					<a href="#modal_act_cat">Categorías</a>
+				</li>
+				<li>
+					<a href="#modal_act_subcat">Sub Categorías</a>
+				</li>
+				<li>
+					<a href="#buscar_prod_stock">Productos con Stock</a>
+				</li>
+				<li>
+					<a href="#buscar_prod_tela">Stock de Telas</a>
+				</li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">Logos
+				<i class="icon ion-md-arrow-dropdown"></i>
+				</a>
+				<ul class="sub-menu">
+				<li>
+					<a href="#">Crear Logo</a>
+				</li>
+				<li>
+					<a href="#">Actualizar Logo</a>
+				</li>
+				</ul>
+			</li>
+			</ul>
+		</li>
+		<li>
+			<a href="#">Terceros
+			<i class="icon ion-md-arrow-dropdown"></i>
+			</a>
+			<ul class="sub-menu">
+			<li>
+				<a href="#">Clientes
+				<i class="icon ion-md-arrow-dropdown"></i>
+				</a>
+				<ul class="sub-menu">
+				<li>
+					<a href="#modal_crear_cli">Crear Cliente</a>
+				</li>
+				<li>
+					<a href="#buscar_cli">Actualizar Cliente</a>
+				</li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">Proveedores
+				<i class="icon ion-md-arrow-dropdown"></i>
+				</a>
+				<ul class="sub-menu">
+				<li>
+					<li>
+					<a href="#modal_crear_prov">Crear Proveedores</a>
+					</li>
+					<li>
+					<a href="#buscar_prov">Actualizar Proveedores</a>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">Maquiladores
+				<i class="icon ion-md-arrow-dropdown"></i>
+				</a>
+				<ul class="sub-menu">
+				<li>
+					<a href="#modal_crear_maq">Crear Maquilador</a>
+				</li>
+				<li>
+					<a href="#buscar_maq">Actualizar Maquilador</a>
+				</li>
+				</ul>
+			</li>
+			</ul>
+		</li>
+		<li>
+			<a href="#">Personal
+			<i class="icon ion-md-arrow-dropdown"></i>
+			</a>
+			<ul class="sub-menu">
+			<li>
+				<a href="#">Crear
+				<i class="icon ion-md-arrow-dropdown"></i>
+				</a>
+				<ul class="sub-menu">
+				<li>
+					<a href="#modal_crear_usu">Usario de sistema</a>
+				</li>
+				<li>
+					<a href="#modal_crear_emp">Crear Empleado</a>
+				</li>
+				<li>
+					<a href="#modal_crear_pt">Crear Puesto de Trabajo</a>
+				</li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">Actualizar / Borrar
+				<i class="icon ion-md-arrow-dropdown"></i>
+				</a>
+				<ul class="sub-menu">
+				<li>
+					<a href="#buscar_emp">Actualizar Empleado</a>
+				</li>
+				<li>
+					<a href="#buscar_pt">Act. Puesto de Trabajo</a>
+				</li>
+				<li>
+					<a href="#modal_eli_usu">Borrar Usario de Sist.</a>
+				</li>
+				</ul>
+			</li>
+			</ul>
+		</li>
+		<li>
+			<a href="#">Buscar
+			<i class="icon ion-md-arrow-dropdown"></i>
+			</a>
+			<ul class="sub-menu">
+			<li>
+				<a href="#">Buscar Cliente</a>
+			</li>
+			<li>
+				<a href="#">Buscar Empleado</a>
+			</li>
+			<li>
+				<a href="#">Buscar Orden de Producción</a>
+			</li>
+			<li>
+				<a href="#">Buscar Producto</a>
+			</li>
+			<li>
+				<a href="#">Buscar Proveedor</a>
+			</li>
+			</ul>
+		</li>
+		<li>
+			<a href="#">Reportes
+			<i class="icon ion-md-arrow-dropdown"></i>
+			</a>
+			<ul class="sub-menu">
+			<li>
+				<a href="#">Estado de Pedidos</a>
+			</li>
+			<li>
+				<a href="#">Ventas por cliente</a>
+			</li>
+			<li>
+				<a href="#">Inventario de Producto</a>
+			</li>
+			<li>
+				<a href="#">Ventas por Proveedor</a>
+			</li>
+			<li>
+				<a href="#">Ventas por Producto</a>
+			</li>
+			<li>
+				<a href="#">Prendas por Maquilador</a>
+			</li>
+			<li>
+				<a href="#">Top 10 Clientes por Fecha</a>
+			</li>
+			<li>
+				<a href="#">Top 10 Telas por Fecha</a>
+			</li>
+			</ul>
+		</li>
+		<li class="move-right btn">
+			<a href="#">Cerrar Sesión</a>
+		</li>
+		</ul>
+	</nav>
+	</div>
+</header>
+
+<!--End nav-->
+
+<!--Hero-->
+<section class="hero">
+	<div class="text">
+
+	</div>
+</section>
+
+<!-- Modals Section -->
+
+<!-- Modals crear categoria -->
+<div class="modal_container" id="modal_crear_cat">
+<div class="modal">
+	<a href="index.php" class="close">+</a>
+	<span class="modal_heading">crear categoría</span>
+	<form class="form_crear_cat" action="crear_cat.php" method="POST">
+	<input id="capitalize" type="text" name="cat_nombre_id" value="" placeholder="Nombre de la Categoría" required>
+	<select class="select" name="supCat_id" required>
+		<option id="defaultSC"  disabled selected><font color="#828282">--Selecciona una Super Categoría--</font></option>
+		<?php
+			require("conn.php");
+			$result = $conn->query("SELECT DISTINCT super_categorias.supCat_nombre FROM categorias INNER JOIN super_categorias ON categorias.supCat_id=super_categorias.supCat_id");
+			while($row=mysqli_fetch_array($result)){
+			?>
+			<option  value="<?php echo $row['supCat_nombre']; ?>" ><?php echo $row['supCat_nombre']; ?></option>
+			<?php mysqli_close($conn);
+			} ?>
+	</select>
+	<textarea name="cat_descripcion" rows="3" placeholder="Digite alguna descripción de la Categoría"></textarea>
+	<input type="submit" class="btn" name="" value="REGISTRAR">
+	</form>
+</div>
+</div>
+<!-- Crear modal para actualizar categorias-->
+<div class="modal_container" id="modal_act_cat">
+<div class="modal">
+	<a href="index.php" class="close">+</a>
+	<span class="modal_heading">Actualizar categoría</span>
+	<a href="#buscar_cat" class="logo">
+	<i class="icon ion-md-search"></i>
+	</a>
+	<form class="form_crear_cat" action="act_cat.php" method="POST">
+	<?php
+	require("conn.php");
+	if(isset($_GET['cat_nombre_id'])){
+		$cat_nombre_id = $_GET['cat_nombre_id'];
+		$query = "SELECT * FROM categorias WHERE cat_nombre_id = '$cat_nombre_id'";
+		$result = mysqli_query($conn, $query);
+		while($row = mysqli_fetch_array($result)){
+		?>
+		<input type="text" id="cat_nombre_id" name="cat_nombre_id" value="" placeholder="Nombre de la Categoría" required><?php echo $row['cat_nombre_id']; ?></input>
+		<input type="text" id="supCat_nombre" name="supCat_nombre" value="" placeholder="Nombre de la Super Categoría" required><?php echo $row['supCat_id']; ?></input>
+		<textarea id="cat_descripcion" name="cat_descripcion" rows="3" placeholder="Descripción de la Categoría"><?php echo $row['cat_descripcion']; ?></textarea>
+		<input type="hidden" id="cat_id" name="cat_id" value="" ><?php echo $row['cat_id']; ?></input>
+		<input type="submit" class="btn" name="" value="ACTUALIZAR">
+		<?php mysqli_close($conn);
+		}
+	} else{
+		?>
+		<input type="text" id="cat_nombre_id" name="cat_nombre_id" value="" placeholder="Nombre de la Categoría" required>
+		<input type="text" id="supCat_nombre" name="supCat_nombre" value="" placeholder="Nombre de la Super Categoría" required>
+		<textarea id="cat_descripcion" name="cat_descripcion" rows="3" placeholder="Descripción de la Categoría"></textarea>
+		<input type="hidden" id="cat_id" name="cat_id" value="" ></input>
+		<input type="submit" class="btn" name="" value="ACTUALIZAR">
+		<?php
+	}
+	?>
+	</form>
+</div>
+</div>
+<!-- Crear modal para buscar categorias-->
+<div class="modal_container" id="buscar_cat">
+<div class="modal" >
+	<a href="#modal_act_cat" class="close">+</a>
+	<span class="modal_heading">categorías almacenadas</span><br><br>
+	<h2>**Seleccione la columna CATEGORÍA</h2><br>
+	<form class="" action="" method="get">
+	<table id="table1">
+		<tr>
+		<th>Categoría</th>
+		<th>Super Categoría</th>
+		</tr><?php
+		require("conn.php");
+		$result = $conn->query("SELECT categorias.cat_id, categorias.cat_nombre_id, super_categorias.supCat_nombre, categorias.cat_descripcion FROM categorias INNER JOIN super_categorias ON categorias.supCat_id=super_categorias.supCat_id order by categorias.cat_nombre_id asc");
+		if ($result-> num_rows > 0) {
+		while ($row = mysqli_fetch_array($result)) {
+			echo "<tr><td><a href='#modal_act_cat' name='cat_nombre_id' onClick='fillForm(\"". $row['cat_nombre_id'] ."\",\"". $row['supCat_nombre'] ."\",\"". $row['cat_descripcion'] ."\",\"". $row['cat_id'] ."\")'>" . $row['cat_nombre_id'] . "</a></td>
+			<td>". $row["supCat_nombre"] ."</td></tr>";
+		}
+		echo "</table>";
+		}
+		else {
+		echo "No hay datos almacenados";
+		}
+		$conn-> close();
+		?>
+	</table><br><br>
+	</form>
+</div>
+</div>
+
+<!-- Modals crear sub categoria -->
+<div class="modal_container" id="modal_crear_subcat">
+<div class="modal">
+	<a href="index.php" class="close">+</a>
+	<span class="modal_heading">crear sub-categoría</span>
+	<form class="form_crear_cat" action="crear_subcat.php" method="POST">
+	<input id='capitalize' type="text" name="subCat_nombre" value="" placeholder="Nombre de la Sub-Categoría" required>
+	<select class="select" name="cat_id" required>
+		<option id="defaultCat"  disabled selected><font color="#828282">--Selecciona una Categoría--</font></option>
+		<?php
+			require("conn.php");
+			$result = $conn->query("SELECT DISTINCT categorias.cat_nombre_id FROM categorias INNER JOIN sub_categorias ON categorias.cat_id=sub_categorias.cat_id");
+			while($row=mysqli_fetch_array($result)){
+			?>
+			<option  value="<?php echo $row['cat_nombre_id']; ?>" ><?php echo $row['cat_nombre_id']; ?></option>
+			<?php mysqli_close($conn);
+			} ?>
+	</select>
+	<textarea name="subCat_descripcion" rows="3" placeholder="Digite alguna descripción de la Sub-Categoría"></textarea>
+	<input type="submit" class="btn" name="" value="REGISTRAR">
+	</form>
+</div>
+</div>
+<!-- Crear modal para actualizar sub-categorias-->
+<div class="modal_container" id="modal_act_subcat">
+<div class="modal">
+	<a href="index.php" class="close">+</a>
+	<span class="modal_heading">Actualizar sub-categoría</span>
+	<a href="#buscar_subcat" class="logo">
+	<i class="icon ion-md-search"></i>
+	</a>
+	<form class="form_crear_cat" action="act_subcat.php" method="POST">
+	<?php
+	require("conn.php");
+	if(isset($_GET['subCat_nombre'])){
+		$subCat_nombre = $_GET['subCat_nombre'];
+		$query = "SELECT * FROM sub_categorias WHERE subCat_nombre = '$subCat_nombre'";
+		$result = mysqli_query($conn, $query);
+		while($row = mysqli_fetch_array($result)){
+		?>
+		<input type="text" id="subCat_nombre" name="subCat_nombre" value="" placeholder="Nombre de la Sub-Categoría" required><?php echo $row['subCat_nombre']; ?></input>
+		<input type="text" id="cat_nombre" name="cat_nombre" value="" placeholder="Nombre de la Categoría" required><?php echo $row['cat_id']; ?></input>
+		<textarea id="subCat_descripcion" name="subCat_descripcion" rows="3" placeholder="Descripción de la Sub-Categoría"><?php echo $row['subCat_descripcion']; ?></textarea>
+		<input type="hidden" id="subCat_id" name="subCat_id" value="" ><?php echo $row['subCat_id']; ?></input>
+		<input type="submit" class="btn" name="" value="ACTUALIZAR">
+		<?php mysqli_close($conn);
+		}
+	} else{
+		?>
+		<input type="text" id="subCat_nombre" name="subCat_nombre" value="" placeholder="Nombre de la Sub-Categoría" required>
+		<input type="text" id="cat_nombre" name="cat_nombre" value="" placeholder="Nombre de la Categoría" required>
+		<textarea id="subCat_descripcion" name="subCat_descripcion" rows="3" placeholder="Descripción de la Sub-Categoría"></textarea>
+		<input type="hidden" id="subCat_id" name="subCat_id" value="" ></input>
+		<input type="submit" class="btn" name="" value="ACTUALIZAR">
+		<?php
+	}
+	?>
+	</form>
+</div>
+</div>
+<!-- Crear modal para buscar subcategorias-->
+<div class="modal_container" id="buscar_subcat">
+<div class="modal" >
+	<a href="#modal_act_cat" class="close">+</a>
+	<span class="modal_heading">sub-categorías almacenadas</span><br><br>
+	<h2>**Seleccione la columna SUB-CATEGORÍA</h2><br>
+	<form class="" action="" method="get">
+	<table id="table1">
+		<tr>
+		<th>Sub-Categoría</th>
+		<th>Categoría</th>
+		</tr><?php
+		require("conn.php");
+		$result = $conn->query("SELECT sub_categorias.subCat_id,
+			sub_categorias.subCat_nombre, categorias.cat_nombre_id, sub_categorias.subCat_descripcion
+			FROM categorias INNER JOIN sub_categorias ON categorias.cat_id=sub_categorias.cat_id order by sub_categorias.subCat_nombre asc");
+		if ($result-> num_rows > 0) {
+		while ($row = mysqli_fetch_array($result)) {
+			echo "<tr><td><a href='#modal_act_subcat' name='subCat_nombre' onClick='fillFormsc(\"". $row['subCat_nombre'] ."\",\"". $row['cat_nombre_id'] ."\",\"". $row['subCat_descripcion'] ."\",\"". $row['subCat_id'] ."\")'>" . $row['subCat_nombre'] . "</a></td>
+			<td>". $row["cat_nombre_id"] ."</td></tr>";
+		}
+		echo "</table>";
+		}
+		else {
+		echo "No hay datos almacenados";
+		}
+		$conn-> close();
+		?>
+	</table><br><br>
+	</form>
+</div>
+</div>
+
+<!-- Modals crear Producto -->
+<div class="modal_container" id="modal_crear_prod">
+<div class="modal">
+	<a href="index.php" class="close">+</a>
+	<span class="modal_heading">crear producto</span>
+	<form class="form_crear_prod" action="crear_prod.php" method="POST">
+	<input id='capitalize' type="text" name="prod_nombre" value="" placeholder="Nombre del Producto" required>
+	<select class="select" name="subCat_id" required>
+		<option id="defaultsubCat"  disabled selected><font color="#828282">--Selecciona una Sub-Categoría--</font></option>
+		<?php
+			require("conn.php");
+			$result = $conn->query("SELECT DISTINCT sub_categorias.subCat_nombre FROM productos INNER JOIN sub_categorias ON productos.subCat_id=sub_categorias.subCat_id");
+			while($row=mysqli_fetch_array($result)){
+			?>
+			<option  value="<?php echo $row['subCat_nombre']; ?>" ><?php echo $row['subCat_nombre']; ?></option>
+			<?php mysqli_close($conn);
+			} ?>
+	</select>
+	<select class="select" name="prov_id" required>
+		<option id="defaultsubCat"  disabled selected><font color="#828282">--Selecciona un Proveedor--</font></option>
+		<?php
+			require("conn.php");
+			$result = $conn->query("SELECT DISTINCT proveedores.prov_nombre FROM productos INNER JOIN proveedores ON productos.prov_id=proveedores.prov_id");
+			while($row=mysqli_fetch_array($result)){
+			?>
+			<option  value="<?php echo $row['prov_nombre']; ?>" ><?php echo $row['prov_nombre']; ?></option>
+			<?php mysqli_close($conn);
+			} ?>
+	</select>
+	<input type="text" name="prod_cod_stock" value="" placeholder="Código Stock">
+	<input type="text" name="prod_cod_color" value="" placeholder="Código Color">
+	<input id='capitalize' type="text" name="prod_color" value="" placeholder="Color">
+	<input type="number" min="0" name="prod_inventario_no_talla" value="" placeholder="Cantidad -- solo MATERIA PRIMA">
+	<input type="submit" class="btn" name="" value="REGISTRAR">
+	</form>
+</div>
+</div>
+<!-- Crear modal para actualizar Producto-->
+<div class="modal_container" id="modal_act_prod">
+<div class="modal">
+	<a href="index.php" class="close">+</a>
+	<span class="modal_heading">Actualizar Productos</span>
+	<a href="#buscar_prod" class="logo">
+	<i class="icon ion-md-search"></i>
+	</a>
+	<form class="form_crear_prod" action="act_prod.php" method="POST">
+	<?php
+	require("conn.php");
+	if(isset($_GET['prod_id'])){
+		$prod_id = $_GET['prod_id'];
+		$query = "SELECT * FROM productos WHERE prod_id = '$prod_id'";
+		$result = mysqli_query($conn, $query);
+		while($row = mysqli_fetch_array($result)){
+		?>
+		<input type="text" id="prod_nombre" name="prod_nombre" value="" placeholder="Nombre del Producto" required><?php echo $row['prod_nombre']; ?></input>
+		<input type="text" id="subcat" name="subcat" value="" placeholder="Nombre de la Sub-Categoría" required><?php echo $row['subCat_id']; ?></input>
+		<input type="text" id="prov_id" name="prov_id" value="" placeholder="Nombre del Proveedor" required><?php echo $row['prov_id']; ?></input>
+		<input type="text" id="prod_cod_stock" name="prod_cod_stock" value="" placeholder="Código de Stock"><?php echo $row['prod_cod_stock']; ?></input>
+		<input type="text" id="prod_cod_color" name="prod_cod_color" value="" placeholder="Código de Color"><?php echo $row['prod_cod_color']; ?></input>
+		<input type="text" id="color" name="color" value="" placeholder="Color"><?php echo $row['color']; ?></input>
+		<input type="hidden" id="prod_id" name="prod_id" value=""><?php echo $row['prod_id']; ?></input>
+		<input type="text" id="prod_inventario_no_talla" name="prod_inventario_no_talla" value="" placeholder="Cantidad -- solo MATERIA PRIMA"><?php echo $row['prod_inventario_no_talla']; ?></input>
+		<input type="submit" class="btn" name="" value="ACTUALIZAR">
+		<?php mysqli_close($conn);
+		}
+	} else{
+		?>
+		<input type="text" id="prod_nombre" name="prod_nombre" value="" placeholder="Nombre del Producto" required></input>
+		<input type="text" id="subcat" name="subcat" value="" placeholder="Nombre de la Sub-Categoría" required></input>
+		<input type="text" id="prov_id" name="prov_id" value="" placeholder="Nombre del Proveedor" required></input>
+		<input type="text" id="prod_cod_stock" name="prod_cod_stock" value="" placeholder="Código de Stock"></input>
+		<input type="text" id="prod_cod_color" name="prod_cod_color" value="" placeholder="Código de Color"></input>
+		<input type="text" id="color" name="color" value="" placeholder="Color"></input>
+		<input type="hidden" id="prod_id" name="prod_id" value=""></input>
+		<input type="number" min="0" id="prod_inventario_no_talla" name="prod_inventario_no_talla" value="" placeholder="Cantidad -- solo MATERIA PRIMA"></input>
+		<input type="submit" class="btn" name="" value="ACTUALIZAR">
+		<?php
+	}
+	?>
+	</form>
+</div>
+</div>
+<!-- Crear modal para buscar Producto-->
+<div class="modal_container" id="buscar_prod">
+<div class="modal" >
+	<a href="#modal_act_prod" class="close">+</a>
+	<span class="modal_heading">Productos almacenados</span><br><br>
+	<h2>**Seleccione la columna PRODUCTO</h2><br>
+	<form class="" action="" method="get">
+	<table id="table1">
+		<tr>
+		<th>Producto</th>
+		<th>Sub Categoría</th>
+		<th>Proveedor</th>
+		<th>Cod. Stock</th>
+		<th>Cod. Color</th>
+		<th>Color</th>
+		<th>Cant.</th>
+		</tr><?php
+		require("conn.php");
+		$result = $conn->query("SELECT productos.prod_nombre,
+			sub_categorias.subCat_nombre, proveedores.prov_nombre, productos.prod_cod_stock,
+			productos.prod_cod_color, productos.prod_color, productos.prod_id, productos.prod_inventario_no_talla
+			FROM productos INNER JOIN sub_categorias ON productos.subCat_id=sub_categorias.subCat_id INNER JOIN proveedores ON proveedores.prov_id=productos.prov_id order by productos.prod_nombre asc");
+		if ($result-> num_rows > 0) {
+		while ($row = mysqli_fetch_array($result)) {
+			echo "<tr><td><a href='#modal_act_prod' name='prod_nombre' onClick='fillFormprod(\"". $row['prod_nombre'] ."\",\"". $row['subCat_nombre'] .
+			"\",\"". $row['prov_nombre'] ."\",\"". $row['prod_cod_stock'] ."\",\"". $row['prod_cod_color'] .
+			"\",\"". $row['prod_color'] ."\",\"". $row['prod_id'] ."\",\"". $row['prod_inventario_no_talla'] ."\")'>" . $row['prod_nombre'] . "</a></td>
+			<td>". $row["subCat_nombre"] ."</td>
+			<td>". $row["prov_nombre"] ."</td>
+			<td>". $row["prod_cod_stock"] ."</td>
+			<td>". $row["prod_cod_color"] ."</td>
+			<td>". $row["prod_color"] ."</td>
+			<td>". $row["prod_inventario_no_talla"] ."</td></tr>";
+		}
+		echo "</table>";
+		}
+		else {
+		echo "No hay datos almacenados";
+		}
+		$conn-> close();
+		?>
+	</table><br><br>
+	</form>
+</div>
+</div>
+
+<!-- Modals crear Producto stock -->
+<div class="modal_container" id="modal_crear_prodstock">
+<div class="modal">
+	<a href="index.php" class="close">+</a>
+	<span class="modal_heading">crear producto con stock</span>
+	<form class="form_crear_prod" action="crear_prod_stock.php" method="POST">
+	<select class="select" name="prod_idcrear" required>
+		<option id="defaultsubCat"  disabled selected><font color="#828282">--Selecciona una Producto--</font></option>
+		<?php
+			require("conn.php");
+			$result = $conn->query("SELECT productos.prod_nombre, productos.prod_color
+			FROM productos INNER JOIN sub_categorias ON productos.subCat_id=sub_categorias.subCat_id INNER JOIN proveedores ON proveedores.prov_id=productos.prov_id WHERE prod_id IN (SELECT productos.prod_id FROM productos
+				INNER JOIN sub_categorias ON productos.subCat_id = sub_categorias.subCat_id INNER JOIN
+				categorias ON sub_categorias.cat_id = categorias.cat_id WHERE categorias.cat_id = 3) ORDER BY productos.prod_nombre ASC");
+			while($row=mysqli_fetch_array($result)){
+			?>
+			<option  value="<?php echo $row['prod_nombre']; ?>" ><?php echo $row['prod_nombre'] . ' -- ' . $row['prod_color'];; ?></option>
+			<?php mysqli_close($conn);
+			} ?>
+	</select>
+	<select class="select" name="talla_id_stock" required>
+		<option id="defaultsubCat"  disabled selected><font color="#828282">--Selecciona una talla--</font></option>
+		<?php
+			require("conn.php");
+			$result = $conn->query("SELECT DISTINCT talla_nombre FROM tallas ");
+			while($row=mysqli_fetch_array($result)){
+			?>
+			<option  value="<?php echo $row['talla_nombre']; ?>" >Talla: <?php echo $row['talla_nombre']; ?></option>
+			<?php mysqli_close($conn);
+			} ?>
+	</select>
+	<select class="select" name="prod_talla_generocrear" required>
+		<option id="defaultsubCat"  disabled selected><font color="#828282">--Selecciona una Género--</font></option>
+		<option  value="Masculino" >Masculino</option>
+		<option  value="Femenino" >Femenino</option>
+		<option  value="Unisex" >Unisex</option>
+	</select>
+	<input type="number" name="prod_tall_can" value="" min="1" placeholder="Ingrese la cantidad -- NO usar signos" required></input>
+	<textarea name="talla_prod_descripcion" rows="3" placeholder="Digite alguna descripción -- opcional"></textarea>
+	<input type="submit" class="btn" name="" value="REGISTRAR">
+	</form>
+</div>
+</div>
+<!-- Crear modal para actualizar stock-->
+<div class="modal_container" id="modal_act_stock">
+<div class="modal">
+	<a href="index.php" class="close">+</a>
+	<span class="modal_heading">Actualizar Stock de Productos</span>
+	<a href="#buscar_prod_stock" class="logo">
+	<i class="icon ion-md-search"></i>
+	</a>
+	<form class="form_crear_prod" action="act_prod_stock.php" method="POST">
+	<?php
+	require("conn.php");
+	if(isset($_GET['prod_id'])){
+		$prod_id = $_GET['prod_idst'];
+		$query = "SELECT * FROM productos WHERE prod_id = '$prod_id'";
+		$result = mysqli_query($conn, $query);
+		while($row = mysqli_fetch_array($result)){
+		?>
+		<input type="hidden" id="prod_idst" name="prod_id" value=""></input>
+		<?php mysqli_close($conn);
+		}
+	} else{
+		?>
+		<input type="text" style="background-color: rgba(125,127,125,0.5);" id="prod_nombrest" name="prod_nombre" value="" placeholder="Nombre del Producto" required readonly></input>
+		<input type="text" style="background-color: rgba(125,127,125,0.5);" id="subcatst" name="subcat" value="" placeholder="Nombre de la Sub-Categoría" required readonly></input>
+		<input type="hidden" id="prov_idst" name="prov_id" value="" placeholder="Nombre del Proveedor" required></input>
+		<input type="hidden" id="prod_cod_stockst" name="prod_cod_stock" value="" placeholder="Código de Stock"></input>
+		<input type="hidden" id="prod_cod_colorst" name="prod_cod_color" value="" placeholder="Código de Color"></input>
+		<input type="text" style="background-color: rgba(125,127,125,0.5);" id="colorst" name="color" value="" placeholder="Color" readonly></input>
+		<input type="hidden" id="prod_idst" name="prod_id" value=""></input>
+		<input type="hidden" id="prod_inventario_no_tallast" name="prod_inventario_no_talla" value="" placeholder="Cantidad -- solo MATERIA PRIMA"></input>
+		<a href="#" class="textospequenosforms"><b>VERIFIQUE LA TALLA Y GENERO</b></a><br>
+		<select class="select" id="tallasprod22" name="talla_id" required></select> <!-- aqui va el javascrip-->
+		<select class="select" name="prod_talla_genero" required>
+		<option id="defaultsubCat"  disabled selected><font color="#828282">--Selecciona una Género--</font></option>
+		<option  value="Masculino" >Masculino</option>
+		<option  value="Femenino" >Femenino</option>
+		<option  value="Unisex" >Unisex</option>
+		</select>
+		<a href="#" class="textospequenosforms"><b>NO usar signos de suma ni resta</b></a><br>
+		<label for="stocksumar">Cantidad a sumar : </label><input type="number" min="0" id="stocksumar" name="stocksumar" value=""></input><br>
+		<label for="stockrestar">Cantidad a restar : </label><input type=" number" min="0" id="stockrestar" name="stockrestar" value=""></input>
+		<input type="submit" class="btn" name="" value="ACTUALIZAR">
+		<?php
+	}
+	?>
+	</form>
+</div>
+</div>
+<!-- Crear modal para buscar stock-->
+<div class="modal_container" id="buscar_prod_stock">
+<div class="modal" >
+	<a href="#index.php" class="close">+</a>
+	<span class="modal_heading">Productos almacenados con Stock</span><br><br>
+	<h2>**Seleccione la columna PRODUCTO</h2><br>
+	<form class="" action="" method="get">
+	<table id="table1">
+		<tr>
+		<th>Producto</th>
+		<th>Sub Categoría</th>
+		<th>Proveedor</th>
+		<th>Cod. Stock</th>
+		<th>Cod. Color</th>
+		<th>Color</th>
+		<th>Cant.</th>
+		</tr><?php
+		require("conn.php");
+		$result = $conn->query("SELECT productos.prod_nombre,
+			sub_categorias.subCat_nombre, proveedores.prov_nombre, productos.prod_cod_stock,
+			productos.prod_cod_color, productos.prod_color, productos.prod_id, productos.prod_inventario_no_talla
+			FROM productos INNER JOIN sub_categorias ON productos.subCat_id=sub_categorias.subCat_id INNER JOIN proveedores ON proveedores.prov_id=productos.prov_id WHERE prod_id IN (SELECT productos.prod_id FROM productos
+			INNER JOIN sub_categorias ON productos.subCat_id = sub_categorias.subCat_id INNER JOIN
+			categorias ON sub_categorias.cat_id = categorias.cat_id WHERE categorias.cat_id = 3) ORDER BY productos.prod_nombre ASC");
+		if ($result-> num_rows > 0) {
+		while ($row = mysqli_fetch_array($result)) {
+			echo "<tr><td><a href='#modal_act_stock' name='prod_nombre' onClick='fillFormprodstock(\"". $row['prod_nombre'] ."\",\"". $row['subCat_nombre'] .
+			"\",\"". $row['prov_nombre'] ."\",\"". $row['prod_cod_stock'] ."\",\"". $row['prod_cod_color'] .
+			"\",\"". $row['prod_color'] ."\",\"". $row['prod_id'] ."\",\"". $row['prod_inventario_no_talla'] ."\")'>" . $row['prod_nombre'] . "</a></td>
+			<td>". $row["subCat_nombre"] ."</td>
+			<td>". $row["prov_nombre"] ."</td>
+			<td>". $row["prod_cod_stock"] ."</td>
+			<td>". $row["prod_cod_color"] ."</td>
+			<td>". $row["prod_color"] ."</td>
+			<td>". $row["prod_inventario_no_talla"] ."</td></tr>";
+		}
+		echo "</table>";
+		}
+		else {
+		echo "No hay datos almacenados";
+		}
+		$conn-> close();
+		?>
+	</table><br><br>
+	</form>
+</div>
+</div>
+
+<!-- Crear modal para actualizar tela-->
+<div class="modal_container" id="modal_act_tela">
+<div class="modal">
+	<a href="index.php" class="close">+</a>
+	<span class="modal_heading">Actualizar Stock de Productos</span>
+	<a href="#buscar_prod_tela" class="logo">
+	<i class="icon ion-md-search"></i>
+	</a>
+	<form class="form_crear_prod" action="act_prod_tela.php" method="POST">
+	<?php
+	require("conn.php");
+	if(isset($_GET['prod_id'])){
+		$prod_id = $_GET['prod_idst'];
+		$query = "SELECT * FROM productos WHERE prod_id = '$prod_id'";
+		$result = mysqli_query($conn, $query);
+		while($row = mysqli_fetch_array($result)){
+		?>
+		<input type="hidden" id="prod_idst" name="prod_id" value=""></input>
+		<?php mysqli_close($conn);
+		}
+	} else{
+		?>
+		<input type="text" style="background-color: rgba(125,127,125,0.5);" id="prod_nombretela" name="prod_nombre" value="" placeholder="Nombre del Producto" required readonly></input>
+		<input type="text" style="background-color: rgba(125,127,125,0.5);" id="subcattela" name="subcat" value="" placeholder="Nombre de la Sub-Categoría" required readonly></input>
+		<input type="text" style="background-color: rgba(125,127,125,0.5);" id="prov_tela" name="prov_id" value="" placeholder="Nombre del Proveedor" required readonly></input>
+		<input type="text" style="background-color: rgba(125,127,125,0.5);" id="prod_cod_stocktela" name="prod_cod_stock" value="" placeholder="Código de Stock" readonly></input>
+		<input type="text" style="background-color: rgba(125,127,125,0.5);" id="prod_cod_colortela" name="prod_cod_color" value="" placeholder="Código de Color" readonly></input>
+		<input type="text" style="background-color: rgba(125,127,125,0.5);" id="colortela" name="color" value="" placeholder="Color" readonly></input>
+		<input type="hidden" id="prod_idtela" name="prod_id" value=""></input>
+		<input type="text" style="background-color: rgba(125,127,125,0.5);" id="prod_inventario_no_tallatela" name="prod_inventario_no_talla" value="" readonly></input>
+		<a href="#" class="textospequenosforms"><b>Solo valores POSITIVOS / Sin Signos</b></a><br>
+		<label for="stocksumar">Cantidad a sumar : </label><input type="number" min="0" id="telasumar" name="telasumar" value=""></input><br>
+		<label for="stockrestar">Cantidad a restar : </label><input type="number" min="0" id="telarestar" name="telarestar" value=""></input>
+		<input type="submit" class="btn" name="" value="ACTUALIZAR">
+		<?php
+	}
+	?>
+	</form>
+</div>
+</div>
+<!-- Crear modal para buscar tela-->
+<div class="modal_container" id="buscar_prod_tela">
+<div class="modal" >
+	<a href="#index.php" class="close">+</a>
+	<span class="modal_heading">Telas almacenados</span><br><br>
+	<h2>**Seleccione la columna PRODUCTO</h2><br>
+	<form class="" action="" method="get">
+	<table id="table1">
+		<tr>
+		<th>Producto</th>
+		<th>Sub Categoría</th>
+		<th>Proveedor</th>
+		<th>Cod. Stock</th>
+		<th>Cod. Color</th>
+		<th>Color</th>
+		<th>Cant.</th>
+		</tr><?php
+		require("conn.php");
+		$result = $conn->query("SELECT productos.prod_nombre,
+			sub_categorias.subCat_nombre, proveedores.prov_nombre, productos.prod_cod_stock,
+			productos.prod_cod_color, productos.prod_color, productos.prod_id, productos.prod_inventario_no_talla
+			FROM productos INNER JOIN sub_categorias ON productos.subCat_id=sub_categorias.subCat_id INNER JOIN proveedores ON proveedores.prov_id=productos.prov_id WHERE prod_id IN (SELECT productos.prod_id FROM productos
+			INNER JOIN sub_categorias ON productos.subCat_id = sub_categorias.subCat_id INNER JOIN
+			categorias ON sub_categorias.cat_id = categorias.cat_id WHERE categorias.cat_id = 2) ORDER BY productos.prod_nombre ASC");
+		if ($result-> num_rows > 0) {
+		while ($row = mysqli_fetch_array($result)) {
+			echo "<tr><td><a href='#modal_act_tela' name='prod_nombre' onClick='fillFormprodtela(\"". $row['prod_nombre'] ."\",\"". $row['subCat_nombre'] .
+			"\",\"". $row['prov_nombre'] ."\",\"". $row['prod_cod_stock'] ."\",\"". $row['prod_cod_color'] .
+			"\",\"". $row['prod_color'] ."\",\"". $row['prod_id'] ."\",\"". $row['prod_inventario_no_talla'] ."\")'>" . $row['prod_nombre'] . "</a></td>
+			<td>". $row["subCat_nombre"] ."</td>
+			<td>". $row["prov_nombre"] ."</td>
+			<td>". $row["prod_cod_stock"] ."</td>
+			<td>". $row["prod_cod_color"] ."</td>
+			<td>". $row["prod_color"] ."</td>
+			<td>". $row["prod_inventario_no_talla"] ."</td></tr>";
+		}
+		echo "</table>";
+		}
+		else {
+		echo "No hay datos almacenados";
+		}
+		$conn-> close();
+		?>
+	</table><br><br>
+	</form>
+</div>
+</div>
+
+<!-- para darle el id a actualizar producto en stock-->
+<script type="text/javascript" >
+<?php require("conn.php");
+$result = $conn->query("SELECT DISTINCT tallas.talla_nombre, producto_tallas.prod_id FROM tallas INNER JOIN producto_tallas
+	ON tallas.talla_id=producto_tallas.talla_id");
+$tallas;
+while($row=mysqli_fetch_array($result)){
+$tallas[$row['prod_id']][]=$row['talla_nombre'];
+}?>
+var tallas=<?php echo json_encode($tallas) ?>;
+</script>
+
+<!-- Modals crear cliente -->
+<div class="modal_container" id="modal_crear_cli">
+<div class="modal">
+<a href="index.php" class="close">+</a>
+<span class="modal_heading">crear clientes</span>
+<form class="form_crear_cat" action="crear_cliente.php" method="POST">
+	<input id='capitalize' type="text" name="cli_nombre" value="" placeholder="Nombre del Cliente" required>
+	<input type="text" name="cli_ced_identidad" value="" placeholder="Cédula Jur./Ident." >
+	<input id='capitalize' type="text" name="cli_direccion" value="" placeholder="Direccion corta" >
+	<input type="text" name="cli_tel1" value="" placeholder="Teléfono 1">
+	<input type="text" name="cli_tel2" value="" placeholder="Teléfono 2">
+	<input type="email" name="cli_correo" value="" placeholder="Correo" >
+	<input type="submit" class="btn" name="" value="REGISTRAR">
+</form>
+</div>
+</div>
+<!-- Crear modal para actualizar cliente-->
+<div class="modal_container" id="modal_act_cli">
+<div class="modal">
+<a href="index.php" class="close">+</a>
+<span class="modal_heading">Actualizar clientes</span>
+<a href="#buscar_cli" class="logo">
+	<i class="icon ion-md-search"></i>
+</a>
+<form class="form_crear_cat" action="act_cliente.php" method="POST">
+	<input type="text" style="background-color: rgba(125,127,125,0.5);" id="cli_nombrecrear" name="cli_nombre" value="" placeholder="Nombre del Cliente" required readonly>
+	<input type="text" id="cli_ced_identidad" name="cli_ced_identidad" value="" placeholder="Cédula Jur./Ident." >
+	<input type="text" id="cli_direccion" name="cli_direccion" value="" placeholder="Direccion corta" >
+	<input type="text" id="cli_tel1" name="cli_tel1" value="" placeholder="Teléfono 1" >
+	<input type="text" id="cli_tel2" name="cli_tel2" value="" placeholder="Teléfono 2" >
+	<input type="email" id="cli_correo" name="cli_correo" value="" placeholder="Correo" >
+	<input type="hidden" id="cli_id" name="cli_id" value="">
+	<input type="submit" class="btn" name="" value="ACTUALIZAR">
+</form>
+</div>
+</div>
+<!-- Crear modal para buscar cliente-->
+<div class="modal_container" id="buscar_cli">
+<div class="modal" >
+<a href="index.php" class="close">+</a>
+<span class="modal_heading">Clientes almacenados</span><br><br>
+<h2>**Seleccione la columna NOMBRE</h2><br>
+<form class="" action="" method="get">
+	<table id="table1">
+	<tr>
+		<th>Nombre</th>
+		<th>Cédula</th>
+		<th>Dirección</th>
+		<th>Tel-1</th>
+		<th>Tel-2</th>
+		<th>Correo</th>
+	</tr><?php
+	require("conn.php");
+	$result = $conn->query("SELECT cli_nombre, cli_ced_identidad, cli_direccion, cli_telefono1, cli_telefono2, cli_correo, cli_id FROM clientes order by cli_nombre asc");
+	if ($result-> num_rows > 0) {
+		while ($row = mysqli_fetch_array($result)) {
+		echo "<tr><td><a href='#modal_act_cli' name='cat_nombre_id'
+		onClick='fillFormcli(\"". $row['cli_nombre'] ."\",\"". $row['cli_ced_identidad'] ."\",\"". $row['cli_direccion'] ."\",
+		\"". $row['cli_telefono1'] ."\",\"". $row['cli_telefono2'] ."\",\"". $row['cli_correo'] ."\",\"". $row['cli_id'] ."\")'>" . $row['cli_nombre'] . "</a></td>
+		<td>". $row["cli_ced_identidad"] ."</td>
+		<td>". $row["cli_direccion"] ."</td>
+		<td>". $row["cli_telefono1"] ."</td>
+		<td>". $row["cli_telefono2"] ."</td>
+		<td>". $row["cli_correo"] ."</td></tr>";
+		}
+		echo "</table>";
+	}
+	else {
+		echo "No hay datos almacenados";
+	}
+	$conn-> close();
+		?>
+	</table><br><br>
+</form>
+</div>
+</div>
+
+<!-- Modals crear proveedores -->
+<div class="modal_container" id="modal_crear_prov">
+<div class="modal">
+<a href="index.php" class="close">+</a>
+<span class="modal_heading">crear proveedores</span>
+<form class="form_crear_cat" action="crear_prov.php" method="POST">
+	<input id='capitalize' type="text" name="prov_nombre" value="" placeholder="Nombre del Proveedor" required>
+	<input type="text" name="prov_ced_identidad" value="" placeholder="Cédula Jur./Ident." >
+	<input id='capitalize' type="text" name="prov_direccion" value="" placeholder="Direccion corta" >
+	<input type="text" name="prov_tel1" value="" placeholder="Teléfono 1"  >
+	<input type="text" name="prov_tel2" value="" placeholder="Teléfono 2"  >
+	<input type="email" name="prov_correo" value="" placeholder="Correo" >
+	<input type="submit" class="btn" name="" value="REGISTRAR">
+</form>
+</div>
+</div>
+<!-- Crear modal para actualizar proveedores-->
+<div class="modal_container" id="modal_act_prov">
+<div class="modal">
+<a href="index.php" class="close">+</a>
+<span class="modal_heading">Actualizar proveedores</span>
+<a href="#buscar_prov" class="logo">
+	<i class="icon ion-md-search"></i>
+</a>
+<form class="form_crear_cat" action="act_prov.php" method="POST">
+	<input type="text" style="background-color: rgba(125,127,125,0.5);" id="prov_nombrecrear" name="prov_nombre" value="" placeholder="Nombre del Proveedor" required readonly>
+	<input type="text" id="prov_ced_identidad" name="prov_ced_identidad" value="" placeholder="Cédula Jur./Ident." >
+	<input type="text" id="prov_direccion" name="prov_direccion" value="" placeholder="Direccion corta" >
+	<input type="text" id="prov_tel1" name="prov_tel1" value="" placeholder="Teléfono 1" >
+	<input type="text" id="prov_tel2" name="prov_tel2" value="" placeholder="Teléfono 2" >
+	<input type="email" id="prov_correo" name="prov_correo" value="" placeholder="Correo" >
+	<input type="hidden" id="prov_id1" name="prov_id" value="">
+	<input type="submit" class="btn" name="" value="ACTUALIZAR">
+</form>
+</div>
+</div>
+<!-- Crear modal para buscar proveedores-->
+<div class="modal_container" id="buscar_prov">
+<div class="modal" >
+<a href="index.php" class="close">+</a>
+<span class="modal_heading">Proveedores almacenados</span><br><br>
+<h2>**Seleccione la columna NOMBRE</h2><br>
+<form class="" action="" method="get">
+	<table id="table1">
+	<tr>
+		<th>Nombre</th>
+		<th>Cédula</th>
+		<th>Dirección</th>
+		<th>Tel-1</th>
+		<th>Tel-2</th>
+		<th>Correo</th>
+	</tr><?php
+	require("conn.php");
+	$result = $conn->query("SELECT prov_nombre, prov_ced_identidad, prov_direccion, prov_telefono1, prov_telefono2, prov_correo, prov_id FROM proveedores order by prov_nombre asc");
+	if ($result-> num_rows > 0) {
+		while ($row = mysqli_fetch_array($result)) {
+		echo "<tr><td><a href='#modal_act_prov' name='cat_nombre_id'
+		onClick='fillFormprov(\"". $row['prov_nombre'] ."\",\"". $row['prov_ced_identidad'] ."\",\"". $row['prov_direccion'] ."\",
+		\"". $row['prov_telefono1'] ."\",\"". $row['prov_telefono2'] ."\",\"". $row['prov_correo'] ."\",\"". $row['prov_id'] ."\")'>" . $row['prov_nombre'] . "</a></td>
+		<td>". $row["prov_ced_identidad"] ."</td>
+		<td>". $row["prov_direccion"] ."</td>
+		<td>". $row["prov_telefono1"] ."</td>
+		<td>". $row["prov_telefono2"] ."</td>
+		<td>". $row["prov_correo"] ."</td></tr>";
+		}
+		echo "</table>";
+	}
+	else {
+		echo "No hay datos almacenados";
+	}
+	$conn-> close();
+		?>
+	</table><br><br>
+</form>
+</div>
+</div>
+
+<!-- Modals crear Maquilador -->
+<div class="modal_container" id="modal_crear_maq">
+<div class="modal">
+<a href="index.php" class="close">+</a>
+<span class="modal_heading">crear Maquiladores</span>
+<form class="form_crear_cat" action="crear_maq.php" method="POST">
+	<input id='capitalize' type="text" name="maq_nombre" value="" placeholder="Nombre del Maquilador" required>
+	<input type="text" name="maq_ced_identidad" value="" placeholder="Cédula Jur./Ident." >
+	<input id='capitalize' type="text" name="maq_direccion" value="" placeholder="Direccion corta" >
+	<input type="text" name="maq_tel1" value="" placeholder="Teléfono 1" >
+	<input type="text" name="maq_tel2" value="" placeholder="Teléfono 2" >
+	<input type="email" name="maq_correo" value="" placeholder="Correo" >
+	<textarea name="maq_que_maquila" rows="3" placeholder="Qué tipo de prendas maquila?"></textarea>
+	<input type="submit" class="btn" name="" value="REGISTRAR">
+</form>
+</div>
+</div>
+<!-- Crear modal para actualizar Maquilador-->
+<div class="modal_container" id="modal_act_maq">
+<div class="modal">
+<a href="index.php" class="close">+</a>
+<span class="modal_heading">Actualizar maquiladores</span>
+<a href="#buscar_maq" class="logo">
+	<i class="icon ion-md-search"></i>
+</a>
+<form class="form_crear_cat" action="act_maq.php" method="POST">
+	<input type="text" style="background-color: rgba(125,127,125,0.5);" id="maq_nombrecrear" name="maq_nombre" value="" placeholder="Nombre del Maquilador" required>
+	<input type="text" id="maq_ced_identidad" name="maq_ced_identidad" value="" placeholder="Cédula Jur./Ident." >
+	<input type="text" id="maq_direccion" name="maq_direccion" value="" placeholder="Direccion corta" >
+	<input type="text" id="tel" name="maq_tel1" value="" placeholder="Teléfono 1">
+	<input type="text" id="tel" name="maq_tel2" value="" placeholder="Teléfono 2">
+	<input type="email" id="maq_correo" name="maq_correo" value="" placeholder="Correo" >
+	<textarea name="maq_que_maquila" id="maq_que_maquila" rows="3" placeholder="Qué tipo de prendas maquila?"></textarea>
+	<input type="hidden" id="maq_id" name="maq_id" value="">
+	<input type="submit" class="btn" name="" value="ACTUALIZAR">
+</form>
+</div>
+</div>
+<!-- Crear modal para buscar Maquilador-->
+<div class="modal_container" id="buscar_maq">
+<div class="modal" >
+<a href="index.php" class="close">+</a>
+<span class="modal_heading">Maquiladores almacenados</span><br><br>
+<h2>**Seleccione la columna NOMBRE</h2><br>
+<form class="" action="" method="get">
+	<table id="table1">
+	<tr>
+		<th>Nombre</th>
+		<th>Cédula</th>
+		<th>Dirección</th>
+		<th>Tel-1</th>
+		<th>Tel-2</th>
+		<th>Correo</th>
+	</tr><?php
+	require("conn.php");
+	$result = $conn->query("SELECT maq_nombre, maq_ced_identidad, maq_direccion, maq_telefono1, maq_telefono2, maq_correo, maq_que_maquila, maq_id FROM maquiladores order by maq_nombre asc");
+	if ($result-> num_rows > 0) {
+		while ($row = mysqli_fetch_array($result)) {
+		echo "<tr><td><a href='#modal_act_maq' name='cat_nombre_id'
+		onClick='fillFormmaq(\"". $row['maq_nombre'] ."\",\"". $row['maq_ced_identidad'] ."\",\"". $row['maq_direccion'] ."\",
+		\"". $row['maq_telefono1'] ."\",\"". $row['maq_telefono2'] ."\",\"". $row['maq_correo'] ."\",\"". $row['maq_que_maquila'] ."\",\"". $row['maq_id'] ."\")'>" . $row['maq_nombre'] . "</a></td>
+		<td>". $row["maq_ced_identidad"] ."</td>
+		<td>". $row["maq_direccion"] ."</td>
+		<td>". $row["maq_telefono1"] ."</td>
+		<td>". $row["maq_telefono2"] ."</td>
+		<td>". $row["maq_correo"] ."</td></tr>";
+		}
+		echo "</table>";
+	}
+	else {
+		echo "No hay datos almacenados";
+	}
+	$conn-> close();
+		?>
+	</table><br><br>
+</form>
+</div>
+</div>
+
+<!-- Modals crear puesto de trabajo -->
+<div class="modal_container" id="modal_crear_pt">
+<div class="modal">
+<a href="index.php" class="close">+</a>
+<span class="modal_heading">crear puesto de trabajo</span>
+<form class="form_crear_cat" action="crear_pt.php" method="POST">
+	<input id='capitalize' type="text" name="pt_nombre" value="" placeholder="Nombre del Puesto" required>
+	<textarea name="pt_descripcion" rows="3" placeholder="Descripción del puesto"></textarea>
+	<input type="submit" class="btn" name="" value="REGISTRAR">
+</form>
+</div>
+</div>
+<!-- Crear modal para actualizar puesto de trabajo-->
+<div class="modal_container" id="modal_act_pt">
+<div class="modal">
+<a href="index.php" class="close">+</a>
+<span class="modal_heading">Actualizar puesto de trabajo</span>
+<a href="#buscar_pt" class="logo">
+	<i class="icon ion-md-search"></i>
+</a>
+<form class="form_crear_cat" action="act_pt.php" method="POST">
+	<input type="text" style="background-color: rgba(125,127,125,0.5);" id="pt_nombre" name="pt_nombre" value="" placeholder="Nombre del Puesto" required readonly>
+	<textarea name="pt_descripcion" id="pt_descripcion" rows="3" placeholder="Descripción del puesto"></textarea>
+	<input type="hidden" id="pt_id" name="pt_id" value="">
+	<input type="submit" class="btn" name="" value="ACTUALIZAR">
+</form>
+</div>
+</div>
+<!-- Crear modal para buscar puesto de trabajo-->
+<div class="modal_container" id="buscar_pt">
+<div class="modal" >
+<a href="index.php" class="close">+</a>
+<span class="modal_heading">Puestos almacenados</span><br><br>
+<h2>**Seleccione la columna PUESTO</h2><br>
+<form class="" action="" method="get">
+	<table id="table1">
+	<tr>
+		<th>Puesto</th>
+		<th>Descripción</th>
+	</tr><?php
+	require("conn.php");
+	$result = $conn->query("SELECT pt_nombre_puesto, pt_descripcion, pt_id FROM puestos_trabajo order by pt_nombre_puesto asc");
+	if ($result-> num_rows > 0) {
+		while ($row = mysqli_fetch_array($result)) {
+		echo "<tr><td><a href='#modal_act_pt' name='cat_nombre_id'
+		onClick='fillFormpt(\"". $row['pt_nombre_puesto'] ."\",\"". $row['pt_descripcion'] ."\",\"". $row['pt_id'] ."\")'>" . $row['pt_nombre_puesto'] . "</a></td>
+		<td>". $row["pt_descripcion"] ."</td></tr>";
+		}
+		echo "</table>";
+	}
+	else {
+		echo "No hay datos almacenados";
+	}
+	$conn-> close();
+		?>
+	</table><br><br>
+</form>
+</div>
+</div>
+
+<!-- Modals crear empleado -->
+<div class="modal_container" id="modal_crear_emp">
+<div class="modal">
+<a href="index.php" class="close">+</a>
+<span class="modal_heading">crear Empleado</span>
+<form class="form_crear_emp" action="crear_emp.php" method="POST">
+	<input type="text" name="emp_ced_id" value="" placeholder="Cédula de Identidad // 1-2345-6789"  required>
+	<input id='capitalize' type="text" name="emp_nombre" value="" placeholder="Nombre del Empleado" required>
+	<input id='capitalize' type="text" name="emp_apellido1" value="" placeholder="Primer apellido" required>
+	<input id='capitalize' type="text" name="emp_apellido2" value="" placeholder="Segundo apellido" required>
+	<input type="text" name="emp_direccion" value="" placeholder="Direccion corta">
+	<a id="a_form" href="#">Fecha de Nacimiento</a>
+	<input type="date" name="emp_fecha_nac" value="" placeholder="Fecha de nacimiento" required>
+	<a id="a_form" href="#">Fecha de Ingreso</a>
+	<input type="date" name="emp_fecha_ingreso" value="" placeholder="Fecha de Ingreso" required>
+	<input type="number" name="emp_salario" value="" min="0" placeholder="Salaio del Empleado" required>
+	<select class="select" name="pt_id" required>
+	<option id="defaultCat"  disabled selected><font color="#828282">--Selecciona una Puesto--</font></option>
+	<?php
+		require("conn.php");
+		$result = $conn->query("SELECT DISTINCT puestos_trabajo.pt_nombre_puesto FROM puestos_trabajo INNER JOIN empleados ON puestos_trabajo.pt_id=empleados.pt_id");
+		while($row=mysqli_fetch_array($result)){
+			?>
+			<option  value="<?php echo $row['pt_nombre_puesto']; ?>" ><?php echo $row['pt_nombre_puesto']; ?></option>
+			<?php mysqli_close($conn);
+		} ?>
+	</select>
+	<textarea name="emp_observaciones" rows="2" placeholder="Observaciones"></textarea>
+	<input type="text" name="emp_telefono1" value="" placeholder="Telefono Principal" required>
+	<input type="text" name="emp_telefono2" value="" placeholder="Telefono Secundario">
+	<input type="email" name="emp_correo" value="" placeholder="Correo">
+	<input type="submit" class="btn" name="" value="REGISTRAR">
+</form>
+</div>
+</div>
+<!-- Crear modal para actualizar empleados-->
+<div class="modal_container" id="modal_act_emp">
+<div class="modal">
+<a href="index.php" class="close">+</a>
+<span class="modal_heading">Actualizar empleados</span>
+<a href="#buscar_emp" class="logo">
+	<i class="icon ion-md-search"></i>
+</a>
+<form class="form_crear_emp" action="act_emp.php" method="POST">
+	<?php
+	require("conn.php");
+	if(isset($_GET['subCat_nombre'])){
+	$subCat_nombre = $_GET['subCat_nombre'];
+	$query = "SELECT * FROM sub_categorias WHERE subCat_nombre = '$subCat_nombre'";
+	$result = mysqli_query($conn, $query);
+	while($row = mysqli_fetch_array($result)){
+		?>
+		<input type="text" id="subCat_nombre" name="subCat_nombre" value="" placeholder="Nombre de la Sub-Categoría" required><?php echo $row['subCat_nombre']; ?></input>
+		<?php mysqli_close($conn);
+	}
+	} else{
+	?>
+	<input type="hidden" id="emp_ced_id" name="emp_ced_id" value="" placeholder="Cédula de Identidad // 1-2345-6789"  required readonly>
+	<input style="background-color: rgba(125,127,125,0.5);" id='emp_nombre' type="text" name="emp_nombre" value="" placeholder="Nombre del Empleado" required readonly>
+	<input style="background-color: rgba(125,127,125,0.5);" id='emp_apellido1' type="text" name="emp_apellido1" value="" placeholder="Primer apellido" required readonly>
+	<input style="background-color: rgba(125,127,125,0.5);" id='emp_apellido2' type="text" name="emp_apellido2" value="" placeholder="Segundo apellido" required readonly>
+	<input type="text" id="emp_direccion" name="emp_direccion" value="" placeholder="Direccion corta">
+	<a id="a_form" href="#">Fecha de Salida</a>
+	<input type="date" id="emp_fecha_salida" name="emp_fecha_salida" value="" placeholder="Fecha de Ingreso" >
+	<input type="number" id="emp_salario" name="emp_salario" value="" min="0" placeholder="Salaio del Empleado" required>
+	<select id="pt_id_emp" class="select" name="pt_id" required>
+		<option id="defaultCat"  disabled selected><font color="#828282">--Selecciona una Puesto--</font></option>
+		<?php
+			require("conn.php");
+			$result = $conn->query("SELECT DISTINCT puestos_trabajo.pt_nombre_puesto FROM puestos_trabajo INNER JOIN empleados ON puestos_trabajo.pt_id=empleados.pt_id");
+			while($row=mysqli_fetch_array($result)){
+			?>
+			<option  value="<?php echo $row['pt_nombre_puesto']; ?>" ><?php echo $row['pt_nombre_puesto']; ?></option>
+			<?php mysqli_close($conn);
+			} ?>
+	</select>
+	<textarea id="emp_observaciones" name="emp_observaciones" rows="2" placeholder="Observaciones"></textarea>
+	<input type="text" id="emp_telefono1" name="emp_telefono1" value="" placeholder="Telefono Principal"  required>
+	<input type="text" id="emp_telefono2" name="emp_telefono2" value="" placeholder="Telefono Secundario" >
+	<input type="email" id="emp_correo" name="emp_correo" value="" placeholder="Correo">
+	<input type="submit" class="btn" name="" value="ACTUALIZAR">
+	<?php
+	}
+	?>
+</form>
+</div>
+</div>
+<!-- Crear modal para buscar empleados-->
+<div class="modal_container" id="buscar_emp">
+<div class="modal" >
+<a href="#index.php" class="close">+</a>
+<span class="modal_heading">Empleados actuales</span><br><br>
+<h2>**Seleccione la columna NOMBRE</h2><br>
+<form class="" action="" method="get">
+	<table id="table1">
+	<tr>
+		<th>Nombre</th>
+		<th>Cédula</th>
+	</tr><?php
+	require("conn.php");
+	$result = $conn->query("SELECT empleados.emp_ced_id, empleados.emp_nombre, empleados.emp_apellido1, empleados.emp_apellido2, empleados.emp_direccion,
+		empleados.emp_fecha_salida, empleados.emp_salario, puestos_trabajo.pt_nombre_puesto, empleados.emp_observaciones,
+		empleados.emp_telefono1, empleados.emp_telefono2, empleados.emp_correo
+		FROM empleados INNER JOIN puestos_trabajo ON empleados.pt_id=puestos_trabajo.pt_id order by empleados.emp_nombre asc");
+	if ($result-> num_rows > 0) {
+		while ($row = mysqli_fetch_array($result)) {
+		echo "<tr><td><a href='#modal_act_emp' name='subCat_nombre' onClick='fillFormemp(\"". $row['emp_ced_id'] ."\",\"". $row['emp_nombre'] ."\",\"". $row['emp_apellido1'] ."\",\"". $row['emp_apellido2'] ."\",
+		\"". $row['emp_direccion'] ."\",\"". $row['emp_fecha_salida'] ."\",\"". $row['emp_salario'] ."\",\"". $row['pt_nombre_puesto'] ."\",
+		\"". $row['emp_observaciones'] ."\",\"". $row['emp_telefono1'] ."\",\"". $row['emp_telefono2'] ."\",\"". $row['emp_correo'] ."\")'>
+		" . $row['emp_nombre'] ." " . $row['emp_apellido1'] ." " . $row['emp_apellido2']  . "</a></td>
+		<td>". $row["emp_ced_id"] ."</td></tr>";
+		}
+		echo "</table>";
+	}
+	else {
+		echo "No hay datos almacenados";
+	}
+	$conn-> close();
+		?>
+	</table><br><br>
+</form>
+</div>
+</div>
+
+<!-- Modals crear usuario -->
+<div class="modal_container" id="modal_crear_usu">
+<div class="modal">
+<a href="index.php" class="close">+</a>
+<span class="modal_heading">crear usuario</span>
+<form id="crear_usuario" class="form_crear_emp" action="crear_usuario.php" method="POST">
+	<select class="select" name="per_id" required>
+	<option id="defaultCat"  disabled selected><font color="#828282">--Selecciona una Perfil--</font></option>
+	<?php
+		require("conn.php");
+		$result = $conn->query("SELECT DISTINCT per_nombre FROM perfiles");
+		while($row=mysqli_fetch_array($result)){
+			?>
+			<option  value="<?php echo $row['per_nombre']; ?>" ><?php echo $row['per_nombre']; ?></option>
+			<?php mysqli_close($conn);
+		} ?>
+	</select>
+	<input type="text" name="usu_login" value="" placeholder="Digite Usuario" required>
+	<input type="password" name="usu_password" id="usu_password" value="" placeholder="Contraseña" required>
+	<input type="password" name="usu_password2" id="usu_password2" value="" placeholder="Confirme Contraseña" required>
+	<span id='message11'></span>
+	<input type="submit" class="btn" name="" value="CREAR">
+</form>
+</div>
+</div>
+<!-- Crear modal para verificar Contraseña-->
+<script >
+$('#usu_password, #usu_password2').on('keyup', function () {
+if ($('#usu_password').val() == $('#usu_password2').val()) {
+$('#message11').html('Contraseñas Iguales ✔').css('color', 'green');
+} else
+$('#message11').html('Contraseñas Diferentes ✘').css('color', 'red');
+});
+</script>
+<!-- Crear modal para eliminar usuarios-->
+<div class="modal_container" id="modal_eli_usu">
+<div class="modal">
+<a href="index.php" class="close">+</a>
+<span class="modal_heading">Eliminar Usuarios</span>
+<form class="form_crear_emp" action="eli_usu.php" method="POST">
+	<select class="select" name="usu_login" required>
+	<option id="defaultCat"  disabled selected><font color="#828282">--Selecciona una Usuario--</font></option>
+	<?php
+		require("conn.php");
+		$result = $conn->query("SELECT DISTINCT usuarios.usu_login FROM perfiles INNER JOIN usuarios ON usuarios.per_id = perfiles.per_id WHERE perfiles.per_id <> 1");
+		while($row=mysqli_fetch_array($result)){
+			?>
+			<option  value="<?php echo $row['usu_login']; ?>" ><?php echo $row['usu_login']; ?></option>
+			<?php mysqli_close($conn);
+		} ?>
+	</select>
+	<input type="submit" class="btn" name="" value="ELIMINAR">
+</form>
+</div>
+</div>
+
+<footer>
+Derechos Reservados | Mauricio Ayales &copy
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script type="text/javascript" src="js\scripts.js"></script>
+</body>
+</html>

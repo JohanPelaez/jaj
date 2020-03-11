@@ -1,0 +1,51 @@
+<div class="modal_container" id="modal_act_emp">
+    <div>
+    <a href="index.php" class="close">+</a>
+    <span class="modal_heading">Actualizar empleados</span>
+    <a href="#buscar_emp" class="logo">
+        <i class="icon ion-md-search"></i>
+    </a>
+    <form class="form_crear_emp" action="act_emp.php" method="POST">
+        <?php
+        require("conn.php");
+        if(isset($_GET['subCat_nombre'])){
+        $subCat_nombre = $_GET['subCat_nombre'];
+        $query = "SELECT * FROM sub_categorias WHERE subCat_nombre = '$subCat_nombre'";
+        $result = mysqli_query($conn, $query);
+        while($row = mysqli_fetch_array($result)){
+            ?>
+            <input type="text" id="subCat_nombre" name="subCat_nombre" value="" placeholder="Nombre de la Sub-Categoría" required><?php echo $row['subCat_nombre']; ?></input>
+            <?php mysqli_close($conn);
+        }
+        } else{
+        ?>
+        <input type="hidden" id="emp_ced_id" name="emp_ced_id" value="" placeholder="Cédula de Identidad // 1-2345-6789"  required readonly>
+        <input style="background-color: rgba(125,127,125,0.5);" id='emp_nombre' type="text" name="emp_nombre" value="" placeholder="Nombre del Empleado" required readonly>
+        <input style="background-color: rgba(125,127,125,0.5);" id='emp_apellido1' type="text" name="emp_apellido1" value="" placeholder="Primer apellido" required readonly>
+        <input style="background-color: rgba(125,127,125,0.5);" id='emp_apellido2' type="text" name="emp_apellido2" value="" placeholder="Segundo apellido" required readonly>
+        <input type="text" id="emp_direccion" name="emp_direccion" value="" placeholder="Direccion corta">
+        <a id="a_form" href="#">Fecha de Salida</a>
+        <input type="date" id="emp_fecha_salida" name="emp_fecha_salida" value="" placeholder="Fecha de Ingreso" >
+        <input type="number" id="emp_salario" name="emp_salario" value="" min="0" placeholder="Salaio del Empleado" required>
+        <select id="pt_id_emp" class="select" name="pt_id" required>
+            <option id="defaultCat"  disabled selected><font color="#828282">--Selecciona una Puesto--</font></option>
+            <?php
+                require("conn.php");
+                $result = $conn->query("SELECT DISTINCT puestos_trabajo.pt_nombre_puesto FROM puestos_trabajo INNER JOIN empleados ON puestos_trabajo.pt_id=empleados.pt_id");
+                while($row=mysqli_fetch_array($result)){
+                ?>
+                <option  value="<?php echo $row['pt_nombre_puesto']; ?>" ><?php echo $row['pt_nombre_puesto']; ?></option>
+                <?php mysqli_close($conn);
+                } ?>
+        </select>
+        <textarea id="emp_observaciones" name="emp_observaciones" rows="2" placeholder="Observaciones"></textarea>
+        <input type="text" id="emp_telefono1" name="emp_telefono1" value="" placeholder="Telefono Principal"  required>
+        <input type="text" id="emp_telefono2" name="emp_telefono2" value="" placeholder="Telefono Secundario" >
+        <input type="email" id="emp_correo" name="emp_correo" value="" placeholder="Correo">
+        <input type="submit" class="btn" name="" value="ACTUALIZAR">
+        <?php
+        }
+        ?>
+    </form>
+    </div>
+</div>

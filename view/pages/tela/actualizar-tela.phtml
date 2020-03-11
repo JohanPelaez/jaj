@@ -1,0 +1,39 @@
+<div class="modal_container" id="modal_act_tela">
+    <div>
+        <a href="index.php" class="close">+</a>
+        <span class="modal_heading">Actualizar Stock de Productos</span>
+        <a href="#buscar_prod_tela" class="logo">
+        <i class="icon ion-md-search"></i>
+        </a>
+        <form class="form_crear_prod" action="act_prod_tela.php" method="POST">
+        <?php
+        require("conn.php");
+        if(isset($_GET['prod_id'])){
+            $prod_id = $_GET['prod_idst'];
+            $query = "SELECT * FROM productos WHERE prod_id = '$prod_id'";
+            $result = mysqli_query($conn, $query);
+            while($row = mysqli_fetch_array($result)){
+            ?>
+            <input type="hidden" id="prod_idst" name="prod_id" value=""></input>
+            <?php mysqli_close($conn);
+            }
+        } else{
+            ?>
+            <input type="text" style="background-color: rgba(125,127,125,0.5);" id="prod_nombretela" name="prod_nombre" value="" placeholder="Nombre del Producto" required readonly></input>
+            <input type="text" style="background-color: rgba(125,127,125,0.5);" id="subcattela" name="subcat" value="" placeholder="Nombre de la Sub-Categoría" required readonly></input>
+            <input type="text" style="background-color: rgba(125,127,125,0.5);" id="prov_tela" name="prov_id" value="" placeholder="Nombre del Proveedor" required readonly></input>
+            <input type="text" style="background-color: rgba(125,127,125,0.5);" id="prod_cod_stocktela" name="prod_cod_stock" value="" placeholder="Código de Stock" readonly></input>
+            <input type="text" style="background-color: rgba(125,127,125,0.5);" id="prod_cod_colortela" name="prod_cod_color" value="" placeholder="Código de Color" readonly></input>
+            <input type="text" style="background-color: rgba(125,127,125,0.5);" id="colortela" name="color" value="" placeholder="Color" readonly></input>
+            <input type="hidden" id="prod_idtela" name="prod_id" value=""></input>
+            <input type="text" style="background-color: rgba(125,127,125,0.5);" id="prod_inventario_no_tallatela" name="prod_inventario_no_talla" value="" readonly></input>
+            <a href="#" class="textospequenosforms"><b>Solo valores POSITIVOS / Sin Signos</b></a><br>
+            <label for="stocksumar">Cantidad a sumar : </label><input type="number" min="0" id="telasumar" name="telasumar" value=""></input><br>
+            <label for="stockrestar">Cantidad a restar : </label><input type="number" min="0" id="telarestar" name="telarestar" value=""></input>
+            <input type="submit" class="btn" name="" value="ACTUALIZAR">
+            <?php
+        }
+        ?>
+        </form>
+    </div>
+</div>

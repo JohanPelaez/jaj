@@ -1,0 +1,24 @@
+<div class="modal_container" id="modal_crear_usu">
+    <div>
+    <a href="index.php" class="close">+</a>
+    <span class="modal_heading">crear usuario</span>
+    <form id="crear_usuario" class="form_crear_emp" action="crear_usuario.php" method="POST">
+        <select class="select" name="per_id" required>
+        <option id="defaultCat"  disabled selected><font color="#828282">--Selecciona una Perfil--</font></option>
+        <?php
+            require("conn.php");
+            $result = $conn->query("SELECT DISTINCT per_nombre FROM perfiles");
+            while($row=mysqli_fetch_array($result)){
+                ?>
+                <option  value="<?php echo $row['per_nombre']; ?>" ><?php echo $row['per_nombre']; ?></option>
+                <?php mysqli_close($conn);
+            } ?>
+        </select>
+        <input type="text" name="usu_login" value="" placeholder="Digite Usuario" required>
+        <input type="password" name="usu_password" id="usu_password" value="" placeholder="Contraseña" required>
+        <input type="password" name="usu_password2" id="usu_password2" value="" placeholder="Confirme Contraseña" required>
+        <span id='message11'></span>
+        <input type="submit" class="btn" name="" value="CREAR">
+    </form>
+    </div>
+</div>

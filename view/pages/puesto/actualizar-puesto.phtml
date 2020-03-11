@@ -1,0 +1,15 @@
+<div class="modal_container" id="modal_act_pt">
+    <div>
+    <a href="index.php" class="close">+</a>
+    <span class="modal_heading">Actualizar puesto de trabajo</span>
+    <a href="#buscar_pt" class="logo">
+        <i class="icon ion-md-search"></i>
+    </a>
+    <form class="form_crear_cat" action="act_pt.php" method="POST">
+        <input type="text" style="background-color: rgba(125,127,125,0.5);" id="pt_nombre" name="pt_nombre" value="" placeholder="Nombre del Puesto" required readonly>
+        <textarea name="pt_descripcion" id="pt_descripcion" rows="3" placeholder="Descripción del puesto"></textarea>
+        <input type="hidden" id="pt_id" name="pt_id" value="">
+        <input type="submit" class="btn" name="" value="ACTUALIZAR">
+    </form>
+    </div>
+</div>

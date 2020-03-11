@@ -1,0 +1,1478 @@
+/*Nav css va aqui*/
+*,
+*::before,
+*::after{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+html{
+  font-family: 'Roboto', sans-serif;
+  font-size: 8px;
+}
+
+body{
+  overflow-x: hidden;
+}
+
+footer{
+  align-self: flex-end;
+  background-color: rgba(120, 120, 120, .5);
+  line-height: 3;
+  text-align: center;
+  width: 100%;
+}
+
+a{
+  text-decoration: none;
+}
+
+ul{
+  list-style: none;
+}
+
+header{
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.container{
+  width: 100%;
+  max-width: 200rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.menu-icons{
+  color: #F5F5F5;
+  font-size: 4rem;
+  position: absolute;
+  top: 50%;
+  right: 2rem;
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 1500;
+  display: none;
+}
+
+nav{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 8rem;
+  border-bottom: 1.5px solid rgba(0, 168, 193, .1);
+}
+
+.logo{
+  width: 5rem;
+  height: 5rem;
+  background-color: #00A8C1;
+  display: flex;
+  border-radius: 100%;
+  margin-right: 5rem;
+}
+
+.logo i{
+  margin: auto;
+  font-size: 3rem;
+    color: #DEDEDE;
+}
+
+.nav-list{
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+
+.nav-list li{
+  line-height: 7rem;
+  position: relative;
+}
+
+.sub-menu li{
+  line-height: 4rem;
+}
+
+.nav-list a{
+  display: block;
+  color: #DEDEDE;
+  padding: 0 1.5rem;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  transition: color 650ms;
+}
+
+.nav-list a:hover{
+  color: #00A8C1;
+}
+
+.btn{
+  padding: 1.3rem;
+  display: inline-block;
+  background-color: #00A8C1;
+  border: 2px solid #00A8C1;
+  border-radius: 5rem;
+  transition: background-color 650ms;
+}
+
+.btn:hover{
+  color: #00A8C1;
+  background-color: rgba(104,104,103, .2);
+}
+
+.sub-menu{
+  width: 27rem;
+  display: block;
+  position: absolute;
+  border-top: 3px solid #00A8C1;
+  background-color: #191919;
+  z-index: 100;
+  top: 16rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 605ms ease;
+}
+.nav-list .sub-menu #btn_OP{
+  display: none !important;
+}
+
+.sub-menu::before{
+  content:"";
+  position: absolute;
+  top: -2.5rem;
+  left: 3rem;
+  border: 1.2rem solid transparent;
+  border-bottom-color: #00A8C1;
+}
+
+.sub-menu .sub-menu::before{
+  top: .9rem;
+  left: -2.5rem;
+  border: 1.2rem solid transparent;
+  border-right-color: #00A8C1;
+}
+
+.sub-menu .sub-menu{
+  border-top: none;
+  border-left: 3px solid #00A8C1;
+  top: 0;
+  left: 160%;
+}
+
+.nav-list li:hover > .sub-menu{
+  top: 8rem;
+  opacity: 1;
+  visibility: visible;
+}
+
+.sub-menu li:hover > .sub-menu{
+  top: 0;
+  left: 100%;
+}
+
+li.move-right{
+  margin: auto 0 auto auto;
+  line-height: initial;
+}
+
+@media screen and (max-width: 945px) {
+  .nav-list{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    display: none;
+    flex-direction: column;
+    align-items: initial;
+    background-color: #191919;
+    z-index: 1000;
+    overflow-y: scroll;
+  }
+
+  .nav-list > li{
+    line-height: 5rem;
+  }
+
+
+  .sub-menu{
+    position: initial;
+    border: 3px solid transparent;
+    border-left-color: #00A8C1;
+    margin-left: 1rem;
+    max-height: 0;
+  }
+
+  .sub-menu::before{
+    display: none;
+  }
+
+  .nav-list li:hover > .sub-menu{
+    opacity: 1;
+    visibility: visible;
+    max-height: initial;
+  }
+
+  li.move-right{
+    margin: 0 auto 0 0;
+    line-height: initial;
+  }
+
+  .menu-icons{
+    display: block;
+    padding-right: 2rem;
+  }
+
+  .ion-md-close{
+    display: none;
+  }
+
+  nav.active .ion-md-close{
+    display: block;
+  }
+
+  nav.active .ion-md-menu{
+    display: none;
+  }
+
+  nav.active .nav-list{
+    display: flex;
+  }
+
+
+
+
+
+}
+
+@media screen and (max-height: 510px) {
+  .hero{
+    background: rgba(41,49,51,1)
+    url(http://localhost/Pes/img/logo_JAJ_peq.png) center no-repeat !important; // cambiar luego
+    background-size: cover;
+  }
+}
+
+@media screen and (max-height: 290px) {
+  .hero{
+    background: rgba(41,49,51,1)
+    url(http://localhost/Pes/img/logo_JAJ_peq2.png) center no-repeat !important; // cambiar luego
+    background-size: cover;
+  }
+}
+
+@media screen and (max-height: 192px) {
+    .hero{
+      background-image: none !important;
+    }
+}
+
+/*End nav css*/
+
+/*Hero*/
+.hero{
+    width: 100%;
+    height: 100vh;
+    background: rgba(41,49,51,1)
+    url(http://localhost/Pes/img/logo_JAJ.png) center no-repeat; // cambiar luego
+    background-size: cover;
+}
+
+.text{
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+    text-align: center;
+}
+
+.text h1{
+    font-size: 8rem;
+    margin: 2rem 0;
+    font-family: 'Blastimo', sans-serif;
+}
+
+.text h2{
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+.text p{
+    font-size: 1.6rem;
+    margin-bottom: 5rem;
+}
+
+.text .btn{
+    font-size: 1.6rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    color: black;
+    text-transform: uppercase;
+}
+
+@media screen and (max-width: 830px){
+    .text h1{
+        font-size: 4rem;
+    }
+
+    .text .btn{
+        font-size: 1.2rem;
+    }
+}
+
+/*Modal*/
+
+.modal_container{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0, 0.5);
+  position: absolute;
+  display: none;
+  top: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal_container:target{
+  display: flex;
+}
+
+.modal{
+  width: 450px;
+  height: 320px;
+  background: #F5F5F5;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  border-radius: 4px;
+  border: 2px solid #00A8C1;
+  box-shadow: 0px 0px 50px 5px black;
+}
+
+.form_crear_cat input{
+  width: 85%;
+  display: block;
+  margin: 15px auto;
+  padding: 8px;
+  border: 2px solid #00A8C1;
+}
+
+.form_crear_cat textarea{
+  width: 85%;
+  display: block;
+  resize: none;
+  margin: 15px auto;
+  padding: 8px;
+  border: 2px solid #00A8C1;
+}
+
+.form_crear_cat .select{
+  width: 85%;
+  display: block;
+  resize: none;
+  margin: 15px auto;
+  padding: 8px;
+  border: 2px solid #00A8C1;
+}
+
+.close{
+  position: absolute;
+  top: 0;
+  right: 14px;
+  font-size: 35px;
+  color: #00A8C1;
+  transform: rotate(45deg);
+  cursor: pointer;
+}
+
+.close:hover{
+  color: red;
+}
+
+.modal_heading{
+  color: black !important;
+  text-transform: uppercase !important;
+  font-size: 2rem;
+  font-weight: 700;
+  pointer-events: none;
+
+}
+
+.modal_container .modal .btn{
+  border-radius: 15px;
+  width: 50%;
+  font-size: 2rem;
+  color: white;
+  margin: 40px auto;
+  padding: 8px;
+  outline: none;
+  cursor: pointer;
+}
+
+
+.modal_container .modal .btn:hover{
+  color: black;
+}
+
+/*Ventana*/
+
+.ventana_container{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0, 0.5);
+  position: absolute;
+  display: flex;
+  top: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.ventana{
+  width: 450px;
+  height: 150px;
+  background: #F5F5F5;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  border-radius: 4px;
+  border: 2px solid #00A8C1;
+  box-shadow: 0px 0px 50px 5px black;
+}
+
+.ventana_container .ventana .btn:hover{
+  color: black;
+}
+
+#modal_act_cat .modal{
+  width: 450px;
+  height: 380px;
+  background: #F5F5F5;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  border-radius: 4px;
+  border: 2px solid #00A8C1;
+  box-shadow: 0px 0px 50px 5px black;
+}
+
+#buscar_cat .modal{
+  width: 600px;
+  height: 450px;
+  background: #F5F5F5;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  border-radius: 4px;
+  border: 2px solid #00A8C1;
+  box-shadow: 0px 0px 50px 5px black;
+  overflow: auto;
+}
+
+table{
+  border-collapse: collapse;
+  width: 100%;
+  color: black;
+  font-size: 1.5rem;
+  text-align: center;
+  border-radius: 2px;
+}
+
+
+th{
+  background-color: #00A8C1;
+  color: #F5F5F5
+}
+
+table, td, th {
+  color: black;
+  border: 1px solid black;
+  padding: 5px;
+}
+
+table a {
+  color: black;
+}
+
+tr:nth-child(odd){
+  background-color: rgba(0,168,193,0.2);
+}
+
+table tr:hover{
+  background-color: #9C9C9C;
+}
+
+#modal_act_subcat .modal{
+  width: 450px;
+  height: 380px;
+  background: #F5F5F5;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  border-radius: 4px;
+  border: 2px solid #00A8C1;
+  box-shadow: 0px 0px 50px 5px black;
+}
+
+#buscar_subcat .modal{
+  width: 600px;
+  height: 450px;
+  background: #F5F5F5;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  border-radius: 4px;
+  border: 2px solid #00A8C1;
+  box-shadow: 0px 0px 50px 5px black;
+  overflow: auto;
+}
+
+/*crear producto*/
+
+#modal_crear_prod{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0, 0.5);
+  position: absolute;
+  display: none;
+  top: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+#modal_crear_prod:target{
+  display: flex;
+}
+
+#modal_crear_prod .modal{
+  width: 450px;
+  height: 500px;
+  background: #F5F5F5;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  border-radius: 4px;
+  border: 2px solid #00A8C1;
+  box-shadow: 0px 0px 50px 5px black;
+}
+
+.form_crear_prod input{
+  width: 85%;
+  display: block;
+  margin: 15px auto;
+  padding: 8px;
+  border: 2px solid #00A8C1;
+}
+
+.form_crear_prod .select{
+  width: 85%;
+  display: block;
+  resize: none;
+  margin: 15px auto;
+  padding: 8px;
+  border: 2px solid #00A8C1;
+}
+
+#form_crear_prod .modal .btn{
+  border-radius: 15px;
+  width: 50%;
+  font-size: 2rem;
+  color: white;
+  margin: 40px auto;
+  padding: 8px;
+  outline: none;
+  cursor: pointer;
+}
+
+/*Actualizar producto*/
+
+#modal_act_prod{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0, 0.5);
+  position: absolute;
+  display: none;
+  top: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+#modal_act_prod:target{
+  display: flex;
+}
+
+#modal_act_prod .modal{
+  width: 500px;
+  height: 550px;
+  background: #F5F5F5;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  border-radius: 4px;
+  border: 2px solid #00A8C1;
+  box-shadow: 0px 0px 50px 5px black;
+}
+
+#modal_act_prod .modal .btn{
+  border-radius: 15px;
+  width: 50%;
+  font-size: 2rem;
+  color: white;
+  margin: 40px auto;
+  padding: 8px;
+  outline: none;
+  cursor: pointer;
+}
+
+/*Bucar modal producto*/
+
+#buscar_prod .modal{
+  width: 850px;
+  height: 550px;
+  background: #F5F5F5;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  border-radius: 4px;
+  border: 2px solid #00A8C1;
+  box-shadow: 0px 0px 50px 5px black;
+  overflow: auto;
+}
+
+#buscar_prod_stock .modal{
+  width: 850px;
+  height: 550px;
+  background: #F5F5F5;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  border-radius: 4px;
+  border: 2px solid #00A8C1;
+  box-shadow: 0px 0px 50px 5px black;
+  overflow: auto;
+}
+
+/*Modal Actualizar Stock*/
+
+/*Actualizar producto*/
+
+#modal_act_stock{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0, 0.5);
+  position: absolute;
+  display: none;
+  top: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+#modal_act_stock:target{
+  display: flex;
+}
+
+#modal_act_stock .modal{
+  width: 500px;
+  height: 630px;
+  background: #F5F5F5;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  border-radius: 4px;
+  border: 2px solid #00A8C1;
+  box-shadow: 0px 0px 50px 5px black;
+}
+
+#modal_act_stock .modal .btn{
+  border-radius: 15px;
+  width: 50%;
+  font-size: 2rem;
+  color: white;
+  margin: 40px auto;
+  padding: 8px;
+  outline: none;
+  cursor: pointer;
+}
+
+/*textos en formularios*/
+
+.textospequenosforms{
+  font-size: 2rem;
+  color: black;
+  margin: 0px;
+  padding: 0px;
+  bottom: 0px;
+}
+
+label{
+  font-size: 2rem;
+}
+
+#stocksumar{
+  display: inline;
+  width: 20%;
+}
+
+#stockrestar{
+  display: inline;
+  width: 20%;
+}
+
+/*Modal crear prod stock*/
+
+#modal_crear_prodstock{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0, 0.5);
+  position: absolute;
+  display: none;
+  top: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+#modal_crear_prodstock:target{
+  display: flex;
+}
+
+#modal_crear_prodstock .modal{
+  width: 500px;
+  height: 450px;
+  background: #F5F5F5;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  border-radius: 4px;
+  border: 2px solid #00A8C1;
+  box-shadow: 0px 0px 50px 5px black;
+}
+
+#modal_crear_prodstock .modal .btn{
+  border-radius: 15px;
+  width: 50%;
+  font-size: 2rem;
+  color: white;
+  margin: 40px auto;
+  padding: 8px;
+  outline: none;
+  cursor: pointer;
+}
+
+#modal_crear_prodstock textarea{
+  width: 85%;
+  display: block;
+  resize: none;
+  margin: 15px auto;
+  padding: 8px;
+  border: 2px solid #00A8C1;
+}
+
+/*Bucar modal tela*/
+
+#buscar_prod_tela .modal{
+  width: 850px;
+  height: 550px;
+  background: #F5F5F5;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  border-radius: 4px;
+  border: 2px solid #00A8C1;
+  box-shadow: 0px 0px 50px 5px black;
+  overflow: auto;
+}
+
+/*Actualizar producto*/
+
+#modal_act_tela{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0, 0.5);
+  position: absolute;
+  display: none;
+  top: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+#modal_act_tela:target{
+  display: flex;
+}
+
+#modal_act_tela .modal{
+  width: 500px;
+  height: 700px;
+  background: #F5F5F5;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  border-radius: 4px;
+  border: 2px solid #00A8C1;
+  box-shadow: 0px 0px 50px 5px black;
+}
+
+#modal_act_tela .modal .btn{
+  border-radius: 15px;
+  width: 50%;
+  font-size: 2rem;
+  color: white;
+  margin: 40px auto;
+  padding: 8px;
+  outline: none;
+  cursor: pointer;
+}
+
+
+#telasumar{
+  display: inline;
+  width: 20%;
+}
+
+#telarestar{
+  display: inline;
+  width: 20%;
+}
+
+
+/*Modal crear cliente*/
+
+#modal_crear_cli{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0, 0.5);
+  position: absolute;
+  display: none;
+  top: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+#modal_crear_cli:target{
+  display: flex;
+}
+
+#modal_crear_cli .modal{
+  width: 500px;
+  height: 450px;
+  background: #F5F5F5;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  border-radius: 4px;
+  border: 2px solid #00A8C1;
+  box-shadow: 0px 0px 50px 5px black;
+}
+
+#modal_crear_cli .modal .btn{
+  border-radius: 15px;
+  width: 50%;
+  font-size: 2rem;
+  color: white;
+  margin: 40px auto;
+  padding: 8px;
+  outline: none;
+  cursor: pointer;
+}
+
+/*Modal actualizar cliente*/
+
+#modal_act_cli{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0, 0.5);
+  position: absolute;
+  display: none;
+  top: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+#modal_act_cli:target{
+  display: flex;
+}
+
+#modal_act_cli .modal{
+  width: 500px;
+  height: 485px;
+  background: #F5F5F5;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  border-radius: 4px;
+  border: 2px solid #00A8C1;
+  box-shadow: 0px 0px 50px 5px black;
+}
+
+#modal_act_cli .modal .btn{
+  border-radius: 15px;
+  width: 50%;
+  font-size: 2rem;
+  color: white;
+  margin: 40px auto;
+  padding: 8px;
+  outline: none;
+  cursor: pointer;
+}
+
+/*Bucar modal cliente*/
+
+#buscar_cli .modal{
+  width: 850px;
+  height: 550px;
+  background: #F5F5F5;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  border-radius: 4px;
+  border: 2px solid #00A8C1;
+  box-shadow: 0px 0px 50px 5px black;
+  overflow: auto;
+}
+
+/*Modal crear proveedr*/
+
+#modal_crear_prov{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0, 0.5);
+  position: absolute;
+  display: none;
+  top: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+#modal_crear_prov:target{
+  display: flex;
+}
+
+#modal_crear_prov .modal{
+  width: 500px;
+  height: 450px;
+  background: #F5F5F5;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  border-radius: 4px;
+  border: 2px solid #00A8C1;
+  box-shadow: 0px 0px 50px 5px black;
+}
+
+#modal_crear_prov .modal .btn{
+  border-radius: 15px;
+  width: 50%;
+  font-size: 2rem;
+  color: white;
+  margin: 40px auto;
+  padding: 8px;
+  outline: none;
+  cursor: pointer;
+}
+
+/*Modal actualizar proveedor*/
+
+#modal_act_prov{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0, 0.5);
+  position: absolute;
+  display: none;
+  top: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+#modal_act_prov:target{
+  display: flex;
+}
+
+#modal_act_prov .modal{
+  width: 500px;
+  height: 485px;
+  background: #F5F5F5;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  border-radius: 4px;
+  border: 2px solid #00A8C1;
+  box-shadow: 0px 0px 50px 5px black;
+}
+
+#modal_act_prov .modal .btn{
+  border-radius: 15px;
+  width: 50%;
+  font-size: 2rem;
+  color: white;
+  margin: 40px auto;
+  padding: 8px;
+  outline: none;
+  cursor: pointer;
+}
+
+/*Bucar modal proveedor*/
+
+#buscar_prov .modal{
+  width: 850px;
+  height: 550px;
+  background: #F5F5F5;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  border-radius: 4px;
+  border: 2px solid #00A8C1;
+  box-shadow: 0px 0px 50px 5px black;
+  overflow: auto;
+}
+
+/*Modal crear Maquilador*/
+
+#modal_crear_maq{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0, 0.5);
+  position: absolute;
+  display: none;
+  top: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+#modal_crear_maq:target{
+  display: flex;
+}
+
+#modal_crear_maq .modal{
+  width: 500px;
+  height: 520px;
+  background: #F5F5F5;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  border-radius: 4px;
+  border: 2px solid #00A8C1;
+  box-shadow: 0px 0px 50px 5px black;
+}
+
+#modal_crear_maq .modal .btn{
+  border-radius: 15px;
+  width: 50%;
+  font-size: 2rem;
+  color: white;
+  margin: 40px auto;
+  padding: 8px;
+  outline: none;
+  cursor: pointer;
+}
+
+/*Modal actualizar Maquilador*/
+
+#modal_act_maq{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0, 0.5);
+  position: absolute;
+  display: none;
+  top: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+#modal_act_maq:target{
+  display: flex;
+}
+
+#modal_act_maq .modal{
+  width: 500px;
+  height: 560px;
+  background: #F5F5F5;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  border-radius: 4px;
+  border: 2px solid #00A8C1;
+  box-shadow: 0px 0px 50px 5px black;
+}
+
+#modal_act_maq .modal .btn{
+  border-radius: 15px;
+  width: 50%;
+  font-size: 2rem;
+  color: white;
+  margin: 40px auto;
+  padding: 8px;
+  outline: none;
+  cursor: pointer;
+}
+
+/*Bucar modal Maquilador*/
+
+#buscar_maq .modal{
+  width: 850px;
+  height: 550px;
+  background: #F5F5F5;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  border-radius: 4px;
+  border: 2px solid #00A8C1;
+  box-shadow: 0px 0px 50px 5px black;
+  overflow: auto;
+}
+
+#capitalize, #maq_direccion, #prov_direccion, #cli_direccion, #color{
+  text-transform: capitalize;
+}
+
+/*Modal crear Maquilador*/
+
+#modal_crear_maq{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0, 0.5);
+  position: absolute;
+  display: none;
+  top: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+#modal_crear_maq:target{
+  display: flex;
+}
+
+#modal_crear_maq .modal{
+  width: 500px;
+  height: 520px;
+  background: #F5F5F5;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  border-radius: 4px;
+  border: 2px solid #00A8C1;
+  box-shadow: 0px 0px 50px 5px black;
+}
+
+#modal_crear_maq .modal .btn{
+  border-radius: 15px;
+  width: 50%;
+  font-size: 2rem;
+  color: white;
+  margin: 40px auto;
+  padding: 8px;
+  outline: none;
+  cursor: pointer;
+}
+
+/*Modal actualizar puesto de trabajo*/
+
+#modal_act_pt{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0, 0.5);
+  position: absolute;
+  display: none;
+  top: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+#modal_act_pt:target{
+  display: flex;
+}
+
+#modal_act_pt .modal{
+  width: 500px;
+  height: 340px;
+  background: #F5F5F5;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  border-radius: 4px;
+  border: 2px solid #00A8C1;
+  box-shadow: 0px 0px 50px 5px black;
+}
+
+#modal_act_pt .modal .btn{
+  border-radius: 15px;
+  width: 50%;
+  font-size: 2rem;
+  color: white;
+  margin: 40px auto;
+  padding: 8px;
+  outline: none;
+  cursor: pointer;
+}
+
+/*Bucar modal puesto de trabajo*/
+
+#buscar_pt .modal{
+  width: 850px;
+  height: 550px;
+  background: #F5F5F5;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  border-radius: 4px;
+  border: 2px solid #00A8C1;
+  box-shadow: 0px 0px 50px 5px black;
+  overflow: auto;
+}
+
+/*Modal crear puesto de trabajo*/
+
+#modal_crear_pt{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0, 0.5);
+  position: absolute;
+  display: none;
+  top: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+#modal_crear_pt:target{
+  display: flex;
+}
+
+#modal_crear_pt .modal{
+  width: 500px;
+  height: 280px;
+  background: #F5F5F5;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  border-radius: 4px;
+  border: 2px solid #00A8C1;
+  box-shadow: 0px 0px 50px 5px black;
+}
+
+#modal_crear_pt .modal .btn{
+  border-radius: 15px;
+  width: 50%;
+  font-size: 2rem;
+  color: white;
+  margin: 40px auto;
+  padding: 8px;
+  outline: none;
+  cursor: pointer;
+}
+
+/*Modal actualizar puesto de trabajo*/
+
+#modal_act_emp{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0, 0.5);
+  position: absolute;
+  display: none;
+  top: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+#modal_act_emp:target{
+  display: flex;
+}
+
+#modal_act_emp .modal{
+  width: 500px;
+  height: 710px;
+  background: #F5F5F5;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  border-radius: 4px;
+  border: 2px solid #00A8C1;
+  box-shadow: 0px 0px 50px 5px black;
+}
+
+#modal_act_emp .modal .btn{
+  border-radius: 15px;
+  width: 50%;
+  font-size: 2rem;
+  color: white;
+  margin: 40px auto;
+  padding: 8px;
+  outline: none;
+  cursor: pointer;
+}
+
+/*Bucar modal empleado*/
+
+#buscar_emp .modal{
+  width: 850px;
+  height: 550px;
+  background: #F5F5F5;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  border-radius: 4px;
+  border: 2px solid #00A8C1;
+  box-shadow: 0px 0px 50px 5px black;
+  overflow: auto;
+}
+
+/*Modal crear empleado*/
+
+#modal_crear_emp{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0, 0.5);
+  position: absolute;
+  display: none;
+  top: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+#modal_crear_emp:target{
+  display: flex;
+}
+
+#modal_crear_emp .modal{
+  width: 500px;
+  height: 760px;
+  background: #F5F5F5;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  border-radius: 4px;
+  border: 2px solid #00A8C1;
+  box-shadow: 0px 0px 50px 5px black;
+}
+
+#modal_crear_emp .modal .btn{
+  border-radius: 15px;
+  width: 50%;
+  font-size: 2rem;
+  color: white;
+  margin: 40px auto;
+  padding: 8px;
+  outline: none;
+  cursor: pointer;
+}
+
+#a_form{
+  font-size: 1.5rem;
+  position: static;
+  display: flex;
+  pointer-events: none;
+  color: black;
+  margin-left: 36px;
+}
+
+.form_crear_emp input{
+  width: 85%;
+  display: block;
+  margin: 8px auto;
+  padding: 8px;
+  border: 2px solid #00A8C1;
+}
+
+.form_crear_emp .select{
+  width: 85%;
+  display: block;
+  resize: none;
+  margin: 8px auto;
+  padding: 8px;
+  border: 2px solid #00A8C1;
+}
+
+.form_crear_emp textarea{
+  width: 85%;
+  display: block;
+  resize: none;
+  margin: 8px auto;
+  padding: 8px;
+  border: 2px solid #00A8C1;
+}
+
+/*Modal crear usuario*/
+
+#modal_crear_usu{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0, 0.5);
+  position: absolute;
+  display: none;
+  top: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+#modal_crear_usu:target{
+  display: flex;
+}
+
+#modal_crear_usu .modal{
+  width: 500px;
+  height: 350px;
+  background: #F5F5F5;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  border-radius: 4px;
+  border: 2px solid #00A8C1;
+  box-shadow: 0px 0px 50px 5px black;
+}
+
+#modal_crear_usu .modal .btn{
+  border-radius: 15px;
+  width: 50%;
+  font-size: 2rem;
+  color: white;
+  margin-bottom: auto;
+  padding: 8px;
+  outline: none;
+  cursor: pointer;
+}
+
+#message11{
+  font-size: 2rem;
+}
+
+/*Modal eliminar usuario*/
+
+#modal_eli_usu{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0, 0.5);
+  position: absolute;
+  display: none;
+  top: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+#modal_eli_usu:target{
+  display: flex;
+}
+
+#modal_eli_usu .modal{
+  width: 500px;
+  height: 200px;
+  background: #F5F5F5;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  border-radius: 4px;
+  border: 2px solid #00A8C1;
+  box-shadow: 0px 0px 50px 5px black;
+}
+
+#modal_eli_usu .modal .btn{
+  border-radius: 15px;
+  width: 50%;
+  font-size: 2rem;
+  color: white;
+  margin-bottom: auto;
+  padding: 8px;
+  outline: none;
+  cursor: pointer;
+}

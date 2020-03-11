@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Pagina Principal</title>
+<!-- Ion Icons -->
+<link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link href="view/css/style.css" rel="stylesheet" type="text/css">
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script type="text/javascript" src="view/js/scripts.js"></script>
+<script type="text/javascript" src="view/js/home.js"></script>
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row flex-xl-nowra">
+			<div class="col-md-3 jaj-sidebar">
+				<div class="row image-logo">
+					<img src="view/img/logo_JAJ.png" alt="">
+				</div>
+				<div class="row jaj-menu">
+					<ul class="jaj-nav-list">
+						<li class="jaj-menu-title">
+							<div class="title-content">
+								Ordenes de Producción
+								<i class="icon ion-md-arrow-dropright"></i>
+								<i class="icon ion-md-arrow-dropdown"></i>
+							</div>
+							<ul class="jaj-sub-menu">
+								<li class="jaj-menu-title2">Ordenes de Producción
+									<ul class="jaj-sub-menu2">
+										<li>
+											<a href="#">Ver Orden de Producción</a>
+										</li>
+										<li>
+											<a href="#">Crear Orden de Producción</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li class="jaj-menu-title">
+							<div class="title-content">
+								Productos / Telas
+								<i class="icon ion-md-arrow-dropright"></i>
+								<i class="icon ion-md-arrow-dropdown"></i>
+							</div>
+							<ul class="jaj-sub-menu">
+								<li class="jaj-menu-title2">Añadir Productos
+									<ul class="jaj-sub-menu2">
+										<li>
+											<a href="#modal_crear_prod">Productos</a>
+										</li>
+										<li>
+											<a href="#modal_crear_cat" id='btn_Cat'>Categorías</a>
+										</li>
+										<li>
+											<a href="#modal_crear_subcat">Sub Categorías</a>
+										</li>
+										<li>
+											<a href="#modal_crear_prodstock">Productos con Stock</a>
+										</li>
+									</ul>
+								</li>
+								<li class="jaj-menu-title2">Actualizar Productos
+									<ul class="jaj-sub-menu2">
+										<li>
+											<a href="#modal_act_prod">Productos</a>
+										</li>
+										<li>
+											<a href="#modal_act_cat">Categorías</a>
+										</li>
+										<li>
+											<a href="#modal_act_subcat">Sub Categorías</a>
+										</li>
+										<li>
+											<a href="#buscar_prod_stock">Productos con Stock</a>
+										</li>
+										<li>
+											<a href="#buscar_prod_tela">Stock de Telas</a>
+										</li>
+									</ul>
+								</li>
+								<li class="jaj-menu-title2">Logos
+									<ul class="jaj-sub-menu2">
+										<li>
+											<a href="#">Crear Logo</a>
+										</li>
+										<li>
+											<a href="#">Actualizar Logo</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li class="jaj-menu-title">
+							<div class="title-content">
+								Terceros
+								<i class="icon ion-md-arrow-dropright"></i>
+								<i class="icon ion-md-arrow-dropdown"></i>
+							</div>
+							<ul class="jaj-sub-menu">
+								<li class="jaj-menu-title2">Clientes
+									<ul class="jaj-sub-menu2">
+										<li>
+											<a href="#modal_crear_cli">Crear Cliente</a>
+										</li>
+										<li>
+											<a href="#buscar_cli">Actualizar Cliente</a>
+										</li>
+									</ul>
+								</li>
+								<li class="jaj-menu-title2">Proveedores
+									<ul class="jaj-sub-menu2">
+										<li>
+											<a href="#modal_crear_prov">Crear Proveedores</a>
+										</li>
+										<li>
+											<a href="#buscar_prov">Actualizar Proveedores</a>
+										</li>
+									</ul>
+								</li>
+								<li class="jaj-menu-title2">Maquiladores
+									<ul class="jaj-sub-menu2">
+										<li>
+											<a href="#modal_crear_maq">Crear Maquilador</a>
+										</li>
+										<li>
+											<a href="#buscar_maq">Actualizar Maquilador</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li class="jaj-menu-title">
+							<div class="title-content">
+								Personal
+								<i class="icon ion-md-arrow-dropright"></i>
+								<i class="icon ion-md-arrow-dropdown"></i>
+							</div>
+							<ul class="jaj-sub-menu">
+								<li class="jaj-menu-title2">Crear
+									<ul class="jaj-sub-menu2">
+										<li>
+											<a href="#modal_crear_usu">Usario de sistema</a>
+										</li>
+										<li>
+											<a href="#modal_crear_emp">Crear Empleado</a>
+										</li>
+										<li>
+											<a href="#modal_crear_pt">Crear Puesto de Trabajo</a>
+										</li>
+									</ul>
+								</li>
+								<li class="jaj-menu-title2">Actualizar / Borrar
+									<ul class="jaj-sub-menu2">
+										<li>
+											<a href="#buscar_emp">Actualizar Empleado</a>
+										</li>
+										<li>
+											<a href="#buscar_pt">Act. Puesto de Trabajo</a>
+										</li>
+										<li>
+											<a href="#modal_eli_usu">Borrar Usario de Sist.</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li class="jaj-menu-title">
+							<div class="title-content">
+								Buscar
+								<i class="icon ion-md-arrow-dropright"></i>
+								<i class="icon ion-md-arrow-dropdown"></i>
+							</div>
+							<ul class="jaj-sub-menu">
+								<li class="jaj-menu-title2">Buscar
+									<ul class="jaj-sub-menu2">
+										<li>
+											<a href="#">Buscar Cliente</a>
+										</li>
+										<li>
+											<a href="#">Buscar Empleado</a>
+										</li>
+										<li>
+											<a href="#">Buscar Orden de Producción</a>
+										</li>
+										<li>
+											<a href="#">Buscar Producto</a>
+										</li>
+										<li>
+											<a href="#">Buscar Proveedor</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li class="jaj-menu-title">
+							<div class="title-content">
+								Reportes
+								<i class="icon ion-md-arrow-dropright"></i>
+								<i class="icon ion-md-arrow-dropdown"></i>
+							</div>
+							<ul class="jaj-sub-menu">
+								<li class="jaj-menu-title2">Reportes
+									<ul class="jaj-sub-menu2">
+										<li>
+											<a href="#">Estado de Pedidos</a>
+										</li>
+										<li>
+											<a href="#">Ventas por cliente</a>
+										</li>
+										<li>
+											<a href="#">Inventario de Producto</a>
+										</li>
+										<li>
+											<a href="#">Ventas por Proveedor</a>
+										</li>
+										<li>
+											<a href="#">Ventas por Producto</a>
+										</li>
+										<li>
+											<a href="#">Prendas por Maquilador</a>
+										</li>
+										<li>
+											<a href="#">Top 10 Clientes por Fecha</a>
+										</li>
+										<li>
+											<a href="#">Top 10 Telas por Fecha</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-md-9">
+				<header class="row">
+					<div class="col-md-12 jaj-header">
+						<a href="#">Cerrar Sesión</a>
+					</div>
+				</header>
+				<main class="row">
+					<div class="col-md-12">
+						<?php 	include 'view/pages/categoria/crear-categoria.phtml';
+								include 'view/pages/categoria/actualizar-categoria.phtml';
+								include 'view/pages/categoria/buscar-categoria.phtml';
+								include 'view/pages/categoria/crear-subcategoria.phtml';
+								include 'view/pages/categoria/actualizar-subcategoria.phtml';
+								include 'view/pages/categoria/buscar-subcategoria.phtml';
+								include 'view/pages/producto/crear-producto.phtml';
+								include 'view/pages/producto/actualizar-producto.phtml';
+								include 'view/pages/producto/buscar-producto.phtml';
+								include 'view/pages/producto/crear-producto-stock.phtml';
+								include 'view/pages/producto/actualizar-producto-stock.phtml';
+								include 'view/pages/producto/buscar-producto-stock.phtml';
+								include 'view/pages/tela/actualizar-tela.phtml';
+								include 'view/pages/tela/buscar-tela.phtml';
+								include 'view/pages/cliente/crear-cliente.phtml';
+								include 'view/pages/cliente/actualizar-cliente.phtml';
+								include 'view/pages/cliente/buscar-cliente.phtml';
+								include 'view/pages/proveedores/crear-proveedores.phtml';
+								include 'view/pages/proveedores/actualizar-proveedores.phtml';
+								include 'view/pages/proveedores/buscar-proveedores.phtml';
+								include 'view/pages/maquilador/crear-maquilador.phtml';
+								include 'view/pages/maquilador/actualizar-maquilador.phtml';
+								include 'view/pages/maquilador/buscar-maquilador.phtml';
+								include 'view/pages/puesto/crear-puesto.phtml';
+								include 'view/pages/puesto/actualizar-puesto.phtml';
+								include 'view/pages/puesto/buscar-puesto.phtml';
+								include 'view/pages/empleado/crear-empleado.phtml';
+								include 'view/pages/empleado/actualizar-empleado.phtml';
+								include 'view/pages/empleado/buscar-empleado.phtml';
+								include 'view/pages/usuario/crear-usuario.phtml';
+								include 'view/pages/usuario/verificar-contrasena.phtml';
+						?>	
+							
+					</div>
+				</main>
+			</div>
+		</div>		
+	</div>
+	<script type="text/javascript" >
+	<?php require("conn.php");
+	$result = $conn->query("SELECT DISTINCT tallas.talla_nombre, producto_tallas.prod_id FROM tallas INNER JOIN producto_tallas
+		ON tallas.talla_id=producto_tallas.talla_id");
+	$tallas;
+	while($row=mysqli_fetch_array($result)){
+	$tallas[$row['prod_id']][]=$row['talla_nombre'];
+	}?>
+	var tallas=<?php echo json_encode($tallas) ?>;
+	</script>
+</body>
+</html>

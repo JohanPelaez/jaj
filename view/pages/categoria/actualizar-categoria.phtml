@@ -1,0 +1,36 @@
+<div class="modal_container" id="modal_act_cat">
+    <div>
+        <a href="index.php" class="close">+</a>
+        <span class="modal_heading">Actualizar categoría</span>
+        <a href="#buscar_cat" class="logo">
+            <i class="icon ion-md-search"></i>
+        </a>
+        <form class="form_crear_cat" action="act_cat.php" method="POST">
+        <?php
+        require("conn.php");
+        if(isset($_GET['cat_nombre_id'])){
+            $cat_nombre_id = $_GET['cat_nombre_id'];
+            $query = "SELECT * FROM categorias WHERE cat_nombre_id = '$cat_nombre_id'";
+            $result = mysqli_query($conn, $query);
+            while($row = mysqli_fetch_array($result)){
+            ?>
+            <input type="text" id="cat_nombre_id" name="cat_nombre_id" value="" placeholder="Nombre de la Categoría" required><?php echo $row['cat_nombre_id']; ?></input>
+            <input type="text" id="supCat_nombre" name="supCat_nombre" value="" placeholder="Nombre de la Super Categoría" required><?php echo $row['supCat_id']; ?></input>
+            <textarea id="cat_descripcion" name="cat_descripcion" rows="3" placeholder="Descripción de la Categoría"><?php echo $row['cat_descripcion']; ?></textarea>
+            <input type="hidden" id="cat_id" name="cat_id" value="" ><?php echo $row['cat_id']; ?></input>
+            <input type="submit" class="btn" name="" value="ACTUALIZAR">
+            <?php mysqli_close($conn);
+            }
+        } else{
+            ?>
+            <input type="text" id="cat_nombre_id" name="cat_nombre_id" value="" placeholder="Nombre de la Categoría" required>
+            <input type="text" id="supCat_nombre" name="supCat_nombre" value="" placeholder="Nombre de la Super Categoría" required>
+            <textarea id="cat_descripcion" name="cat_descripcion" rows="3" placeholder="Descripción de la Categoría"></textarea>
+            <input type="hidden" id="cat_id" name="cat_id" value="" ></input>
+            <input type="submit" class="btn" name="" value="ACTUALIZAR">
+            <?php
+        }
+        ?>
+        </form>
+    </div>
+</div>

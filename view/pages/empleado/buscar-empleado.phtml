@@ -1,0 +1,35 @@
+<div class="modal_container" id="buscar_emp">
+    <div >
+    <a href="#index.php" class="close">+</a>
+    <span class="modal_heading">Empleados actuales</span><br><br>
+    <h2>**Seleccione la columna NOMBRE</h2><br>
+    <form class="" action="" method="get">
+        <table id="table1">
+        <tr>
+            <th>Nombre</th>
+            <th>Cédula</th>
+        </tr><?php
+        require("conn.php");
+        $result = $conn->query("SELECT empleados.emp_ced_id, empleados.emp_nombre, empleados.emp_apellido1, empleados.emp_apellido2, empleados.emp_direccion,
+            empleados.emp_fecha_salida, empleados.emp_salario, puestos_trabajo.pt_nombre_puesto, empleados.emp_observaciones,
+            empleados.emp_telefono1, empleados.emp_telefono2, empleados.emp_correo
+            FROM empleados INNER JOIN puestos_trabajo ON empleados.pt_id=puestos_trabajo.pt_id order by empleados.emp_nombre asc");
+        if ($result-> num_rows > 0) {
+            while ($row = mysqli_fetch_array($result)) {
+            echo "<tr><td><a href='#modal_act_emp' name='subCat_nombre' onClick='fillFormemp(\"". $row['emp_ced_id'] ."\",\"". $row['emp_nombre'] ."\",\"". $row['emp_apellido1'] ."\",\"". $row['emp_apellido2'] ."\",
+            \"". $row['emp_direccion'] ."\",\"". $row['emp_fecha_salida'] ."\",\"". $row['emp_salario'] ."\",\"". $row['pt_nombre_puesto'] ."\",
+            \"". $row['emp_observaciones'] ."\",\"". $row['emp_telefono1'] ."\",\"". $row['emp_telefono2'] ."\",\"". $row['emp_correo'] ."\")'>
+            " . $row['emp_nombre'] ." " . $row['emp_apellido1'] ." " . $row['emp_apellido2']  . "</a></td>
+            <td>". $row["emp_ced_id"] ."</td></tr>";
+            }
+            echo "</table>";
+        }
+        else {
+            echo "No hay datos almacenados";
+        }
+        $conn-> close();
+            ?>
+        </table><br><br>
+    </form>
+    </div>
+</div>

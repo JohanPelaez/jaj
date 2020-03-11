@@ -1,0 +1,81 @@
+<div class="page-container"  id="modal_crear_prod">
+    <form class="form_crear_prod" action="crear_prod.php" method="POST">
+        <div class="card">
+            <h1 class="card-header">Crear Producto</h1>
+            <div class="card-body">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon3">Nombre del Producto</span>
+                    </div>
+                    <input type="text" class="form-control" name="prod_nombre" aria-describedby="Nombre del producto" required>
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect01">Selecciona una Sub-Categoría</label>
+                    </div>
+                    <select class="custom-select" id="inputGroupSelect01" name="subCat_id" required>
+                    <option id="defaultsubCat"  disabled selected><font color="#828282">--Selecciona una Sub-Categoría--</font></option>
+                        <?php
+                        require("conn.php");
+                        $result = $conn->query("SELECT DISTINCT sub_categorias.subCat_nombre FROM productos INNER JOIN sub_categorias ON productos.subCat_id=sub_categorias.subCat_id");
+                        while($row=mysqli_fetch_array($result)){
+                        ?>
+                        <option  value="<?php echo $row['subCat_nombre']; ?>" ><?php echo $row['subCat_nombre']; ?></option>
+                        <?php mysqli_close($conn);
+                        } ?>
+                    </select>
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect01">Selecciona un Proveedor</label>
+                    </div>
+                    <select class="custom-select" id="inputGroupSelect01" name="prov_id" required>
+                    <option id="defaultsubCat"  disabled selected><font color="#828282">--Selecciona un Proveedor--</font></option>
+                        <?php
+                        require("conn.php");
+                        $result = $conn->query("SELECT DISTINCT proveedores.prov_nombre FROM productos INNER JOIN proveedores ON productos.prov_id=proveedores.prov_id");
+                        while($row=mysqli_fetch_array($result)){
+                        ?>
+                        <option  value="<?php echo $row['prov_nombre']; ?>" ><?php echo $row['prov_nombre']; ?></option>
+                        <?php mysqli_close($conn);
+                        } ?>
+                    </select>
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon3">Código Stock</span>
+                    </div>
+                    <input type="text" class="form-control" name="prod_cod_stock" aria-describedby="Código Stock">
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon3">Código Color</span>
+                    </div>
+                    <input type="text" class="form-control" name="prod_cod_color" aria-describedby="Código Color">
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon3">Color</span>
+                    </div>
+                    <input type="text" class="form-control" name="prod_color" aria-describedby="Color">
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon3">Cantidad -- solo MATERIA PRIMA</span>
+                    </div>
+                    <input type="number" class="form-control" name="prod_inventario_no_talla" aria-describedby="Cantidad -- solo MATERIA PRIMA">
+                </div>
+
+            </div>
+            <div class="card-footer text-right">
+                <input type="submit" class="btn btn-primary" name="" value="REGISTRAR">
+            </div>
+        </div>
+    </form>
+</div>

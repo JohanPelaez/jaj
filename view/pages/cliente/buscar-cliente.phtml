@@ -1,0 +1,39 @@
+<div class="modal_container" id="buscar_cli">
+    <div >
+    <a href="index.php" class="close">+</a>
+    <span class="modal_heading">Clientes almacenados</span><br><br>
+    <h2>**Seleccione la columna NOMBRE</h2><br>
+    <form class="" action="" method="get">
+        <table id="table1">
+        <tr>
+            <th>Nombre</th>
+            <th>Cédula</th>
+            <th>Dirección</th>
+            <th>Tel-1</th>
+            <th>Tel-2</th>
+            <th>Correo</th>
+        </tr><?php
+        require("conn.php");
+        $result = $conn->query("SELECT cli_nombre, cli_ced_identidad, cli_direccion, cli_telefono1, cli_telefono2, cli_correo, cli_id FROM clientes order by cli_nombre asc");
+        if ($result-> num_rows > 0) {
+            while ($row = mysqli_fetch_array($result)) {
+            echo "<tr><td><a href='#modal_act_cli' name='cat_nombre_id'
+            onClick='fillFormcli(\"". $row['cli_nombre'] ."\",\"". $row['cli_ced_identidad'] ."\",\"". $row['cli_direccion'] ."\",
+            \"". $row['cli_telefono1'] ."\",\"". $row['cli_telefono2'] ."\",\"". $row['cli_correo'] ."\",\"". $row['cli_id'] ."\")'>" . $row['cli_nombre'] . "</a></td>
+            <td>". $row["cli_ced_identidad"] ."</td>
+            <td>". $row["cli_direccion"] ."</td>
+            <td>". $row["cli_telefono1"] ."</td>
+            <td>". $row["cli_telefono2"] ."</td>
+            <td>". $row["cli_correo"] ."</td></tr>";
+            }
+            echo "</table>";
+        }
+        else {
+            echo "No hay datos almacenados";
+        }
+        $conn-> close();
+            ?>
+        </table><br><br>
+    </form>
+    </div>
+</div>

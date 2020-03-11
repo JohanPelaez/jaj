@@ -1,0 +1,22 @@
+<div class="modal_container" id="modal_crear_subcat">
+    <div>
+        <a href="index.php" class="close">+</a>
+        <span class="modal_heading">crear sub-categoría</span>
+        <form class="form_crear_cat" action="crear_subcat.php" method="POST">
+        <input id='capitalize' type="text" name="subCat_nombre" value="" placeholder="Nombre de la Sub-Categoría" required>
+        <select class="select" name="cat_id" required>
+            <option id="defaultCat"  disabled selected><font color="#828282">--Selecciona una Categoría--</font></option>
+            <?php
+                require("conn.php");
+                $result = $conn->query("SELECT DISTINCT categorias.cat_nombre_id FROM categorias INNER JOIN sub_categorias ON categorias.cat_id=sub_categorias.cat_id");
+                while($row=mysqli_fetch_array($result)){
+                ?>
+                <option  value="<?php echo $row['cat_nombre_id']; ?>" ><?php echo $row['cat_nombre_id']; ?></option>
+                <?php mysqli_close($conn);
+                } ?>
+        </select>
+        <textarea name="subCat_descripcion" rows="3" placeholder="Digite alguna descripción de la Sub-Categoría"></textarea>
+        <input type="submit" class="btn" name="" value="REGISTRAR">
+        </form>
+    </div>
+</div>

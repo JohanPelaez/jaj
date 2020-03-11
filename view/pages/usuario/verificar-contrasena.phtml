@@ -1,0 +1,29 @@
+<script >
+    $('#usu_password, #usu_password2').on('keyup', function () {
+    if ($('#usu_password').val() == $('#usu_password2').val()) {
+    $('#message11').html('Contraseñas Iguales ✔').css('color', 'green');
+    } else
+    $('#message11').html('Contraseñas Diferentes ✘').css('color', 'red');
+    });
+</script>
+        <!-- Crear modal para eliminar usuarios-->
+<div class="modal_container" id="modal_eli_usu">
+    <div>
+        <a href="index.php" class="close">+</a>
+        <span class="modal_heading">Eliminar Usuarios</span>
+        <form class="form_crear_emp" action="eli_usu.php" method="POST">
+            <select class="select" name="usu_login" required>
+            <option id="defaultCat"  disabled selected><font color="#828282">--Selecciona una Usuario--</font></option>
+            <?php
+                require("conn.php");
+                $result = $conn->query("SELECT DISTINCT usuarios.usu_login FROM perfiles INNER JOIN usuarios ON usuarios.per_id = perfiles.per_id WHERE perfiles.per_id <> 1");
+                while($row=mysqli_fetch_array($result)){
+                    ?>
+                    <option  value="<?php echo $row['usu_login']; ?>" ><?php echo $row['usu_login']; ?></option>
+                    <?php mysqli_close($conn);
+                } ?>
+            </select>
+            <input type="submit" class="btn" name="" value="ELIMINAR">
+        </form>
+    </div>
+</div>
