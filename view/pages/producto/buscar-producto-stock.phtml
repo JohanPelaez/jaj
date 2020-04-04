@@ -1,46 +1,46 @@
-<div class="modal_container" id="buscar_prod_stock">
-    <div >
-        <a href="#index.php" class="close">+</a>
-        <span class="modal_heading">Productos almacenados con Stock</span><br><br>
-        <h2>**Seleccione la columna PRODUCTO</h2><br>
-        <form class="" action="" method="get">
-        <table id="table1">
-            <tr>
-            <th>Producto</th>
-            <th>Sub Categoría</th>
-            <th>Proveedor</th>
-            <th>Cod. Stock</th>
-            <th>Cod. Color</th>
-            <th>Color</th>
-            <th>Cant.</th>
-            </tr><?php
-            require("conn.php");
-            $result = $conn->query("SELECT productos.prod_nombre,
-                sub_categorias.subCat_nombre, proveedores.prov_nombre, productos.prod_cod_stock,
-                productos.prod_cod_color, productos.prod_color, productos.prod_id, productos.prod_inventario_no_talla
-                FROM productos INNER JOIN sub_categorias ON productos.subCat_id=sub_categorias.subCat_id INNER JOIN proveedores ON proveedores.prov_id=productos.prov_id WHERE prod_id IN (SELECT productos.prod_id FROM productos
-                INNER JOIN sub_categorias ON productos.subCat_id = sub_categorias.subCat_id INNER JOIN
-                categorias ON sub_categorias.cat_id = categorias.cat_id WHERE categorias.cat_id = 3) ORDER BY productos.prod_nombre ASC");
-            if ($result-> num_rows > 0) {
-            while ($row = mysqli_fetch_array($result)) {
-                echo "<tr><td><a href='#modal_act_stock' name='prod_nombre' onClick='fillFormprodstock(\"". $row['prod_nombre'] ."\",\"". $row['subCat_nombre'] .
-                "\",\"". $row['prov_nombre'] ."\",\"". $row['prod_cod_stock'] ."\",\"". $row['prod_cod_color'] .
-                "\",\"". $row['prod_color'] ."\",\"". $row['prod_id'] ."\",\"". $row['prod_inventario_no_talla'] ."\")'>" . $row['prod_nombre'] . "</a></td>
-                <td>". $row["subCat_nombre"] ."</td>
-                <td>". $row["prov_nombre"] ."</td>
-                <td>". $row["prod_cod_stock"] ."</td>
-                <td>". $row["prod_cod_color"] ."</td>
-                <td>". $row["prod_color"] ."</td>
-                <td>". $row["prod_inventario_no_talla"] ."</td></tr>";
-            }
-            echo "</table>";
-            }
-            else {
-            echo "No hay datos almacenados";
-            }
-            $conn-> close();
-            ?>
-        </table><br><br>
-        </form>
+<div class="page-container" id="buscar_prod_stock">
+    <div class="centered">
+        <div class="card">
+            <h1 class="card-header">Productos almacenados con Stock</h1>
+            <div class="card-body">
+                <table id="table1" class="table">
+                    <tr>
+                    <th>Producto</th>
+                    <th>Sub Categoría</th>
+                    <th>Proveedor</th>
+                    <th>Cod. Stock</th>
+                    <th>Cod. Color</th>
+                    <th>Color</th>
+                    <th>Cant.</th>
+                    </tr><?php
+                    require("conn.php");
+                    $result = $conn->query("SELECT productos.prod_nombre,
+                        sub_categorias.subCat_nombre, proveedores.prov_nombre, productos.prod_cod_stock,
+                        productos.prod_cod_color, productos.prod_color, productos.prod_id, productos.prod_inventario_no_talla
+                        FROM productos INNER JOIN sub_categorias ON productos.subCat_id=sub_categorias.subCat_id INNER JOIN proveedores ON proveedores.prov_id=productos.prov_id WHERE prod_id IN (SELECT productos.prod_id FROM productos
+                        INNER JOIN sub_categorias ON productos.subCat_id = sub_categorias.subCat_id INNER JOIN
+                        categorias ON sub_categorias.cat_id = categorias.cat_id WHERE categorias.cat_id = 3) ORDER BY productos.prod_nombre ASC");
+                    if ($result-> num_rows > 0) {
+                    while ($row = mysqli_fetch_array($result)) {
+                        echo "<tr><td><a href='#modal_act_stock' name='prod_nombre' onClick='fillFormprodstock(\"". $row['prod_nombre'] ."\",\"". $row['subCat_nombre'] .
+                        "\",\"". $row['prov_nombre'] ."\",\"". $row['prod_cod_stock'] ."\",\"". $row['prod_cod_color'] .
+                        "\",\"". $row['prod_color'] ."\",\"". $row['prod_id'] ."\",\"". $row['prod_inventario_no_talla'] ."\")'>" . $row['prod_nombre'] . "</a></td>
+                        <td>". $row["subCat_nombre"] ."</td>
+                        <td>". $row["prov_nombre"] ."</td>
+                        <td>". $row["prod_cod_stock"] ."</td>
+                        <td>". $row["prod_cod_color"] ."</td>
+                        <td>". $row["prod_color"] ."</td>
+                        <td>". $row["prod_inventario_no_talla"] ."</td></tr>";
+                    }
+                    echo "</table>";
+                    }
+                    else {
+                    echo "No hay datos almacenados";
+                    }
+                    $conn-> close();
+                    ?>
+                </table>
+            </div>
+        </div>
     </div>
 </div>

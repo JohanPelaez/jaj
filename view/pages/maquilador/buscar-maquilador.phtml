@@ -1,39 +1,39 @@
-<div class="modal_container" id="buscar_maq">
-    <div >
-    <a href="index.php" class="close">+</a>
-    <span class="modal_heading">Maquiladores almacenados</span><br><br>
-    <h2>**Seleccione la columna NOMBRE</h2><br>
-    <form class="" action="" method="get">
-        <table id="table1">
-        <tr>
-            <th>Nombre</th>
-            <th>Cédula</th>
-            <th>Dirección</th>
-            <th>Tel-1</th>
-            <th>Tel-2</th>
-            <th>Correo</th>
-        </tr><?php
-        require("conn.php");
-        $result = $conn->query("SELECT maq_nombre, maq_ced_identidad, maq_direccion, maq_telefono1, maq_telefono2, maq_correo, maq_que_maquila, maq_id FROM maquiladores order by maq_nombre asc");
-        if ($result-> num_rows > 0) {
-            while ($row = mysqli_fetch_array($result)) {
-            echo "<tr><td><a href='#modal_act_maq' name='cat_nombre_id'
-            onClick='fillFormmaq(\"". $row['maq_nombre'] ."\",\"". $row['maq_ced_identidad'] ."\",\"". $row['maq_direccion'] ."\",
-            \"". $row['maq_telefono1'] ."\",\"". $row['maq_telefono2'] ."\",\"". $row['maq_correo'] ."\",\"". $row['maq_que_maquila'] ."\",\"". $row['maq_id'] ."\")'>" . $row['maq_nombre'] . "</a></td>
-            <td>". $row["maq_ced_identidad"] ."</td>
-            <td>". $row["maq_direccion"] ."</td>
-            <td>". $row["maq_telefono1"] ."</td>
-            <td>". $row["maq_telefono2"] ."</td>
-            <td>". $row["maq_correo"] ."</td></tr>";
-            }
-            echo "</table>";
-        }
-        else {
-            echo "No hay datos almacenados";
-        }
-        $conn-> close();
-            ?>
-        </table><br><br>
-    </form>
+<div class="page-container" id="buscar_maq">
+    <div class="centered">
+        <div class="card">
+            <h1 class="card-header">Maquiladores almacenados</h1>
+            <div class="card-body">
+                <table id="table1" class="table">
+                <tr>
+                    <th>Nombre</th>
+                    <th>Cédula</th>
+                    <th>Dirección</th>
+                    <th>Tel-1</th>
+                    <th>Tel-2</th>
+                    <th>Correo</th>
+                </tr><?php
+                require("conn.php");
+                $result = $conn->query("SELECT maq_nombre, maq_ced_identidad, maq_direccion, maq_telefono1, maq_telefono2, maq_correo, maq_que_maquila, maq_id FROM maquiladores order by maq_nombre asc");
+                if ($result-> num_rows > 0) {
+                    while ($row = mysqli_fetch_array($result)) {
+                    echo "<tr><td><a href='#modal_act_maq' name='cat_nombre_id'
+                    onClick='fillFormmaq(\"". $row['maq_nombre'] ."\",\"". $row['maq_ced_identidad'] ."\",\"". $row['maq_direccion'] ."\",
+                    \"". $row['maq_telefono1'] ."\",\"". $row['maq_telefono2'] ."\",\"". $row['maq_correo'] ."\",\"". $row['maq_que_maquila'] ."\",\"". $row['maq_id'] ."\")'>" . $row['maq_nombre'] . "</a></td>
+                    <td>". $row["maq_ced_identidad"] ."</td>
+                    <td>". $row["maq_direccion"] ."</td>
+                    <td>". $row["maq_telefono1"] ."</td>
+                    <td>". $row["maq_telefono2"] ."</td>
+                    <td>". $row["maq_correo"] ."</td></tr>";
+                    }
+                    echo "</table>";
+                }
+                else {
+                    echo "No hay datos almacenados";
+                }
+                $conn-> close();
+                    ?>
+                </table>
+            </div>
+        </div>
     </div>
 </div>

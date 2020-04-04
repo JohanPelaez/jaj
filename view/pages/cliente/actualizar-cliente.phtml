@@ -1,19 +1,58 @@
-<div class="modal_container" id="modal_act_cli">
-    <div>
-    <a href="index.php" class="close">+</a>
-    <span class="modal_heading">Actualizar clientes</span>
-    <a href="#buscar_cli" class="logo">
-        <i class="icon ion-md-search"></i>
-    </a>
+<div class="page-container" id="modal_act_cli">
     <form class="form_crear_cat" action="act_cliente.php" method="POST">
-        <input type="text" style="background-color: rgba(125,127,125,0.5);" id="cli_nombrecrear" name="cli_nombre" value="" placeholder="Nombre del Cliente" required readonly>
-        <input type="text" id="cli_ced_identidad" name="cli_ced_identidad" value="" placeholder="Cédula Jur./Ident." >
-        <input type="text" id="cli_direccion" name="cli_direccion" value="" placeholder="Direccion corta" >
-        <input type="text" id="cli_tel1" name="cli_tel1" value="" placeholder="Teléfono 1" >
-        <input type="text" id="cli_tel2" name="cli_tel2" value="" placeholder="Teléfono 2" >
-        <input type="email" id="cli_correo" name="cli_correo" value="" placeholder="Correo" >
-        <input type="hidden" id="cli_id" name="cli_id" value="">
-        <input type="submit" class="btn" name="" value="ACTUALIZAR">
+        <div class="card">
+            <h1 class="card-header">Actualizar Cliente</h1>
+            <div class="card-body">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon3">Nombre del Cliente</span>
+                    </div>
+                    <input type="text" class="form-control" id="cli_nombrecrear" name="cli_nombre" aria-describedby="Nombre del Cliente" required readonly>
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon3">Cédula Jur./Ident.</span>
+                    </div>
+                    <input type="text" class="form-control" id="cli_ced_identidad" name="cli_ced_identidad" aria-describedby="Cédula Jur./Ident." required>
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon3">Direccion corta</span>
+                    </div>
+                    <input type="text" class="form-control" id="cli_direccion" name="cli_direccion" aria-describedby="Direccion corta" required>
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon3">Teléfono 1</span>
+                    </div>
+                    <input type="text" class="form-control" id="cli_tel1" name="cli_tel1" aria-describedby="Teléfono 1" required>
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon3">Teléfono 2</span>
+                    </div>
+                    <input type="text" class="form-control" id="cli_tel2" name="cli_tel2" aria-describedby="Teléfono 2" required>
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon3">Correo</span>
+                    </div>
+                    <input type="text" class="form-control" id="cli_correo" name="cli_correo" aria-describedby="Correo" required>
+                </div>
+            </div>
+
+            <div class="card-footer text-right">
+                <a href="#buscar_cli" class="logo btn">
+                    <i class="icon ion-md-search"></i> BUSCAR
+                </a>
+                <input type="submit" class="btn btn-primary" name="" value="ACTUALIZAR">
+            </div>
+            <input type="hidden" id="cli_id" name="cli_id" value="">
+        </div>
     </form>
-    </div>
 </div>

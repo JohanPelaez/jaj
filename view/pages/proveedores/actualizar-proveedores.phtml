@@ -1,19 +1,57 @@
-<div class="modal_container" id="modal_act_prov">
-    <div>
-    <a href="index.php" class="close">+</a>
-    <span class="modal_heading">Actualizar proveedores</span>
-    <a href="#buscar_prov" class="logo">
-        <i class="icon ion-md-search"></i>
-    </a>
+<div class="page-container" id="modal_act_prov">
     <form class="form_crear_cat" action="act_prov.php" method="POST">
-        <input type="text" style="background-color: rgba(125,127,125,0.5);" id="prov_nombrecrear" name="prov_nombre" value="" placeholder="Nombre del Proveedor" required readonly>
-        <input type="text" id="prov_ced_identidad" name="prov_ced_identidad" value="" placeholder="Cédula Jur./Ident." >
-        <input type="text" id="prov_direccion" name="prov_direccion" value="" placeholder="Direccion corta" >
-        <input type="text" id="prov_tel1" name="prov_tel1" value="" placeholder="Teléfono 1" >
-        <input type="text" id="prov_tel2" name="prov_tel2" value="" placeholder="Teléfono 2" >
-        <input type="email" id="prov_correo" name="prov_correo" value="" placeholder="Correo" >
-        <input type="hidden" id="prov_id1" name="prov_id" value="">
-        <input type="submit" class="btn" name="" value="ACTUALIZAR">
+        <div class="card">
+            <h1 class="card-header">Crear Proveedores</h1>
+            <div class="card-body">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon3">Nombre del Proveedor</span>
+                    </div>
+                    <input type="text" class="form-control" id="prov_nombrecrear" name="prov_nombre" aria-describedby="Nombre del Proveedor" required readonly>
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon3">Cédula Jur./Ident.</span>
+                    </div>
+                    <input type="text" class="form-control" id="prov_ced_identidad" name="prov_ced_identidad" aria-describedby="Cédula Jur./Ident." required>
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon3">Direccion corta</span>
+                    </div>
+                    <input type="text" class="form-control" id="prov_direccion" name="prov_direccion" aria-describedby="Direccion corta" required>
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon3">Teléfono 1</span>
+                    </div>
+                    <input type="text" class="form-control" id="prov_tel1" name="prov_tel1" aria-describedby="Teléfono 1" required>
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon3">Teléfono 2</span>
+                    </div>
+                    <input type="text" class="form-control" id="prov_tel2" name="prov_tel2" aria-describedby="Teléfono 2" required>
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon3">Correo</span>
+                    </div>
+                    <input type="text" class="form-control" id="prov_correo" name="prov_correo" aria-describedby="Correo" required>
+                </div>
+                <input type="hidden" id="prov_id1" name="prov_id" value="">
+            </div>
+            <div class="card-footer text-right">
+                <a href="#buscar_prov" class="logo btn">
+                    <i class="icon ion-md-search"></i> BUSCAR
+                </a>
+                <input type="submit" class="btn btn-primary" name="" value="REGISTRAR">
+            </div>
+        </div>
     </form>
-    </div>
 </div>

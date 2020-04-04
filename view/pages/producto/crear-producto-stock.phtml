@@ -1,42 +1,75 @@
-<div class="modal_container" id="modal_crear_prodstock">
-    <div>
-        <a href="index.php" class="close">+</a>
-        <span class="modal_heading">crear producto con stock</span>
-        <form class="form_crear_prod" action="crear_prod_stock.php" method="POST">
-        <select class="select" name="prod_idcrear" required>
-            <option id="defaultsubCat"  disabled selected><font color="#828282">--Selecciona una Producto--</font></option>
-            <?php
-                require("conn.php");
-                $result = $conn->query("SELECT productos.prod_nombre, productos.prod_color
-                FROM productos INNER JOIN sub_categorias ON productos.subCat_id=sub_categorias.subCat_id INNER JOIN proveedores ON proveedores.prov_id=productos.prov_id WHERE prod_id IN (SELECT productos.prod_id FROM productos
-                    INNER JOIN sub_categorias ON productos.subCat_id = sub_categorias.subCat_id INNER JOIN
-                    categorias ON sub_categorias.cat_id = categorias.cat_id WHERE categorias.cat_id = 3) ORDER BY productos.prod_nombre ASC");
-                while($row=mysqli_fetch_array($result)){
-                ?>
-                <option  value="<?php echo $row['prod_nombre']; ?>" ><?php echo $row['prod_nombre'] . ' -- ' . $row['prod_color'];; ?></option>
-                <?php mysqli_close($conn);
-                } ?>
-        </select>
-        <select class="select" name="talla_id_stock" required>
-            <option id="defaultsubCat"  disabled selected><font color="#828282">--Selecciona una talla--</font></option>
-            <?php
-                require("conn.php");
-                $result = $conn->query("SELECT DISTINCT talla_nombre FROM tallas ");
-                while($row=mysqli_fetch_array($result)){
-                ?>
-                <option  value="<?php echo $row['talla_nombre']; ?>" >Talla: <?php echo $row['talla_nombre']; ?></option>
-                <?php mysqli_close($conn);
-                } ?>
-        </select>
-        <select class="select" name="prod_talla_generocrear" required>
-            <option id="defaultsubCat"  disabled selected><font color="#828282">--Selecciona una Género--</font></option>
-            <option  value="Masculino" >Masculino</option>
-            <option  value="Femenino" >Femenino</option>
-            <option  value="Unisex" >Unisex</option>
-        </select>
-        <input type="number" name="prod_tall_can" value="" min="1" placeholder="Ingrese la cantidad -- NO usar signos" required></input>
-        <textarea name="talla_prod_descripcion" rows="3" placeholder="Digite alguna descripción -- opcional"></textarea>
-        <input type="submit" class="btn" name="" value="REGISTRAR">
-        </form>
-    </div>
+<div class="page-container" id="modal_crear_prodstock">
+    <form class="form_crear_prod" action="crear_prod_stock.php" method="POST">
+        <div class="card">
+            <h1 class="card-header">Crear Producto Con Stock</h1>
+            <div class="card-body">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect01">Selecciona un Producto</label>
+                    </div>
+                    <select class="custom-select" id="prod_idcrear" name="prod_idcrear" required>
+                    <option id="defaultsubCat"  disabled selected><font color="#828282">--Selecciona un Producto--</font></option>
+                        <?php
+                        require("conn.php");
+                        $result = $conn->query("SELECT productos.prod_nombre, productos.prod_color
+                        FROM productos INNER JOIN sub_categorias ON productos.subCat_id=sub_categorias.subCat_id INNER JOIN proveedores ON proveedores.prov_id=productos.prov_id WHERE prod_id IN (SELECT productos.prod_id FROM productos
+                            INNER JOIN sub_categorias ON productos.subCat_id = sub_categorias.subCat_id INNER JOIN
+                            categorias ON sub_categorias.cat_id = categorias.cat_id WHERE categorias.cat_id = 3) ORDER BY productos.prod_nombre ASC");
+                        while($row=mysqli_fetch_array($result)){
+                        ?>
+                        <option  value="<?php echo $row['prod_nombre']; ?>" ><?php echo $row['prod_nombre'] . ' -- ' . $row['prod_color'];; ?></option>
+                        <?php mysqli_close($conn);
+                        } ?>
+                    </select>
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect01">Selecciona Una Talla</label>
+                    </div>
+                    <select class="custom-select" id="inputGroupSelect01" name="talla_id_stock" required>
+                    <option id="defaultsubCat"  disabled selected><font color="#828282">--Selecciona una talla--</font></option>
+                        <?php
+                        require("conn.php");
+                        $result = $conn->query("SELECT DISTINCT talla_nombre FROM tallas ");
+                        while($row=mysqli_fetch_array($result)){
+                        ?>
+                        <option  value="<?php echo $row['talla_nombre']; ?>" >Talla: <?php echo $row['talla_nombre']; ?></option>
+                        <?php mysqli_close($conn);
+                        } ?>
+                    </select>
+                </div>
+                
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect01">Selecciona una Género</label>
+                    </div>
+                    <select class="custom-select" id="inputGroupSelect01" name="prod_talla_generocrear" required>
+                        <option id="defaultsubCat"  disabled selected><font color="#828282">--Selecciona una Género--</font></option>
+                        <option  value="Masculino" >Masculino</option>
+                        <option  value="Femenino" >Femenino</option>
+                        <option  value="Unisex" >Unisex</option>
+                    </select>
+                </div>
+                
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon3">Cantidad</span>
+                    </div>
+                    <input type="number" min="1" class="form-control" name="prod_tall_can" aria-describedby="Ingrese la cantidad" required>
+                </div>
+
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Descripción</span>
+                    </div>
+                    <textarea name="talla_prod_descripcion" class="form-control" aria-label="Digite alguna descripción"></textarea>
+                </div>
+
+            </div>
+            <div class="card-footer text-right">
+                <input type="submit" class="btn btn-primary" name="" value="REGISTRAR">
+            </div>
+        </div>
+    </form>
 </div>

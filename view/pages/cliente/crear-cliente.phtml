@@ -1,15 +1,54 @@
-<div class="modal_container" id="modal_crear_cli">
-    <div>
-    <a href="index.php" class="close">+</a>
-    <span class="modal_heading">crear clientes</span>
+<div class="page-container" id="modal_crear_cli">
     <form class="form_crear_cat" action="crear_cliente.php" method="POST">
-        <input id='capitalize' type="text" name="cli_nombre" value="" placeholder="Nombre del Cliente" required>
-        <input type="text" name="cli_ced_identidad" value="" placeholder="Cédula Jur./Ident." >
-        <input id='capitalize' type="text" name="cli_direccion" value="" placeholder="Direccion corta" >
-        <input type="text" name="cli_tel1" value="" placeholder="Teléfono 1">
-        <input type="text" name="cli_tel2" value="" placeholder="Teléfono 2">
-        <input type="email" name="cli_correo" value="" placeholder="Correo" >
-        <input type="submit" class="btn" name="" value="REGISTRAR">
+        <div class="card">
+            <h1 class="card-header">Crear Cliente</h1>
+            <div class="card-body">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon3">Nombre del Cliente</span>
+                    </div>
+                    <input type="text" class="form-control" name="cli_nombre" aria-describedby="Nombre del Cliente" required>
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon3">Cédula Jur./Ident.</span>
+                    </div>
+                    <input type="text" class="form-control" name="cli_ced_identidad" aria-describedby="Cédula Jur./Ident." required>
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon3">Direccion corta</span>
+                    </div>
+                    <input type="text" class="form-control" name="cli_direccion" aria-describedby="Direccion corta" required>
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon3">Teléfono 1</span>
+                    </div>
+                    <input type="text" class="form-control" name="cli_tel1" aria-describedby="Teléfono 1" required>
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon3">Teléfono 2</span>
+                    </div>
+                    <input type="text" class="form-control" name="cli_tel2" aria-describedby="Teléfono 2" required>
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon3">Correo</span>
+                    </div>
+                    <input type="text" class="form-control" name="cli_correo" aria-describedby="Correo" required>
+                </div>
+            </div>
+
+            <div class="card-footer text-right">
+                <input type="submit" class="btn btn-primary" name="" value="REGISTRAR">
+            </div>
+        </div>
     </form>
-    </div>
 </div>
