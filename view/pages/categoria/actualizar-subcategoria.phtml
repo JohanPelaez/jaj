@@ -1,36 +1,38 @@
-<div class="modal_container" id="modal_act_subcat">
-    <div>
-        <a href="index.php" class="close">+</a>
-        <span class="modal_heading">Actualizar sub-categoría</span>
-        <a href="#buscar_subcat" class="logo">
-        <i class="icon ion-md-search"></i>
-        </a>
-        <form class="form_crear_cat" action="act_subcat.php" method="POST">
-        <?php
-        require("conn.php");
-        if(isset($_GET['subCat_nombre'])){
-            $subCat_nombre = $_GET['subCat_nombre'];
-            $query = "SELECT * FROM sub_categorias WHERE subCat_nombre = '$subCat_nombre'";
-            $result = mysqli_query($conn, $query);
-            while($row = mysqli_fetch_array($result)){
-            ?>
-            <input type="text" id="subCat_nombre" name="subCat_nombre" value="" placeholder="Nombre de la Sub-Categoría" required><?php echo $row['subCat_nombre']; ?></input>
-            <input type="text" id="cat_nombre" name="cat_nombre" value="" placeholder="Nombre de la Categoría" required><?php echo $row['cat_id']; ?></input>
-            <textarea id="subCat_descripcion" name="subCat_descripcion" rows="3" placeholder="Descripción de la Sub-Categoría"><?php echo $row['subCat_descripcion']; ?></textarea>
-            <input type="hidden" id="subCat_id" name="subCat_id" value="" ><?php echo $row['subCat_id']; ?></input>
-            <input type="submit" class="btn" name="" value="ACTUALIZAR">
-            <?php mysqli_close($conn);
-            }
-        } else{
-            ?>
-            <input type="text" id="subCat_nombre" name="subCat_nombre" value="" placeholder="Nombre de la Sub-Categoría" required>
-            <input type="text" id="cat_nombre" name="cat_nombre" value="" placeholder="Nombre de la Categoría" required>
-            <textarea id="subCat_descripcion" name="subCat_descripcion" rows="3" placeholder="Descripción de la Sub-Categoría"></textarea>
-            <input type="hidden" id="subCat_id" name="subCat_id" value="" ></input>
-            <input type="submit" class="btn" name="" value="ACTUALIZAR">
-            <?php
-        }
-        ?>
-        </form>
-    </div>
+<div class="page-container" id="modal_act_subcat">
+    <form class="form_crear_cat" action="act_subcat.php" method="POST">
+        <div class="card">
+            <h1 class="card-header">Actualizar Sub Categoría</h1>
+            <div class="card-body">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon3">Nombre de la Sub Categoría</span>
+                    </div>
+                    <input type="text" class="form-control" id="subCat_nombre" name="subCat_nombre" aria-describedby="Nombre de la Sub Categoría" required>
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon3">Nombre de la Categoría</span>
+                    </div>
+                    <input type="text" class="form-control" id="cat_nombre" name="cat_nombre" aria-describedby="Nombre de la Categoría" required>
+                </div>
+
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Descripción</span>
+                    </div>
+                    <textarea id="subCat_descripcion" name="subCat_descripcion" class="form-control" aria-label="Descripción de la Sub-Categoría"></textarea>
+                </div>
+                <input type="hidden" id="subCat_id" name="subCat_id" value="" ></input>
+            </div>
+
+            <div class="card-footer text-right">
+                <a href="#buscar_subcat" class="logo btn">
+                    <i class="icon ion-md-search"></i> BUSCAR
+                </a>
+                <input type="submit" class="btn btn-primary" name="" value="REGISTRAR">
+            </div>
+
+        </div>
+    </form>
 </div>

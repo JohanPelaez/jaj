@@ -1476,3 +1476,7 @@ label{
   outline: none;
   cursor: pointer;
 }
+
+.modal {
+  display: block !important;
+}

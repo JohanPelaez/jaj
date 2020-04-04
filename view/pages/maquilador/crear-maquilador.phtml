@@ -1,16 +1,61 @@
-<div class="modal_container" id="modal_crear_maq">
-    <div>
-    <a href="index.php" class="close">+</a>
-    <span class="modal_heading">crear Maquiladores</span>
+<div class="page-container" id="modal_crear_maq">
     <form class="form_crear_cat" action="crear_maq.php" method="POST">
-        <input id='capitalize' type="text" name="maq_nombre" value="" placeholder="Nombre del Maquilador" required>
-        <input type="text" name="maq_ced_identidad" value="" placeholder="Cédula Jur./Ident." >
-        <input id='capitalize' type="text" name="maq_direccion" value="" placeholder="Direccion corta" >
-        <input type="text" name="maq_tel1" value="" placeholder="Teléfono 1" >
-        <input type="text" name="maq_tel2" value="" placeholder="Teléfono 2" >
-        <input type="email" name="maq_correo" value="" placeholder="Correo" >
-        <textarea name="maq_que_maquila" rows="3" placeholder="Qué tipo de prendas maquila?"></textarea>
-        <input type="submit" class="btn" name="" value="REGISTRAR">
+        <div class="card">
+
+            <h1 class="card-header">Crear Maquiladores</h1>
+            <div class="card-body">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon3">Nombre del Maquilador</span>
+                    </div>
+                    <input type="text" class="form-control" name="maq_nombre" aria-describedby="Nombre del Maquilador" required>
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon3">Cédula Jur./Ident.</span>
+                    </div>
+                    <input type="text" class="form-control" name="maq_ced_identidad" aria-describedby="Cédula Jur./Ident." required>
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon3">Direccion corta</span>
+                    </div>
+                    <input type="text" class="form-control" name="maq_direccion" aria-describedby="Direccion corta" required>
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon3">Teléfono 1</span>
+                    </div>
+                    <input type="text" class="form-control" name="maq_tel1" aria-describedby="Teléfono 1" required>
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon3">Teléfono 2</span>
+                    </div>
+                    <input type="text" class="form-control" name="maq_tel2" aria-describedby="Teléfono 2" required>
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon3">Correo</span>
+                    </div>
+                    <input type="text" class="form-control" name="maq_correo" aria-describedby="Correo" required>
+                </div>
+
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Qué tipo de prendas maquila?</span>
+                    </div>
+                    <textarea name="maq_que_maquila" class="form-control" aria-label="Qué tipo de prendas maquila?"></textarea>
+                </div>
+            </div>
+            <div class="card-footer text-right">
+                <input type="submit" class="btn btn-primary" name="" value="REGISTRAR">
+            </div>
+        </div>
     </form>
-    </div>
 </div>

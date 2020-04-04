@@ -1,44 +1,70 @@
-<div class="modal_container" id="modal_act_prod">
-    <div>
-        <a href="index.php" class="close">+</a>
-        <span class="modal_heading">Actualizar Productos</span>
-        <a href="#buscar_prod" class="logo">
-        <i class="icon ion-md-search"></i>
-        </a>
-        <form class="form_crear_prod" action="act_prod.php" method="POST">
-        <?php
-        require("conn.php");
-        if(isset($_GET['prod_id'])){
-            $prod_id = $_GET['prod_id'];
-            $query = "SELECT * FROM productos WHERE prod_id = '$prod_id'";
-            $result = mysqli_query($conn, $query);
-            while($row = mysqli_fetch_array($result)){
-            ?>
-            <input type="text" id="prod_nombre" name="prod_nombre" value="" placeholder="Nombre del Producto" required><?php echo $row['prod_nombre']; ?></input>
-            <input type="text" id="subcat" name="subcat" value="" placeholder="Nombre de la Sub-Categoría" required><?php echo $row['subCat_id']; ?></input>
-            <input type="text" id="prov_id" name="prov_id" value="" placeholder="Nombre del Proveedor" required><?php echo $row['prov_id']; ?></input>
-            <input type="text" id="prod_cod_stock" name="prod_cod_stock" value="" placeholder="Código de Stock"><?php echo $row['prod_cod_stock']; ?></input>
-            <input type="text" id="prod_cod_color" name="prod_cod_color" value="" placeholder="Código de Color"><?php echo $row['prod_cod_color']; ?></input>
-            <input type="text" id="color" name="color" value="" placeholder="Color"><?php echo $row['color']; ?></input>
-            <input type="hidden" id="prod_id" name="prod_id" value=""><?php echo $row['prod_id']; ?></input>
-            <input type="text" id="prod_inventario_no_talla" name="prod_inventario_no_talla" value="" placeholder="Cantidad -- solo MATERIA PRIMA"><?php echo $row['prod_inventario_no_talla']; ?></input>
-            <input type="submit" class="btn" name="" value="ACTUALIZAR">
-            <?php mysqli_close($conn);
-            }
-        } else{
-            ?>
-            <input type="text" id="prod_nombre" name="prod_nombre" value="" placeholder="Nombre del Producto" required></input>
-            <input type="text" id="subcat" name="subcat" value="" placeholder="Nombre de la Sub-Categoría" required></input>
-            <input type="text" id="prov_id" name="prov_id" value="" placeholder="Nombre del Proveedor" required></input>
-            <input type="text" id="prod_cod_stock" name="prod_cod_stock" value="" placeholder="Código de Stock"></input>
-            <input type="text" id="prod_cod_color" name="prod_cod_color" value="" placeholder="Código de Color"></input>
-            <input type="text" id="color" name="color" value="" placeholder="Color"></input>
-            <input type="hidden" id="prod_id" name="prod_id" value=""></input>
-            <input type="number" min="0" id="prod_inventario_no_talla" name="prod_inventario_no_talla" value="" placeholder="Cantidad -- solo MATERIA PRIMA"></input>
-            <input type="submit" class="btn" name="" value="ACTUALIZAR">
-            <?php
-        }
-        ?>
-        </form>
-    </div>
+<div class="page-container" id="modal_act_prod">
+    <form class="form_crear_prod" action="act_prod.php" method="POST">
+        <div class="card">
+            <h1 class="card-header">Actualizar Productos</h1>
+            <div class="card-body">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon3">Nombre del Producto</span>
+                    </div>
+                    <input type="text" class="form-control" id="prod_nombre" name="prod_nombre" aria-describedby="Nombre del Producto" required>
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon3">Nombre de la Sub-Categoría</span>
+                    </div>
+                    <input type="text" class="form-control" id="subcat" name="subcat" aria-describedby="Nombre de la Sub-Categoría" required>
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon3">Nombre del Proveedor</span>
+                    </div>
+                    <input type="text" class="form-control" id="prov_id" name="prov_id" aria-describedby="Nombre del Proveedor" required>
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon3">Código de Stock</span>
+                    </div>
+                    <input type="text" class="form-control" id="prod_cod_stock" name="prod_cod_stock" aria-describedby="Código de Stock" required>
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon3">Código de Color</span>
+                    </div>
+                    <input type="text" class="form-control" id="prod_cod_color" name="prod_cod_color" aria-describedby="Código de Color" required>
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon3">Color</span>
+                    </div>
+                    <input type="text" class="form-control" id="color" name="color" aria-describedby="Color" required>
+                </div>
+
+                <input type="hidden" id="prod_id" name="prod_id" value=""></input>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon3">Cantidad</span>
+                    </div>
+                    <input type="number" min="0" class="form-control" id="prod_inventario_no_talla" name="prod_inventario_no_talla" aria-describedby="Cantidad" required>
+                </div>
+
+            </div>
+            <div class="card-footer text-right">
+                <a href="#buscar_prod" class="logo btn">
+                    <i class="icon ion-md-search"></i> BUSCAR
+                </a>
+                <input type="submit" class="btn btn-primary" name="" value="REGISTRAR">
+            </div>
+
+
+
+
+        </div>
+    </form>
 </div>

@@ -1,39 +1,39 @@
-<div class="modal_container" id="buscar_prov">
-    <div >
-    <a href="index.php" class="close">+</a>
-    <span class="modal_heading">Proveedores almacenados</span><br><br>
-    <h2>**Seleccione la columna NOMBRE</h2><br>
-    <form class="" action="" method="get">
-        <table id="table1">
-        <tr>
-            <th>Nombre</th>
-            <th>Cédula</th>
-            <th>Dirección</th>
-            <th>Tel-1</th>
-            <th>Tel-2</th>
-            <th>Correo</th>
-        </tr><?php
-        require("conn.php");
-        $result = $conn->query("SELECT prov_nombre, prov_ced_identidad, prov_direccion, prov_telefono1, prov_telefono2, prov_correo, prov_id FROM proveedores order by prov_nombre asc");
-        if ($result-> num_rows > 0) {
-            while ($row = mysqli_fetch_array($result)) {
-            echo "<tr><td><a href='#modal_act_prov' name='cat_nombre_id'
-            onClick='fillFormprov(\"". $row['prov_nombre'] ."\",\"". $row['prov_ced_identidad'] ."\",\"". $row['prov_direccion'] ."\",
-            \"". $row['prov_telefono1'] ."\",\"". $row['prov_telefono2'] ."\",\"". $row['prov_correo'] ."\",\"". $row['prov_id'] ."\")'>" . $row['prov_nombre'] . "</a></td>
-            <td>". $row["prov_ced_identidad"] ."</td>
-            <td>". $row["prov_direccion"] ."</td>
-            <td>". $row["prov_telefono1"] ."</td>
-            <td>". $row["prov_telefono2"] ."</td>
-            <td>". $row["prov_correo"] ."</td></tr>";
-            }
-            echo "</table>";
-        }
-        else {
-            echo "No hay datos almacenados";
-        }
-        $conn-> close();
-            ?>
-        </table><br><br>
-    </form>
+<div class="page-container" id="buscar_prov">
+    <div class="centered">
+        <div class="card">
+            <h1 class="card-header">Proveedores almacenados</h1>
+            <div class="card-body">
+                <table id="table1" class="table">
+                <tr>
+                    <th>Nombre</th>
+                    <th>Cédula</th>
+                    <th>Dirección</th>
+                    <th>Tel-1</th>
+                    <th>Tel-2</th>
+                    <th>Correo</th>
+                </tr><?php
+                require("conn.php");
+                $result = $conn->query("SELECT prov_nombre, prov_ced_identidad, prov_direccion, prov_telefono1, prov_telefono2, prov_correo, prov_id FROM proveedores order by prov_nombre asc");
+                if ($result-> num_rows > 0) {
+                    while ($row = mysqli_fetch_array($result)) {
+                    echo "<tr><td><a href='#modal_act_prov' name='cat_nombre_id'
+                    onClick='fillFormprov(\"". $row['prov_nombre'] ."\",\"". $row['prov_ced_identidad'] ."\",\"". $row['prov_direccion'] ."\",
+                    \"". $row['prov_telefono1'] ."\",\"". $row['prov_telefono2'] ."\",\"". $row['prov_correo'] ."\",\"". $row['prov_id'] ."\")'>" . $row['prov_nombre'] . "</a></td>
+                    <td>". $row["prov_ced_identidad"] ."</td>
+                    <td>". $row["prov_direccion"] ."</td>
+                    <td>". $row["prov_telefono1"] ."</td>
+                    <td>". $row["prov_telefono2"] ."</td>
+                    <td>". $row["prov_correo"] ."</td></tr>";
+                    }
+                    echo "</table>";
+                }
+                else {
+                    echo "No hay datos almacenados";
+                }
+                $conn-> close();
+                    ?>
+                </table>
+            </div>
+        </div>
     </div>
 </div>
