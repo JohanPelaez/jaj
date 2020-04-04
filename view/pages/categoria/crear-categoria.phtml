@@ -1,22 +1,44 @@
-<div class="modal_container" id="modal_crear_cat">
-    <div>
-        <a href="index.php" class="close">+</a>
-        <span class="modal_heading">crear categoría</span>
-        <form class="form_crear_cat" action="crear_cat.php" method="POST">
-        <input id="capitalize" type="text" name="cat_nombre_id" value="" placeholder="Nombre de la Categoría" required>
-        <select class="select" name="supCat_id" required>
-            <option id="defaultSC"  disabled selected><font color="#828282">--Selecciona una Super Categoría--</font></option>
-            <?php
-                require("conn.php");
-                $result = $conn->query("SELECT DISTINCT super_categorias.supCat_nombre FROM categorias INNER JOIN super_categorias ON categorias.supCat_id=super_categorias.supCat_id");
-                while($row=mysqli_fetch_array($result)){
-                ?>
-                <option  value="<?php echo $row['supCat_nombre']; ?>" ><?php echo $row['supCat_nombre']; ?></option>
-                <?php mysqli_close($conn);
-                } ?>
-        </select>
-        <textarea name="cat_descripcion" rows="3" placeholder="Digite alguna descripción de la Categoría"></textarea>
-        <input type="submit" class="btn" name="" value="REGISTRAR">
-        </form>
-    </div>
+<div class="page-container" id="modal_crear_cat">
+    <form class="form_crear_cat" action="crear_cat.php" method="POST">
+        <div class="card">
+
+            <h1 class="card-header">crear categoría</h1>
+            <div class="card-body">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon3">Nombre de la Categoría</span>
+                    </div>
+                    <input type="text" class="form-control" name="cat_nombre_id" aria-describedby="Nombre de la Categoría" required>
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect01">Selecciona una Sub-Categoría</label>
+                    </div>
+                    <select class="custom-select" id="inputGroupSelect01" name="supCat_id" required>
+                    <option id="defaultsubCat"  disabled selected><font color="#828282">--Selecciona una Super Categoría--</font></option>
+                        <?php
+                        require("conn.php");
+                        $result = $conn->query("SELECT DISTINCT super_categorias.supCat_nombre FROM categorias INNER JOIN super_categorias ON categorias.supCat_id=super_categorias.supCat_id");
+                        while($row=mysqli_fetch_array($result)){
+                        ?>
+                        <option  value="<?php echo $row['supCat_nombre']; ?>" ><?php echo $row['supCat_nombre']; ?></option>
+                        <?php mysqli_close($conn);
+                        } ?>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Descripción</span>
+                    </div>
+                    <textarea name="cat_descripcion" class="form-control" aria-label="Descripción"></textarea>
+                </div>
+
+            </div>
+            <div class="card-footer text-right">
+                <input type="submit" class="btn btn-primary" name="" value="REGISTRAR">
+            </div>
+        </div>
+    </form>
 </div>
