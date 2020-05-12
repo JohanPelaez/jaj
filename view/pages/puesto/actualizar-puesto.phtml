@@ -1,15 +1,30 @@
-<div class="modal_container" id="modal_act_pt">
-    <div>
-    <a href="index.php" class="close">+</a>
-    <span class="modal_heading">Actualizar puesto de trabajo</span>
-    <a href="#buscar_pt" class="logo">
-        <i class="icon ion-md-search"></i>
-    </a>
+<div class="page-container" id="modal_act_pt">
     <form class="form_crear_cat" action="act_pt.php" method="POST">
-        <input type="text" style="background-color: rgba(125,127,125,0.5);" id="pt_nombre" name="pt_nombre" value="" placeholder="Nombre del Puesto" required readonly>
-        <textarea name="pt_descripcion" id="pt_descripcion" rows="3" placeholder="Descripción del puesto"></textarea>
-        <input type="hidden" id="pt_id" name="pt_id" value="">
-        <input type="submit" class="btn" name="" value="ACTUALIZAR">
+        <div class="card">
+
+            <h1 class="card-header">Crear Puesto de Trabajo</h1>
+            <div class="card-body">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon3">Nombre del Puesto</span>
+                    </div>
+                    <input type="text" class="form-control" id="pt_nombre" name="pt_nombre" aria-describedby="Nombre del Puesto" required>
+                </div>
+
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Descripción</span>
+                    </div>
+                    <textarea id="pt_descripcion" name="pt_descripcion" class="form-control" aria-label="Descripción"></textarea>
+                </div>
+                <input type="hidden" id="pt_id" name="pt_id" value="">
+            </div>
+            <div class="card-footer text-right">
+                <a href="#buscar_pt" class="logo btn">
+                    <i class="icon ion-md-search"></i> BUSCAR
+                </a>
+                <input type="submit" class="btn btn-primary" name="" value="REGISTRAR">
+            </div>
+        </div>
     </form>
-    </div>
 </div>

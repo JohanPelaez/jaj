@@ -1,14 +1,22 @@
 <?php
+// En versiones de PHP anteriores a la 4.1.0, debería utilizarse $HTTP_POST_FILES en lugar
+// de $_FILES.
 
-$cat_nombre_id = $_POST['cat_nombre_id'];
-$supCat_id= $_POST['supCat_id'];
-$cat_descripcion = $_POST['cat_descripcion'];
+$dir_subida = dirname(__FILE__).'/files/';
+$fichero_subido = $dir_subida . basename($_FILES['logo']['name']);
 
-require("conn.php");
-$query2 = "INSERT INTO categorias (cat_nombre_id, supCat_id, cat_descripcion) VALUES ('$cat_nombre_id', (SELECT SupCat_id FROM super_categorias where supCat_nombre = '$supCat_id'), '$cat_descripcion')";
-$resultado = $conn->query($query2);
-mysqli_close($conn);
-
+echo '<pre>';
+if (move_uploaded_file($_FILES['logo']['tmp_name'], $fichero_subido)) {
+    $log_name = $_POST['name'];
+    $log_image = $_FILES['logo']['name'];
+    $cli_id = $_POST['cliente'];
+    require("conn.php");
+    $query2 = "INSERT INTO logos (log_nombre, cli_id, imagen) VALUES ('$log_name', '$cli_id', '$log_image')";
+    $resultado = $conn->query($query2);
+    mysqli_close($conn);
+} else {
+    $resultado = false;
+}
 ?>
 
 <!doctype html>
@@ -30,11 +38,11 @@ mysqli_close($conn);
 		<div class="ventana">
 			<?php if($resultado){ ?>
 					<span class="modal_heading">Datos Ingresados de manera Exitosa! <br>
-					La categoría <u><?php echo $cat_nombre_id ?></u> ha sido creada. </span><br><br>
+					El Logo ha sido creado. </span><br><br>
 					<?php } else { ?>
 					<span class="modal_heading">Error: Puede que la categoría <u><?php echo $cat_nombre_id ?></u> ya está creada.</span><br><br>
 					<?php } ?>
-			<a href="<?=$_SERVER['REQUEST_URI']?>" class="btn">REGRESAR</a>
+			<a href="/" class="btn">REGRESAR</a>
 		</div>
 	</div>
 </body>

@@ -1,29 +1,29 @@
-<div class="modal_container" id="buscar_cat">
-    <div>
-        <a href="#modal_act_cat" class="close">+</a>
-        <span class="modal_heading">categorías almacenadas</span><br><br>
-        <h2>**Seleccione la columna CATEGORÍA</h2><br>
-        <form class="" action="" method="get">
-        <table id="table1">
-            <tr>
-            <th>Categoría</th>
-            <th>Super Categoría</th>
-            </tr><?php
-            require("conn.php");
-            $result = $conn->query("SELECT categorias.cat_id, categorias.cat_nombre_id, super_categorias.supCat_nombre, categorias.cat_descripcion FROM categorias INNER JOIN super_categorias ON categorias.supCat_id=super_categorias.supCat_id order by categorias.cat_nombre_id asc");
-            if ($result-> num_rows > 0) {
-            while ($row = mysqli_fetch_array($result)) {
-                echo "<tr><td><a href='#modal_act_cat' name='cat_nombre_id' onClick='fillForm(\"". $row['cat_nombre_id'] ."\",\"". $row['supCat_nombre'] ."\",\"". $row['cat_descripcion'] ."\",\"". $row['cat_id'] ."\")'>" . $row['cat_nombre_id'] . "</a></td>
-                <td>". $row["supCat_nombre"] ."</td></tr>";
-            }
-            echo "</table>";
-            }
-            else {
-            echo "No hay datos almacenados";
-            }
-            $conn-> close();
-            ?>
-        </table><br><br>
-        </form>
+<div class="page-container" id="buscar_cat">
+    <div class="centered">
+        <div class="card">
+            <h1 class="card-header">Categorias almacenados</h1>
+            <div class="card-body">
+                <table id="table1" class="table">
+                    <tr>
+                    <th>Categoría</th>
+                    <th>Super Categoría</th>
+                    </tr><?php
+                    require("conn.php");
+                    $result = $conn->query("SELECT categorias.cat_id, categorias.cat_nombre_id, super_categorias.supCat_nombre, categorias.cat_descripcion FROM categorias INNER JOIN super_categorias ON categorias.supCat_id=super_categorias.supCat_id order by categorias.cat_nombre_id asc");
+                    if ($result-> num_rows > 0) {
+                    while ($row = mysqli_fetch_array($result)) {
+                        echo "<tr><td><a href='#modal_act_cat' name='cat_nombre_id' onClick='fillForm(\"". $row['cat_nombre_id'] ."\",\"". $row['supCat_nombre'] ."\",\"". $row['cat_descripcion'] ."\",\"". $row['cat_id'] ."\")'>" . $row['cat_nombre_id'] . "</a></td>
+                        <td>". $row["supCat_nombre"] ."</td></tr>";
+                    }
+                    echo "</table>";
+                    }
+                    else {
+                    echo "No hay datos almacenados";
+                    }
+                    $conn-> close();
+                    ?>
+                </table>
+            </div>
+        </div>
     </div>
 </div>

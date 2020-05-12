@@ -1,30 +1,30 @@
-<div class="modal_container" id="buscar_pt">
-    <div >
-    <a href="index.php" class="close">+</a>
-    <span class="modal_heading">Puestos almacenados</span><br><br>
-    <h2>**Seleccione la columna PUESTO</h2><br>
-    <form class="" action="" method="get">
-        <table id="table1">
-        <tr>
-            <th>Puesto</th>
-            <th>Descripción</th>
-        </tr><?php
-        require("conn.php");
-        $result = $conn->query("SELECT pt_nombre_puesto, pt_descripcion, pt_id FROM puestos_trabajo order by pt_nombre_puesto asc");
-        if ($result-> num_rows > 0) {
-            while ($row = mysqli_fetch_array($result)) {
-            echo "<tr><td><a href='#modal_act_pt' name='cat_nombre_id'
-            onClick='fillFormpt(\"". $row['pt_nombre_puesto'] ."\",\"". $row['pt_descripcion'] ."\",\"". $row['pt_id'] ."\")'>" . $row['pt_nombre_puesto'] . "</a></td>
-            <td>". $row["pt_descripcion"] ."</td></tr>";
-            }
-            echo "</table>";
-        }
-        else {
-            echo "No hay datos almacenados";
-        }
-        $conn-> close();
-            ?>
-        </table><br><br>
-    </form>
+<div class="page-container" id="buscar_pt">
+    <div class="centered">
+        <div class="card">
+            <h1 class="card-header">Puestos almacenados</h1>
+            <div class="card-body">
+                <table id="table1" class="table">
+                <tr>
+                    <th>Puesto</th>
+                    <th>Descripción</th>
+                </tr><?php
+                require("conn.php");
+                $result = $conn->query("SELECT pt_nombre_puesto, pt_descripcion, pt_id FROM puestos_trabajo order by pt_nombre_puesto asc");
+                if ($result-> num_rows > 0) {
+                    while ($row = mysqli_fetch_array($result)) {
+                    echo "<tr><td><a href='#modal_act_pt' name='cat_nombre_id'
+                    onClick='fillFormpt(\"". $row['pt_nombre_puesto'] ."\",\"". $row['pt_descripcion'] ."\",\"". $row['pt_id'] ."\")'>" . $row['pt_nombre_puesto'] . "</a></td>
+                    <td>". $row["pt_descripcion"] ."</td></tr>";
+                    }
+                    echo "</table>";
+                }
+                else {
+                    echo "No hay datos almacenados";
+                }
+                $conn-> close();
+                    ?>
+                </table>
+            </div>
+        </div>
     </div>
 </div>

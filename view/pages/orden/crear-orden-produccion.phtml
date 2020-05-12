@@ -1,0 +1,397 @@
+<?php include dirname(__FILE__).'/../../../controllers/orden-pro-ctrl.php'; ?>
+
+<div class="page-container"  id="modal_crear_orden">
+    <form class="crear_orden_prod" action="crear_orden_prod.php" method="POST" style=" width: 100%; max-width: 1024;">
+        <div class="card">
+            <h1 class="card-header">Crear Orden de Producción</h1>
+            <div class="card-body">
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon3">Hecha por</span>
+                    </div>
+                    <input type="text" class="form-control" name="hecha_por" aria-describedby="Hecha por" required>
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect01">Selecciona un Cliente</label>
+                    </div>
+                    <select class="custom-select" id="inputGroupSelect01" name="cliente" required>
+                        <option id="defaultsubCat"  disabled selected><font color="#828282">--Selecciona un Cliente--</font></option>
+                        <?php foreach ($bigObj['clientes'] as $k => $v) { ?>
+                            <option  value="<?=$v['cli_id']?>" ><?=$v['cli_nombre']?></option>
+                        <?php } ?>
+                    </select>
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon3">Orden de Comprqa</span>
+                    </div>
+                    <input type="text" class="form-control" name="orden_compra" aria-describedby="Orden de Compra" required>
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon3">OP #</span>
+                    </div>
+                    <input type="text" class="form-control" name="op" aria-describedby="OP #" required>
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon3">OP 2</span>
+                    </div>
+                    <input type="text" class="form-control" name="op" aria-describedby="OP #" required>
+                </div>
+
+                <hr>
+                
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon3">Fecha de Solicitud</span>
+                    </div>
+                    <input type="date" class="form-control" name="op" aria-describedby="OP #" required>
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon3">Fecha de Entrega</span>
+                    </div>
+                    <input type="date" class="form-control" name="op" aria-describedby="OP #" required>
+                </div>
+
+                <hr>
+
+                <div id="product-content">
+                    
+                    <div class="input-group mb-3 product-1">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect01">Selecciona un Producto</label>
+                        </div>
+                        <select class="custom-select" id="inputGroupSelect01" name="cliente" required>
+                            <option id="defaultsubCat"  disabled selected><font color="#828282">--Selecciona un Producto--</font></option>
+                            <?php foreach ($bigObj['productos'] as $k => $v) { ?>
+                                <option  value="<?=$v['prod_id']?>" ><?=$v['prod_nombre']?></option>
+                            <?php } ?>
+                        </select>
+                    </div>
+                    <div class="btn-content text-right">
+                        <button type="button" class="btn btn-primary" onclick="">+</button>
+                    </div>
+                </div>
+
+                <hr>
+                
+                <h3>Tallas Hombre <button type="button" class="btn btn-primary" onclick="">+</button></h3>
+                <div class="col-md-3">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control">
+                        <div class="input-group-append">
+                            <select class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon">
+                                <option selected>Talla</option>
+                                <?php foreach ($bigObj['tallas'] as $k => $v) { ?>
+                                <option  value="<?=$v['talla_id']?>" ><?=$v['talla_nombre']?></option>
+                                <?php } ?>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>Tallas Mujer <button type="button" class="btn btn-primary" onclick="">+</button></h3>
+                <div class="col-md-3">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control">
+                        <div class="input-group-append">
+                            <select class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon">
+                                <option selected>Talla</option>
+                                <?php foreach ($bigObj['tallas'] as $k => $v) { ?>
+                                <option  value="<?=$v['talla_id']?>" ><?=$v['talla_nombre']?></option>
+                                <?php } ?>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <hr>
+
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Especificaciones</span>
+                    </div>
+                    <textarea name="tallas_especificaciones" class="form-control" aria-label="Especificaciones"></textarea>
+                </div>
+
+                <hr>
+
+                <div class="input-group mb-3 product-1">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect01">¿Lleva Bolsa?</label>
+                    </div>
+                    <select class="custom-select" id="bolsa-select" name="cliente" onchange="changeSelect('bolsa');" required>
+                        <option  value="1">Si</option>
+                        <option selected value="0">No</option>
+                    </select>
+                </div> 
+
+                <div id="bolsa" style="display:none;"> 
+
+                    <div class="input-group mb-3 product-1">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect01">¿Es Bordada?</label>
+                        </div>
+                        <select class="custom-select" id="inputGroupSelect01" name="cliente" required>
+                            <option  value="1">Si</option>
+                            <option selected value="0">No</option>
+                        </select>
+                    </div> 
+
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon3">Ubicación Bolsa</span>
+                        </div>
+                        <input type="text" class="form-control" name="op" aria-describedby="Ubicación Bolsa" required>
+                    </div>                              
+                    
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Detalles</span>
+                        </div>
+                        <textarea name="op_detalles_bolsa" class="form-control" aria-label="Detalles"></textarea>
+                    </div>
+                </div>
+
+                <hr>
+
+                <div class="input-group mb-3 product-1">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect01">¿Lleva Vivos?</label>
+                    </div>
+                    <select class="custom-select" id="vivos-select" name="cliente" onchange="changeSelect('vivos');" required>
+                        <option  value="1">Si</option>
+                        <option selected value="0">No</option>
+                    </select>
+                </div> 
+
+                <div id="vivos" style="display:none;">
+
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon3">Ubicación vivo</span>
+                        </div>
+                        <input type="text" class="form-control" name="op" aria-describedby="Ubicación Bolsa" required>
+                    </div>                              
+                    
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Detalles</span>
+                        </div>
+                        <textarea name="op_detalles_bolsa" class="form-control" aria-label="Detalles"></textarea>
+                    </div>
+
+                </div>
+
+                <hr>
+
+                <div class="input-group mb-3 product-1">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect01">¿Lleva Botón?</label>
+                    </div>
+                    <select class="custom-select" id="boton-select" name="cliente" onchange="changeSelect('boton');" required>
+                        <option  value="1">Si</option>
+                        <option selected value="0">No</option>
+                    </select>
+                </div> 
+
+                <div id="boton" style="display:none;">
+
+                    <div class="input-group mb-3 product-1">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect01">¿Botón en el Cuello?</label>
+                        </div>
+                        <select class="custom-select" id="inputGroupSelect01" name="cliente" required>
+                            <option  value="1">Si</option>
+                            <option selected value="0">No</option>
+                        </select>
+                    </div> 
+                    
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon3">Color del Botón</span>
+                        </div>
+                        <input type="text" class="form-control" name="op" aria-describedby="Color del Botón" required>
+                    </div>    
+
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon3">Color del Ojal</span>
+                        </div>
+                        <input type="text" class="form-control" name="op" aria-describedby="Color del Ojal" required>
+                    </div> 
+
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon3">Color del Hilo</span>
+                        </div>
+                        <input type="text" class="form-control" name="op" aria-describedby="Color del Hilo" required>
+                    </div>                           
+                    
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Detalles</span>
+                        </div>
+                        <textarea name="op_detalles_bolsa" class="form-control" aria-label="Detalles"></textarea>
+                    </div>
+
+                </div>
+
+                <hr>
+
+                <div class="input-group mb-3 product-1">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect01">¿Delantal?</label>
+                    </div>
+                    <select class="custom-select" id="delantal-select" name="cliente" onchange="changeSelect('delantal');" required>
+                        <option  value="1">Si</option>
+                        <option selected value="0">No</option>
+                    </select>
+                </div> 
+
+                <div id="delantal" style="display:none;">
+                                
+                    <div class="input-group mb-3 product-1">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect01">¿Lleva ajustes?</label>
+                        </div>
+                        <select class="custom-select" id="inputGroupSelect01" name="cliente" required>
+                            <option  value="1">Si</option>
+                            <option selected value="0">No</option>
+                        </select>
+                    </div> 
+
+                    <div class="input-group mb-3 product-1">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect01">¿Lleva Pasadores?</label>
+                        </div>
+                        <select class="custom-select" id="inputGroupSelect01" name="cliente" required>
+                            <option  value="1">Si</option>
+                            <option selected value="0">No</option>
+                        </select>
+                    </div> 
+
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Detalles</span>
+                        </div>
+                        <textarea name="op_detalles_bolsa" class="form-control" aria-label="Detalles"></textarea>
+                    </div>
+                    
+                </div>
+
+                <hr>
+
+                <div class="input-group mb-3 product-1">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect01">¿Zipper?</label>
+                    </div>
+                    <select class="custom-select" id="zipper-select" name="cliente" required onchange="changeSelect('zipper');">
+                        <option  value="1">Si</option>
+                        <option selected value="0">No</option>
+                    </select>
+                </div>
+
+                <div id="zipper" style="display:none;">
+                
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon3">Color</span>
+                        </div>
+                        <input type="text" class="form-control" name="op" aria-describedby="Color del Hilo" required>
+                    </div> 
+
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Detalles</span>
+                        </div>
+                        <textarea name="op_detalles_bolsa" class="form-control" aria-label="Detalles"></textarea>
+                    </div>
+                
+                </div>
+
+                <hr>
+
+                <div class="input-group mb-3 product-1">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect01">Logo?</label>
+                    </div>
+                    <select class="custom-select" id="logo-select" name="logo" required onchange="changeSelect('logo');">
+                        <option  value="1">Si</option>
+                        <option selected value="0">No</option>
+                    </select>
+                </div>
+
+                <div id="logo" style="display:none;">
+                
+                    <div class="input-group mb-3 product-1">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect01">¿Bordado?</label>
+                        </div>
+                        <select class="custom-select" id="inputGroupSelect01" name="cliente" required>
+                            <option  value="1">Si</option>
+                            <option selected value="0">No</option>
+                        </select>
+                    </div> 
+
+                    <div class="input-group mb-3 product-1">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect01">¿Sublimación?</label>
+                        </div>
+                        <select class="custom-select" id="sublimacion-logo-select" name="cliente" onchange="changeSelect('sublimacion-logo');" required>
+                            <option  value="1">Si</option>
+                            <option selected value="0">No</option>
+                        </select>
+                    </div> 
+
+                    <div id="sublimacion-logo" style="display:none;">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Detalles</span>
+                            </div>
+                            <textarea name="op_detalles_bolsa" class="form-control" aria-label="Detalles"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="input-group mb-3 product-1">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect01">¿Poliflex?</label>
+                        </div>
+                        <select class="custom-select" id="poliflex-logo-select" name="cliente" onchange="changeSelect('poliflex-logo');" required>
+                            <option  value="1">Si</option>
+                            <option selected value="0">No</option>
+                        </select>
+                    </div> 
+
+                    <div id="poliflex-logo" style="display:none;">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Detalles</span>
+                            </div>
+                            <textarea name="op_detalles_bolsa" class="form-control" aria-label="Detalles"></textarea>
+                        </div>
+                    </div>
+                
+                </div>
+
+
+            </div>
+            <div class="card-footer text-right">
+                <input type="submit" class="btn btn-primary" name="" value="REGISTRAR">
+            </div>
+        </div>
+    </form>
+</div>
+
+<script type="text/javascript">
+    bigObj = <?=print_r(json_encode($bigObj))?>;
+</script>

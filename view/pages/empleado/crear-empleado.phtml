@@ -1,34 +1,112 @@
-<div class="modal_container" id="modal_crear_emp">
-    <div>
-    <a href="index.php" class="close">+</a>
-    <span class="modal_heading">crear Empleado</span>
+<div class="page-container" id="modal_crear_emp">
     <form class="form_crear_emp" action="crear_emp.php" method="POST">
-        <input type="text" name="emp_ced_id" value="" placeholder="Cédula de Identidad // 1-2345-6789"  required>
-        <input id='capitalize' type="text" name="emp_nombre" value="" placeholder="Nombre del Empleado" required>
-        <input id='capitalize' type="text" name="emp_apellido1" value="" placeholder="Primer apellido" required>
-        <input id='capitalize' type="text" name="emp_apellido2" value="" placeholder="Segundo apellido" required>
-        <input type="text" name="emp_direccion" value="" placeholder="Direccion corta">
-        <a id="a_form" href="#">Fecha de Nacimiento</a>
-        <input type="date" name="emp_fecha_nac" value="" placeholder="Fecha de nacimiento" required>
-        <a id="a_form" href="#">Fecha de Ingreso</a>
-        <input type="date" name="emp_fecha_ingreso" value="" placeholder="Fecha de Ingreso" required>
-        <input type="number" name="emp_salario" value="" min="0" placeholder="Salaio del Empleado" required>
-        <select class="select" name="pt_id" required>
-        <option id="defaultCat"  disabled selected><font color="#828282">--Selecciona una Puesto--</font></option>
-        <?php
-            require("conn.php");
-            $result = $conn->query("SELECT DISTINCT puestos_trabajo.pt_nombre_puesto FROM puestos_trabajo INNER JOIN empleados ON puestos_trabajo.pt_id=empleados.pt_id");
-            while($row=mysqli_fetch_array($result)){
-                ?>
-                <option  value="<?php echo $row['pt_nombre_puesto']; ?>" ><?php echo $row['pt_nombre_puesto']; ?></option>
-                <?php mysqli_close($conn);
-            } ?>
-        </select>
-        <textarea name="emp_observaciones" rows="2" placeholder="Observaciones"></textarea>
-        <input type="text" name="emp_telefono1" value="" placeholder="Telefono Principal" required>
-        <input type="text" name="emp_telefono2" value="" placeholder="Telefono Secundario">
-        <input type="email" name="emp_correo" value="" placeholder="Correo">
-        <input type="submit" class="btn" name="" value="REGISTRAR">
+        <div class="card">
+            <h1 class="card-header">Crear Empleado</h1>
+            <div class="card-body">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon3">Cédula de Identidad // 1-2345-6789</span>
+                    </div>
+                    <input type="text" class="form-control" name="emp_ced_id" aria-describedby="Cédula de Identidad // 1-2345-6789" required>
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon3">Nombre del Empleado</span>
+                    </div>
+                    <input type="text" class="form-control" name="emp_nombre" aria-describedby="Nombre del Empleado" required>
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon3">Primer apellido</span>
+                    </div>
+                    <input type="text" class="form-control" name="emp_apellido1" aria-describedby="Primer apellido" required>
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon3">Segundo apellido</span>
+                    </div>
+                    <input type="text" class="form-control" name="emp_apellido2" aria-describedby="Segundo apellido" required>
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon3">Direccion corta</span>
+                    </div>
+                    <input type="text" class="form-control" name="emp_direccion" aria-describedby="Direccion corta" required>
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon3">Fecha de Nacimiento</span>
+                    </div>
+                    <input type="date" class="form-control" name="emp_fecha_nac" aria-describedby="Fecha de Nacimiento" required>
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon3">Fecha de Ingreso</span>
+                    </div>
+                    <input type="date" class="form-control" name="emp_fecha_ingreso" aria-describedby="Fecha de Ingreso" required>
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon3">Salaio del Empleado</span>
+                    </div>
+                    <input type="number" class="form-control" name="emp_salario" min="0" aria-describedby="Salaio del Empleado" required>
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect01">Selecciona un Puesto</label>
+                    </div>
+                    <select class="custom-select" id="inputGroupSelect01" name="pt_id" required>
+                    <option id="defaultsubCat"  disabled selected><font color="#828282">--Selecciona una Puesto--</font></option>
+                        <?php
+                        require("conn.php");
+                        $result = $conn->query("SELECT DISTINCT puestos_trabajo.pt_nombre_puesto FROM puestos_trabajo INNER JOIN empleados ON puestos_trabajo.pt_id=empleados.pt_id");
+                        while($row=mysqli_fetch_array($result)){
+                            ?>
+                            <option  value="<?php echo $row['pt_nombre_puesto']; ?>" ><?php echo $row['pt_nombre_puesto']; ?></option>
+                            <?php mysqli_close($conn);
+                        } ?>
+                    </select>
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Observaciones</span>
+                    </div>
+                    <textarea name="emp_observaciones" class="form-control" aria-label="Observaciones"></textarea>
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon3">Telefono Principal</span>
+                    </div>
+                    <input type="text" class="form-control" name="emp_telefono1" aria-describedby="Telefono Principal" required>
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon3">Telefono Secundario</span>
+                    </div>
+                    <input type="text" class="form-control" name="emp_telefono2" aria-describedby="Telefono Secundario">
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon3">Correo</span>
+                    </div>
+                    <input type="text" class="form-control" name="emp_correo" aria-describedby="Correo">
+                </div>
+            </div>
+            <div class="card-footer text-right">
+                <input type="submit" class="btn btn-primary" name="" value="REGISTRAR">
+            </div>
+        </div>
     </form>
-    </div>
 </div>

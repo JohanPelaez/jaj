@@ -7,23 +7,32 @@
     });
 </script>
         <!-- Crear modal para eliminar usuarios-->
-<div class="modal_container" id="modal_eli_usu">
-    <div>
-        <a href="index.php" class="close">+</a>
-        <span class="modal_heading">Eliminar Usuarios</span>
-        <form class="form_crear_emp" action="eli_usu.php" method="POST">
-            <select class="select" name="usu_login" required>
-            <option id="defaultCat"  disabled selected><font color="#828282">--Selecciona una Usuario--</font></option>
-            <?php
-                require("conn.php");
-                $result = $conn->query("SELECT DISTINCT usuarios.usu_login FROM perfiles INNER JOIN usuarios ON usuarios.per_id = perfiles.per_id WHERE perfiles.per_id <> 1");
-                while($row=mysqli_fetch_array($result)){
-                    ?>
-                    <option  value="<?php echo $row['usu_login']; ?>" ><?php echo $row['usu_login']; ?></option>
-                    <?php mysqli_close($conn);
-                } ?>
-            </select>
-            <input type="submit" class="btn" name="" value="ELIMINAR">
-        </form>
-    </div>
+<div class="page-container" id="modal_eli_usu">
+    <form class="form_crear_emp" action="eli_usu.php" method="POST">
+        <div class="card">
+
+            <h1 class="card-header">Eliminar Usuarios</h1>
+            <div class="card-body">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect01">Selecciona una Usuario</label>
+                    </div>
+                    <select class="custom-select" id="inputGroupSelect01" name="usu_login" required>
+                    <option id="defaultsubCat"  disabled selected><font color="#828282">--Selecciona una Usuario--</font></option>
+                        <?php
+                        require("conn.php");
+                        $result = $conn->query("SELECT DISTINCT usuarios.usu_login FROM perfiles INNER JOIN usuarios ON usuarios.per_id = perfiles.per_id WHERE perfiles.per_id <> 1");
+                        while($row=mysqli_fetch_array($result)){
+                            ?>
+                            <option  value="<?php echo $row['usu_login']; ?>" ><?php echo $row['usu_login']; ?></option>
+                            <?php mysqli_close($conn);
+                        } ?>
+                    </select>
+                </div>
+            </div>
+            <div class="card-footer text-right">
+                <input type="submit" class="btn btn-primary" name="" value="ELIMINAR">
+            </div>
+        </div>
+    </form>
 </div>

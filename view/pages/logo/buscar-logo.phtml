@@ -1,0 +1,33 @@
+<div class="page-container" id="buscar_logo">
+    <div class="centered">
+        <div class="card">
+            <h1 class="card-header">Logos almacenados</h1>
+            <div class="card-body">
+                <table id="table1" class="table">
+                <tr>
+                    <th>Nombre</th> 
+                    <th>Cliente</th>
+                    <th>Logo</th>
+                    <th>Eliminar</th>
+                </tr><?php
+                    require("conn.php");
+                    $result = $conn->query("SELECT log_id, log_nombre, imagen, cli_nombre  FROM logos INNER JOIN clientes ON logos.cli_id = clientes.cli_id");
+                    if ($result-> num_rows > 0) {
+                        while ($row = mysqli_fetch_array($result)) {
+                        echo "<tr><td>" . $row['log_nombre'] . "</td>
+                        <td>". $row["cli_nombre"] ."</td>
+                        <td><img src=\"files/". $row["imagen"] ."\" width='100'></td>
+                        <td><a href='#'>Eliminar</a></td></tr>";
+                        }
+                        echo "</table>";
+                    }
+                    else {
+                        echo "No hay datos almacenados";
+                    }
+                    $conn-> close();
+                    ?>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

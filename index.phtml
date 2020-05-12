@@ -10,11 +10,6 @@
 <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 <link href="view/css/style.css" rel="stylesheet" type="text/css">
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-<script type="text/javascript" src="view/js/scripts.js"></script>
-<script type="text/javascript" src="view/js/home.js"></script>
 </head>
 <body>
 	<div class="container-fluid">
@@ -38,7 +33,7 @@
 											<a href="#">Ver Orden de Producción</a>
 										</li>
 										<li>
-											<a href="#">Crear Orden de Producción</a>
+											<a href="#modal_crear_orden">Crear Orden de Producción</a>
 										</li>
 									</ul>
 								</li>
@@ -89,10 +84,10 @@
 								<li class="jaj-menu-title2">Logos
 									<ul class="jaj-sub-menu2">
 										<li>
-											<a href="#">Crear Logo</a>
+											<a href="#modal_crear_logo">Crear Logo</a>
 										</li>
 										<li>
-											<a href="#">Actualizar Logo</a>
+											<a href="#buscar_logo">Actualizar Logo</a>
 										</li>
 									</ul>
 								</li>
@@ -246,7 +241,7 @@
 						<a href="#">Cerrar Sesión</a>
 					</div>
 				</header>
-				<main class="row">
+				<main class="row jaj-main-content">
 					<div class="col-md-12">
 						<?php 	include 'view/pages/categoria/crear-categoria.phtml';
 								include 'view/pages/categoria/actualizar-categoria.phtml';
@@ -279,6 +274,9 @@
 								include 'view/pages/empleado/buscar-empleado.phtml';
 								include 'view/pages/usuario/crear-usuario.phtml';
 								include 'view/pages/usuario/verificar-contrasena.phtml';
+								include 'view/pages/orden/crear-orden-produccion.phtml';
+								include 'view/pages/logo/crear-logo.phtml';
+								include 'view/pages/logo/buscar-logo.phtml';
 						?>	
 							
 					</div>
@@ -286,6 +284,11 @@
 			</div>
 		</div>		
 	</div>
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="view/js/scripts.js"></script>
+	<script type="text/javascript" src="view/js/home.js"></script>
 	<script type="text/javascript" >
 	<?php require("conn.php");
 	$result = $conn->query("SELECT DISTINCT tallas.talla_nombre, producto_tallas.prod_id FROM tallas INNER JOIN producto_tallas

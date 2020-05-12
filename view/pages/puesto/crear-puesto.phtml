@@ -1,11 +1,26 @@
-<div class="modal_container" id="modal_crear_pt">
-    <div>
-    <a href="index.php" class="close">+</a>
-    <span class="modal_heading">crear puesto de trabajo</span>
+<div class="page-container" id="modal_crear_pt">
     <form class="form_crear_cat" action="crear_pt.php" method="POST">
-        <input id='capitalize' type="text" name="pt_nombre" value="" placeholder="Nombre del Puesto" required>
-        <textarea name="pt_descripcion" rows="3" placeholder="Descripción del puesto"></textarea>
-        <input type="submit" class="btn" name="" value="REGISTRAR">
+        <div class="card">
+
+            <h1 class="card-header">Crear Puesto de Trabajo</h1>
+            <div class="card-body">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon3">Nombre del Puesto</span>
+                    </div>
+                    <input type="text" class="form-control" name="pt_nombre" aria-describedby="Nombre del Puesto" required>
+                </div>
+
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Descripción</span>
+                    </div>
+                    <textarea name="pt_descripcion" class="form-control" aria-label="Descripción"></textarea>
+                </div>
+            </div>
+            <div class="card-footer text-right">
+                <input type="submit" class="btn btn-primary" name="" value="REGISTRAR">
+            </div>
+        </div>
     </form>
-    </div>
 </div>

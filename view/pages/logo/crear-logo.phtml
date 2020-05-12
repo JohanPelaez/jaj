@@ -1,0 +1,42 @@
+<div class="page-container" id="modal_crear_logo">
+    <form class="form_crear_cat" action="crear_logo.php" method="POST" enctype="multipart/form-data">
+        <div class="card">
+            <h1 class="card-header">Crear Logo</h1>
+            <div class="card-body">
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon3">Nombre del logo</span>
+                    </div>
+                    <input type="text" class="form-control" name="name" aria-describedby="Hecha por" required>
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon3">Cliente</span>
+                    </div>
+                    <select class="custom-select" id="inputGroupSelect01" name="cliente" id="cliente" required>
+                        <option id="defaultsubCat"  disabled selected><font color="#828282">--Selecciona un Cliente--</font></option>
+                        <?php foreach ($bigObj['clientes'] as $k => $v) { ?>
+                            <option  value="<?=$v['cli_id']?>" ><?=$v['cli_nombre']?></option>
+                        <?php } ?>
+                    </select>
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroupFileAddon01">Logo</span>
+                    </div>
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="logo" name="logo" aria-describedby="inputGroupFileAddon01" onchange="document.querySelector('#label-logo').innerHTML = this.files[0].name">
+                        <label id="label-logo" class="custom-file-label" for="logo">Choose file</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-footer text-right">
+                <input type="submit" class="btn btn-primary" name="" value="REGISTRAR">
+            </div>
+        </div>
+    </form>
+</div>

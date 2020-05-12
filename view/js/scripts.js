@@ -111,3 +111,9 @@ function fillFormemp( emp_ced_id, emp_nombre, emp_apellido1, emp_apellido2, emp_
   document.querySelector("#emp_telefono2").value = emp_telefono2;
   document.querySelector("#emp_correo").value = emp_correo;
 }
+
+function changeSelect(select) {
+  element = document.querySelector('#' + select);
+  select = document.querySelector('#' + select + '-select');
+  element.style.display = select.value == '1' ? 'block' : 'none';
+}
