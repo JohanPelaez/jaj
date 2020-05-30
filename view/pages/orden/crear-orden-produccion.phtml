@@ -1,5 +1,9 @@
 <?php include dirname(__FILE__).'/../../../controllers/orden-pro-ctrl.php'; ?>
 
+<script type="text/javascript">
+    bigObj = <?=print_r(json_encode($bigObj))?>;
+</script>
+
 <div class="page-container"  id="modal_crear_orden">
     <form class="crear_orden_prod" action="crear_orden_prod.php" method="POST" style=" width: 100%; max-width: 1024;">
         <div class="card">
@@ -77,39 +81,40 @@
                             <?php } ?>
                         </select>
                     </div>
-                    <div class="btn-content text-right">
-                        <button type="button" class="btn btn-primary" onclick="">+</button>
-                    </div>
                 </div>
 
                 <hr>
                 
-                <h3>Tallas Hombre <button type="button" class="btn btn-primary" onclick="">+</button></h3>
-                <div class="col-md-3">
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control" name="talla_h_quan[]">
-                        <div class="input-group-append">
-                            <select class="custom-select" name="talla_h[]" id="inputGroupSelect04" aria-label="Example select with button addon">
-                                <option selected>Talla</option>
-                                <?php foreach ($bigObj['tallas'] as $k => $v) { ?>
-                                <option  value="<?=$v['talla_id']?>" ><?=$v['talla_nombre']?></option>
-                                <?php } ?>
-                            </select>
+                <h3>Tallas Hombre <button type="button" class="btn btn-primary" onclick="otraTalla('hombres')">+</button><button type="button" class="btn btn-primary" onclick="borrarTalla('hombres')">-</button></h3>
+                <div class="tallas-hombres row">
+                    <div class="col-md-3 talla-hombres">
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" name="talla_h_quan[]">
+                            <div class="input-group-append">
+                                <select class="custom-select" name="talla_h[]" id="inputGroupSelect04" aria-label="Example select with button addon">
+                                    <option selected>Talla</option>
+                                    <?php foreach ($bigObj['tallas'] as $k => $v) { ?>
+                                    <option  value="<?=$v['talla_id']?>" ><?=$v['talla_nombre']?></option>
+                                    <?php } ?>
+                                </select>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <h3>Tallas Mujer <button type="button" class="btn btn-primary" onclick="">+</button></h3>
-                <div class="col-md-3">
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control" name="talla_m_quan[]">
-                        <div class="input-group-append">
-                            <select class="custom-select" name="talla_m[]" id="inputGroupSelect04" aria-label="Example select with button addon">
-                                <option selected>Talla</option>
-                                <?php foreach ($bigObj['tallas'] as $k => $v) { ?>
-                                <option  value="<?=$v['talla_id']?>" ><?=$v['talla_nombre']?></option>
-                                <?php } ?>
-                            </select>
+                <h3>Tallas Mujer <button type="button" class="btn btn-primary" onclick="otraTalla('mujeres')">+</button><button type="button" class="btn btn-primary" onclick="borrarTalla('mujeres')">-</button></h3>
+                <div class="tallas-mujeres row">
+                    <div class="col-md-3 talla-mujeres">
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" name="talla_m_quan[]">
+                            <div class="input-group-append">
+                                <select class="custom-select" name="talla_m[]" id="inputGroupSelect04" aria-label="Example select with button addon">
+                                    <option selected>Talla</option>
+                                    <?php foreach ($bigObj['tallas'] as $k => $v) { ?>
+                                    <option  value="<?=$v['talla_id']?>" ><?=$v['talla_nombre']?></option>
+                                    <?php } ?>
+                                </select>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -382,6 +387,3 @@
     </form>
 </div>
 
-<script type="text/javascript">
-    bigObj = <?=print_r(json_encode($bigObj))?>;
-</script>

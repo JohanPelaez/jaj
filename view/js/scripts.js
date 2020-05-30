@@ -117,3 +117,14 @@ function changeSelect(select) {
   select = document.querySelector('#' + select + '-select');
   element.style.display = select.value == '1' ? 'block' : 'none';
 }
+
+function otraTalla(gen) {
+  content = document.querySelector(".tallas-"+gen);
+  inner = document.querySelector(".talla-"+gen).cloneNode(true);
+  content.appendChild(inner);
+}
+
+function borrarTalla(gen) {
+  if (document.querySelectorAll(".talla-"+gen).length > 1)
+    document.querySelector(".tallas-"+gen).lastChild.remove();
+}
