@@ -1,0 +1,12 @@
+body {
+    background-color: #000;
+}
+.ventana_container {
+    width: 1024px;
+    margin: auto;
+    padding: 0 15px;
+    background-color: #fff;
+}
+.logo {
+    width: 100%;
+}
